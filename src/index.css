@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  /* Wissn Farbpalette – Grün */
+  --color-wissn-green: #6B9B37;
+  --color-wissn-green-dark: #5A8530;
+  --color-wissn-green-light: #7FB344;
+  --color-wissn-green-50: #F0F7E8;
+  --color-wissn-green-100: #DCE9CC;
+
+  --color-slate-900: #1E293B;
+  --color-slate-700: #334155;
+  --color-slate-500: #64748B;
+  --color-slate-400: #94A3B8;
+  --color-slate-300: #CBD5E1;
+  --color-slate-200: #E2E8F0;
+  --color-slate-100: #F1F5F9;
+  --color-gray-50: #F8F9FA;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1E293B;
+  background-color: #FFFFFF;
+}
