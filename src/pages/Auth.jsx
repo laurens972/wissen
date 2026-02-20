@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 import WissnLogo from '../components/WissnLogo'
-import { Mail, Lock, ArrowRight, Eye, EyeOff, AlertCircle, CheckCircle } from 'lucide-react'
+import { Mail, Lock, ArrowRight, Eye, EyeOff, AlertCircle, CheckCircle, User } from 'lucide-react'
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [passwordConfirm, setPasswordConfirm] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [termsAccepted, setTermsAccepted] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -16,6 +20,23 @@ export default function Auth() {
     e.preventDefault()
     setError(null)
     setSuccess(null)
+
+    if (password.length < 8) {
+      setError('Das Passwort muss mindestens 8 Zeichen lang sein.')
+      return
+    }
+
+    if (!isLogin) {
+      if (password !== passwordConfirm) {
+        setError('Die Passwörter stimmen nicht überein.')
+        return
+      }
+      if (!termsAccepted) {
+        setError('Bitte akzeptiere die Nutzungsbedingungen.')
+        return
+      }
+    }
+
     setLoading(true)
 
     try {
@@ -23,8 +44,26 @@ export default function Auth() {
         const { error } = await supabase.auth.signInWithPassword({ email, password })
         if (error) throw error
       } else {
-        const { error } = await supabase.auth.signUp({ email, password })
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: { first_name: firstName, last_name: lastName },
+          },
+        })
         if (error) throw error
+
+        if (data.user) {
+          await supabase
+            .from('profiles')
+            .update({
+              first_name: firstName,
+              last_name: lastName,
+              terms_accepted_at: new Date().toISOString(),
+            })
+            .eq('id', data.user.id)
+        }
+
         setSuccess('Bestätigungs-E-Mail gesendet! Bitte überprüfe dein Postfach.')
       }
     } catch (err) {
@@ -71,6 +110,46 @@ export default function Auth() {
 
           {/* Formular */}
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Vorname + Nachname (nur Register) */}
+            {!isLogin && (
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1.5">
+                    Vorname
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                    <input
+                      id="firstName"
+                      type="text"
+                      required
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="Max"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-wissn-green focus:ring-2 focus:ring-wissn-green-50 transition-all"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1.5">
+                    Nachname
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                    <input
+                      id="lastName"
+                      type="text"
+                      required
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Mustermann"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-wissn-green focus:ring-2 focus:ring-wissn-green-50 transition-all"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
                 E-Mail-Adresse
@@ -99,10 +178,10 @@ export default function Auth() {
                   id="password"
                   type={showPassword ? 'text' : 'password'}
                   required
-                  minLength={6}
+                  minLength={8}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Mindestens 6 Zeichen"
+                  placeholder="Mindestens 8 Zeichen"
                   className="w-full pl-10 pr-10 py-2.5 rounded-lg border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-wissn-green focus:ring-2 focus:ring-wissn-green-50 transition-all"
                 />
                 <button
@@ -114,6 +193,51 @@ export default function Auth() {
                 </button>
               </div>
             </div>
+
+            {/* Passwort bestätigen (nur Register) */}
+            {!isLogin && (
+              <div>
+                <label htmlFor="passwordConfirm" className="block text-sm font-medium text-slate-700 mb-1.5">
+                  Passwort bestätigen
+                </label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <input
+                    id="passwordConfirm"
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    minLength={8}
+                    value={passwordConfirm}
+                    onChange={(e) => setPasswordConfirm(e.target.value)}
+                    placeholder="Passwort wiederholen"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 bg-white text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-wissn-green focus:ring-2 focus:ring-wissn-green-50 transition-all"
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Nutzungsbedingungen Checkbox (nur Register) */}
+            {!isLogin && (
+              <label className="flex items-start gap-2.5 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={termsAccepted}
+                  onChange={(e) => setTermsAccepted(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 rounded border-slate-300 text-wissn-green focus:ring-wissn-green cursor-pointer accent-wissn-green"
+                />
+                <span className="text-sm text-slate-600">
+                  Ich akzeptiere die{' '}
+                  <a
+                    href="/nutzungsbedingungen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-wissn-green hover:text-wissn-green-dark no-underline font-medium"
+                  >
+                    Nutzungsbedingungen
+                  </a>
+                </span>
+              </label>
+            )}
 
             <button
               type="submit"

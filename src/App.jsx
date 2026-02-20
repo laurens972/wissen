@@ -8,8 +8,13 @@ import Dashboard from './pages/Dashboard'
 import FeaturesPage from './pages/FeaturesPage'
 import HowItWorksPage from './pages/HowItWorksPage'
 import ForSchoolsPage from './pages/ForSchoolsPage'
+import ForParentsPage from './pages/ForParentsPage'
+import ForStudentsPage from './pages/ForStudentsPage'
+import FAQPage from './pages/FAQPage'
+import AboutPage from './pages/AboutPage'
 import ImpressumPage from './pages/ImpressumPage'
 import DatenschutzPage from './pages/DatenschutzPage'
+import NutzungsbedingungenPage from './pages/NutzungsbedingungenPage'
 import KontaktPage from './pages/KontaktPage'
 
 /* ── GA4 Route Tracking ────────────────────── */
@@ -92,8 +97,13 @@ export default function App() {
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="/so-funktionierts" element={<HowItWorksPage />} />
         <Route path="/fuer-schulen" element={<ForSchoolsPage />} />
+        <Route path="/fuer-eltern" element={<ForParentsPage />} />
+        <Route path="/fuer-schueler" element={<ForStudentsPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/ueber-uns" element={<AboutPage />} />
         <Route path="/impressum" element={<ImpressumPage />} />
         <Route path="/datenschutz" element={<DatenschutzPage />} />
+        <Route path="/nutzungsbedingungen" element={<NutzungsbedingungenPage />} />
         <Route path="/kontakt" element={<KontaktPage />} />
         <Route
           path="/auth"

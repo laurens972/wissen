@@ -30,3 +30,74 @@ body {
   color: #1E293B;
   background-color: #FFFFFF;
 }
+
+/* ── Hero Animations ──────────────────────── */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-3deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(107, 155, 55, 0.3), 0 0 60px rgba(107, 155, 55, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(107, 155, 55, 0.5), 0 0 80px rgba(107, 155, 55, 0.2); }
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(0.9); }
+  66% { transform: translate(25px, -15px) scale(1.05); }
+}
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 3)); }
+}
+
+.animate-fade-in-up { animation: fade-in-up 0.8s ease-out both; }
+.animate-fade-in-scale { animation: fade-in-scale 0.8s ease-out both; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-reverse { animation: float-reverse 7s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-gradient-shift {
+  background-size: 200% auto;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+.animate-orb-1 { animation: orb-drift-1 12s ease-in-out infinite; }
+.animate-orb-2 { animation: orb-drift-2 15s ease-in-out infinite; }
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-700 { animation-delay: 0.7s; }

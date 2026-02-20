@@ -21,6 +21,9 @@ export function Header() {
     { href: '/features', label: 'Features' },
     { href: '/so-funktionierts', label: "So funktioniert's" },
     { href: '/fuer-schulen', label: 'Für Schulen' },
+    { href: '/fuer-eltern', label: 'Für Eltern' },
+    { href: '/fuer-schueler', label: 'Für Schüler' },
+    { href: '/faq', label: 'FAQ' },
   ]
 
   const isActive = (href) => location.pathname === href
@@ -108,13 +111,18 @@ export function Footer() {
               <a href="/features" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Features</a>
               <a href="/so-funktionierts" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">So funktioniert's</a>
               <a href="/fuer-schulen" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Für Schulen</a>
+              <a href="/fuer-eltern" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Für Eltern</a>
+              <a href="/fuer-schueler" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Für Schüler</a>
+              <a href="/faq" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">FAQ</a>
             </nav>
           </div>
           <div>
             <h4 className="font-semibold text-sm mb-4 text-slate-300 uppercase tracking-wider">Rechtliches</h4>
             <nav className="space-y-2.5">
+              <a href="/ueber-uns" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Über uns</a>
               <a href="/impressum" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Impressum</a>
               <a href="/datenschutz" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Datenschutz</a>
+              <a href="/nutzungsbedingungen" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Nutzungsbedingungen</a>
               <a href="/kontakt" className="block text-sm text-slate-400 hover:text-white transition-colors no-underline">Kontakt</a>
             </nav>
           </div>

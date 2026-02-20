@@ -204,9 +204,12 @@ function AppTab() {
               <h3 className="text-xl font-bold text-slate-900 mb-3">
                 Chrome erforderlich
               </h3>
-              <p className="text-slate-500 leading-relaxed mb-6">
+              <p className="text-slate-500 leading-relaxed mb-2">
                 Die Wissn Lern-App funktioniert aktuell nur in <strong>Google Chrome</strong>.
                 Bitte öffne die App in Chrome, um alle Funktionen nutzen zu können.
+              </p>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                Die App ist für <strong>Tablet und PC</strong> optimiert und eignet sich nicht für die Nutzung auf dem Handy.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a
@@ -218,15 +221,17 @@ function AppTab() {
                   <Chrome className="w-4 h-4" />
                   Chrome herunterladen
                 </a>
-                <a
-                  href={FIREBASE_APP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-slate-700 font-medium text-sm border border-slate-200 hover:border-slate-300 transition-colors no-underline"
+                <button
+                  onClick={() => {
+                    // googlechromes:// öffnet HTTPS-URLs direkt in Chrome (iOS & macOS)
+                    const chromeUrl = FIREBASE_APP_URL.replace('https://', 'googlechromes://')
+                    window.location.href = chromeUrl
+                  }}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-slate-700 font-medium text-sm border border-slate-200 hover:border-slate-300 transition-colors no-underline cursor-pointer"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  Trotzdem in Chrome öffnen
-                </a>
+                  In Chrome öffnen
+                </button>
               </div>
             </div>
           </div>
