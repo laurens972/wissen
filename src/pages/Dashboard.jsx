@@ -12,15 +12,7 @@ import {
   FileText,
   MessageSquare,
   Map,
-  AlertTriangle,
-  Chrome,
 } from 'lucide-react'
-
-// Chrome-Erkennung
-function isChromeBrowser() {
-  const ua = navigator.userAgent
-  return /Chrome/.test(ua) && !/Edg|OPR|Brave/.test(ua)
-}
 
 const FIREBASE_APP_URL = 'https://turbotutor-67e03.web.app'
 
@@ -169,10 +161,8 @@ function OverviewTab() {
 /* ── Lern-App (iframe) ─────────────────────── */
 function AppTab() {
   const [appUrl, setAppUrl] = useState(null)
-  const chrome = isChromeBrowser()
 
   useEffect(() => {
-    if (!chrome) return
     // Supabase-Session holen und Tokens an die iframe-URL hängen
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
@@ -185,60 +175,7 @@ function AppTab() {
         setAppUrl(FIREBASE_APP_URL)
       }
     })
-  }, [chrome])
-
-  // Nicht-Chrome: Hinweis anzeigen
-  if (!chrome) {
-    return (
-      <div className="space-y-4">
-        <div>
-          <h2 className="text-lg font-bold text-slate-900">Lern-App</h2>
-          <p className="text-sm text-slate-500">Dein KI-Tutor — direkt im Browser.</p>
-        </div>
-        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden" style={{ height: 'calc(100vh - 240px)' }}>
-          <div className="w-full h-full flex items-center justify-center p-8">
-            <div className="max-w-md text-center">
-              <div className="w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center mx-auto mb-6">
-                <AlertTriangle className="w-8 h-8 text-amber-500" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">
-                Chrome erforderlich
-              </h3>
-              <p className="text-slate-500 leading-relaxed mb-2">
-                Die Wissn Lern-App funktioniert aktuell nur in <strong>Google Chrome</strong>.
-                Bitte öffne die App in Chrome, um alle Funktionen nutzen zu können.
-              </p>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Die App ist für <strong>Tablet und PC</strong> optimiert und eignet sich nicht für die Nutzung auf dem Handy.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a
-                  href="https://www.google.com/chrome/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-wissn-green text-white font-medium text-sm hover:bg-wissn-green-dark transition-colors no-underline"
-                >
-                  <Chrome className="w-4 h-4" />
-                  Chrome herunterladen
-                </a>
-                <button
-                  onClick={() => {
-                    // googlechromes:// öffnet HTTPS-URLs direkt in Chrome (iOS & macOS)
-                    const chromeUrl = FIREBASE_APP_URL.replace('https://', 'googlechromes://')
-                    window.location.href = chromeUrl
-                  }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-slate-700 font-medium text-sm border border-slate-200 hover:border-slate-300 transition-colors no-underline cursor-pointer"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  In Chrome öffnen
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
+  }, [])
 
   const externalUrl = appUrl || FIREBASE_APP_URL
 
