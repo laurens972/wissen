@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: https:;
+      connect-src 'self' https://xsuiumhdakdmvsqbnnvh.supabase.co https://www.google-analytics.com https://www.googletagmanager.com;
+      frame-src https://app.wissn-ai.de;
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self';
+    " />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
     <!-- SEO -->
     <title>Wissn — Weil du's Wissn willst | KI-Lernplattform für Schulen</title>
     <meta name="description" content="Wissn — Die KI-gestützte Lernplattform für Schulen. Intelligenter Chat-Tutor, automatische Mindmaps, Karteikarten und personalisierte Lernpläne." />
@@ -57,7 +73,7 @@
       }
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-BBQ8xawb.js"></script>
+    <script type="module" crossorigin src="/assets/index-BXwCf-Kh.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-jVn13_5o.css">
   </head>
   <body>
