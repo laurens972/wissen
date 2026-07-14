@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Security Headers -->
+    <!-- Security Headers
+         Schriftarten werden lokal ausgeliefert (@fontsource/inter). Externe
+         Font-Hosts sind deshalb bewusst nicht mehr erlaubt — font-src 'self'.
+         Die Analytics-Hosts unten sind reine Erlaubnis, kein Ladebefehl: geladen
+         wird erst, wenn in src/lib/consent.js ein Dienst eingetragen und (bei
+         GA4) eingewilligt wurde. Neuer Dienst = Host hier ergänzen. -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
-      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      font-src 'self' https://fonts.gstatic.com;
+      script-src 'self' 'unsafe-inline' https://plausible.io https://www.googletagmanager.com https://www.google-analytics.com;
+      style-src 'self' 'unsafe-inline';
+      font-src 'self';
       img-src 'self' data: https:;
-      connect-src 'self' https://xsuiumhdakdmvsqbnnvh.supabase.co https://www.google-analytics.com https://www.googletagmanager.com;
+      connect-src 'self' https://xsuiumhdakdmvsqbnnvh.supabase.co https://plausible.io https://www.google-analytics.com https://www.googletagmanager.com;
       frame-src https://app.wissn-ai.de;
       frame-ancestors 'none';
       base-uri 'self';
@@ -46,10 +51,7 @@
     <link rel="icon" type="image/png" href="/wissn-logo-icon.png" />
     <link rel="apple-touch-icon" href="/wissn-logo-icon.png" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Fonts: lokal via @fontsource/inter in src/main.jsx — kein Google-Request -->
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -73,8 +75,8 @@
       }
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-CZ0V5A-i.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CIHzD_x2.css">
+    <script type="module" crossorigin src="/assets/index-CHXlz2bH.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BxywhkoQ.css">
   </head>
   <body>
     <div id="root"></div>
