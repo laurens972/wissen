@@ -435,8 +435,10 @@ export default function HeroDemo() {
           </div>
         </div>
 
-        {/* Fortschritt / Feature-Leiste — klickbar */}
-        <div className="flex items-center justify-around border-t border-slate-100 bg-slate-50 px-1 py-1.5">
+        {/* Fortschritt / Feature-Leiste — klickbar.
+            min-w-0 + kompakte Abstände: 5 Tabs dürfen auf schmalen Screens
+            die Karte nicht breiter als den Viewport machen. */}
+        <div className="flex min-w-0 items-center justify-around border-t border-slate-100 bg-slate-50 px-1 py-1.5">
           {TABS.map((t, i) => {
             const Icon = t.icon
             const active = i === stage
@@ -445,7 +447,7 @@ export default function HeroDemo() {
                 key={t.label}
                 type="button"
                 onClick={() => goToStage(i)}
-                className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[11px] font-medium transition-colors ${
+                className={`flex min-w-0 shrink items-center gap-1 rounded-lg px-1.5 py-1.5 text-[11px] font-medium transition-colors sm:gap-1.5 sm:px-2.5 ${
                   active
                     ? 'bg-wissn-green-50 text-wissn-green-dark'
                     : 'text-slate-400 hover:bg-slate-100 hover:text-slate-600'

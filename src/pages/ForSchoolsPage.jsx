@@ -155,7 +155,7 @@ export default function ForSchoolsPage() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href="mailto:laurens.samberg@wissn-ai.de"
+                  href="mailto:kontakt@wissn-ai.de"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-slate-700 text-sm font-semibold border border-slate-200 no-underline hover:border-slate-300 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2"
                 >
                   Angebot anfragen
@@ -419,7 +419,7 @@ export default function ForSchoolsPage() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="mailto:laurens.samberg@wissn-ai.de"
+                href="mailto:kontakt@wissn-ai.de"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 text-white text-sm font-semibold no-underline hover:bg-white/15 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2"
               >
                 <Mail className="w-4 h-4" />

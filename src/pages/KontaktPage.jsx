@@ -27,7 +27,7 @@ export default function KontaktPage() {
                 <Mail className="w-6 h-6 text-wissn-green" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-1">E-Mail</h3>
-              <a href="mailto:laurens.samberg@wissn-ai.de" className="text-wissn-green hover:underline no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 rounded">laurens.samberg@wissn-ai.de</a>
+              <a href="mailto:kontakt@wissn-ai.de" className="text-wissn-green hover:underline no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 rounded">kontakt@wissn-ai.de</a>
             </Reveal>
             <Reveal direction="right" delay={100} className="text-center p-8 rounded-2xl border border-slate-200 bg-white">
               <div className="w-12 h-12 rounded-xl bg-wissn-green-50 flex items-center justify-center mx-auto mb-5">
@@ -40,7 +40,7 @@ export default function KontaktPage() {
 
           <Reveal direction="right" className="max-w-xl mx-auto text-center">
             <a
-              href="mailto:laurens.samberg@wissn-ai.de"
+              href="mailto:kontakt@wissn-ai.de"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-wissn-green-btn text-white font-semibold text-lg hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2"
             >
               Schreib uns

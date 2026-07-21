@@ -21,8 +21,9 @@ function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 lg:pt-28 lg:pb-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-10 items-center">
-          {/* Links: Value-Prop + CTA */}
-          <div className="text-center lg:text-left">
+          {/* Links: Value-Prop + CTA. min-w-0: Grid-Kinder dürfen die Spalte
+              nicht über den Viewport hinaus aufweiten (Mobile-Zentrierung). */}
+          <div className="min-w-0 text-center lg:text-left">
             <img
               src="/wissn-logo-icon.png"
               alt="Wissn Logo"
@@ -30,7 +31,7 @@ function Hero() {
               style={{ animationDelay: '0s' }}
             />
 
-            <h1 className="hero-animate text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6" style={{ animationDelay: '0.3s' }}>
+            <h1 className="hero-animate text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6" style={{ animationDelay: '0.3s' }}>
               Vom Frontalunterricht zu{' '}
               <span className="marker-green">freiem Lernen</span>.
             </h1>
@@ -60,7 +61,7 @@ function Hero() {
           </div>
 
           {/* Rechts: Live-Produkt-Demo (Chat → Mindmap) */}
-          <div className="hero-animate" style={{ animationDelay: '0.5s' }}>
+          <div className="hero-animate min-w-0" style={{ animationDelay: '0.5s' }}>
             <HeroDemo />
           </div>
         </div>
