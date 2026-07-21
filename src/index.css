@@ -109,7 +109,7 @@ body {
   animation: cursor-blink 1s step-end infinite;
 }
 
-/* HeroDemo — Mindmap-Knoten ploppen rein */
+/* HeroDemo — Grafik-Knoten ploppen rein */
 @keyframes node-pop {
   from { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
   to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }

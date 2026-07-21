@@ -6,7 +6,7 @@ import Reveal from '../components/Reveal'
 const faqs = [
   {
     question: 'Was ist Wissn?',
-    answer: 'Wissn ist eine Plattform, die Schulen beim Übergang vom Frontalunterricht zu freien Lernformen wie dem Lernbüro-Konzept begleitet. Schülerinnen und Schüler nutzen schon heute einen sokratischen KI-Tutor mit Quellenangaben aus dem Unterrichtsmaterial, KI-Karteikarten, Quiz, Lückentexte, Mindmaps und individuelle KI-Lernpläne. Lehrkräfte erhalten eine Lernanalyse zum Fortschritt ihrer Klassen. Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen und Lerncoaching entsteht aktuell gemeinsam mit unseren Pilotschulen.',
+    answer: 'Wissn ist eine Plattform, die Schulen beim Übergang vom Frontalunterricht zu freien Lernformen wie dem Lernbüro-Konzept begleitet. Schülerinnen und Schüler nutzen schon heute einen sokratischen KI-Tutor mit Quellenangaben aus dem Unterrichtsmaterial, KI-Karteikarten, Quiz, Lückentexte, Grafiken und individuelle KI-Lernpläne. Lehrkräfte erhalten eine Lernanalyse zum Fortschritt ihrer Klassen. Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen und Lerncoaching entsteht aktuell gemeinsam mit unseren Pilotschulen.',
   },
   {
     question: 'Was ist ein Lernbüro?',
@@ -42,11 +42,11 @@ const faqs = [
   },
   {
     question: 'Wie sieht es mit Datenschutz aus?',
-    answer: 'Wissn ist DSGVO-konform gebaut: KI-Anfragen laufen über einen EU-Proxy, alle Daten werden auf Servern in der EU gespeichert. Die Anmeldung erfolgt wahlweise über VIDIS-SSO, für minderjährige Schülerinnen und Schüler holen wir die Einwilligung der Eltern nach Art. 8 DSGVO ein. Details findest du in unserer Datenschutzerklärung.',
+    answer: 'Wissn ist DSGVO-konform gebaut: KI-Anfragen laufen über einen EU-Proxy, alle Daten werden auf Servern in der EU gespeichert. Für minderjährige Schülerinnen und Schüler holen wir die Einwilligung der Eltern nach Art. 8 DSGVO ein. Details findest du in unserer Datenschutzerklärung.',
   },
   {
     question: 'Welche Fächer und Inhalte deckt Wissn ab?',
-    answer: 'Der KI-Tutor unterstützt bei den gängigen Schulfächern und arbeitet mit den Unterrichtsmaterialien, die Fachlehrkräfte hochladen, etwa als PDF, Word- oder PowerPoint-Datei. Aus diesen Materialien erstellt die KI Karteikarten, Quiz, Lückentexte und Mindmaps und zitiert bei Antworten die passenden Quellen.',
+    answer: 'Der KI-Tutor unterstützt bei den gängigen Schulfächern und arbeitet mit den Unterrichtsmaterialien, die Fachlehrkräfte hochladen, etwa als PDF, Word- oder PowerPoint-Datei. Aus diesen Materialien erstellt die KI Karteikarten, Quiz, Lückentexte und Grafiken und zitiert bei Antworten die passenden Quellen.',
   },
   {
     question: 'Wie starte ich mit Wissn an meiner Schule?',

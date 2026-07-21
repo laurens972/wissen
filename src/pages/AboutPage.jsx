@@ -59,44 +59,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Geschäftsmodell */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <Reveal direction="up">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-6 text-center">Unsere Mission</h2>
-            </Reveal>
-            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-              <Reveal direction="left">
-                <p>
-                  <strong className="text-slate-900">Das Problem:</strong> Viele Schulen wollen vom klassischen Frontalunterricht zu freieren
-                  Lernformen wie dem Lernbüro-Konzept wechseln, doch der Übergang ist aufwendig: Lernbausteine müssen entstehen, Logbücher
-                  geführt, Coaching-Gespräche vorbereitet und der Überblick über 30 Schüler pro Klasse behalten werden.
-                </p>
-              </Reveal>
-              <Reveal direction="right">
-                <p>
-                  <strong className="text-slate-900">Unsere Lösung:</strong> Wissn begleitet Schulen bei genau diesem Übergang. Fachlehrkräfte
-                  laden ihr Unterrichtsmaterial hoch, ein KI-Tutor unterstützt Schülerinnen und Schüler mit sokratischen Dialogen,
-                  Quellenangaben, Karteikarten, Quiz und Mindmaps, und KI-Lernpläne begleiten den individuellen Fortschritt. Die Lernanalyse
-                  gibt Lehrkräften die Grundlage für Feedback und Förderung. Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen und
-                  Freiheitsgraden entsteht aktuell gemeinsam mit unseren Pilotschulen.
-                </p>
-              </Reveal>
-              <Reveal direction="left">
-                <p>
-                  <strong className="text-slate-900">Geschäftsmodell:</strong> Wissn ist ein SaaS-Produkt mit Schullizenzen.
-                  Schulen erhalten eine zentrale Verwaltung für Klassen, Fächer, Materialien und Lernanalyse, von der ersten
-                  Pilotphase bis zur ganzen Schule. Einzelne Schüler können Wissn kostenlos mit Basisfunktionen nutzen.
-                </p>
-              </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Team */}
-      <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal direction="up">
             <div className="max-w-2xl mx-auto text-center mb-16">
@@ -119,6 +83,42 @@ export default function AboutPage() {
                 </a>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Geschäftsmodell */}
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <Reveal direction="up">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-6 text-center">Unsere Mission</h2>
+            </Reveal>
+            <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+              <Reveal direction="left">
+                <p>
+                  <strong className="text-slate-900">Das Problem:</strong> Viele Schulen wollen vom klassischen Frontalunterricht zu freieren
+                  Lernformen wie dem Lernbüro-Konzept wechseln, doch der Übergang ist aufwendig: Lernbausteine müssen entstehen, Logbücher
+                  geführt, Coaching-Gespräche vorbereitet und der Überblick über 30 Schüler pro Klasse behalten werden.
+                </p>
+              </Reveal>
+              <Reveal direction="right">
+                <p>
+                  <strong className="text-slate-900">Unsere Lösung:</strong> Wissn begleitet Schulen bei genau diesem Übergang. Fachlehrkräfte
+                  laden ihr Unterrichtsmaterial hoch, ein KI-Tutor unterstützt Schülerinnen und Schüler mit sokratischen Dialogen,
+                  Quellenangaben, Karteikarten, Quiz und Grafiken, und KI-Lernpläne begleiten den individuellen Fortschritt. Die Lernanalyse
+                  gibt Lehrkräften die Grundlage für Feedback und Förderung. Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen und
+                  Freiheitsgraden entsteht aktuell gemeinsam mit unseren Pilotschulen.
+                </p>
+              </Reveal>
+              <Reveal direction="left">
+                <p>
+                  <strong className="text-slate-900">Geschäftsmodell:</strong> Wissn ist ein SaaS-Produkt mit Schullizenzen.
+                  Schulen erhalten eine zentrale Verwaltung für Klassen, Fächer, Materialien und Lernanalyse, von der ersten
+                  Pilotphase bis zur ganzen Schule. Einzelne Schüler können Wissn kostenlos mit Basisfunktionen nutzen.
+                </p>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>

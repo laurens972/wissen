@@ -3,7 +3,7 @@ import WissnLogo from '../components/WissnLogo'
 import Reveal from '../components/Reveal'
 import {
   Upload, Sparkles, Compass, LineChart,
-  ArrowRight, CheckCircle,
+  ArrowRight, CheckCircle, Check,
 } from 'lucide-react'
 
 const steps = [
@@ -25,7 +25,7 @@ const steps = [
     description: 'Aus dem hochgeladenen Material erstellt die KI passende Lernwerkzeuge, abgestimmt auf Inhalt und Niveau der Klasse.',
     details: [
       'Lernpläne, Karteikarten, Quiz und Lückentexte',
-      'Mindmaps zur Visualisierung von Zusammenhängen',
+      'Grafiken zur Visualisierung von Zusammenhängen',
       'Alles basiert auf dem Material der Lehrkraft, nicht auf generischem Wissen',
     ],
   },
@@ -76,6 +76,28 @@ export default function HowItWorksPage() {
               Vom Frontalunterricht zu freien Lernformen: Wissn unterstützt Lehrkräfte und Schüler mit KI-gestützten Werkzeugen, Schritt für Schritt.
             </p>
           </Reveal>
+          {/* Schlagwort-Zusammenfassung der Seite */}
+          <Reveal
+            direction="up"
+            delay={250}
+            as="ul"
+            className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mt-8"
+          >
+            {[
+              'Material hochladen',
+              'KI erstellt Lernwerkzeuge',
+              'Im eigenen Tempo arbeiten',
+              'Begleiten statt dozieren',
+            ].map((tag) => (
+              <li
+                key={tag}
+                className="inline-flex items-center gap-2 rounded-full bg-wissn-green-50 border border-wissn-green-100 px-5 py-2.5 text-base font-semibold text-wissn-green-dark"
+              >
+                <Check className="w-4.5 h-4.5 text-wissn-green shrink-0" aria-hidden="true" />
+                {tag}
+              </li>
+            ))}
+          </Reveal>
         </div>
       </section>
 
@@ -86,7 +108,7 @@ export default function HowItWorksPage() {
             <Reveal key={number} direction="up" delay={(i % 3) * 100}>
               <div
                 id={`step-${number}`}
-                className="relative flex gap-6 sm:gap-8 scroll-mt-28 pb-12 last:pb-0"
+                className={`relative flex gap-6 sm:gap-8 scroll-mt-28 ${i < steps.length - 1 ? 'pb-24 sm:pb-32' : ''}`}
               >
                 {/* Verbindungslinie */}
                 {i < steps.length - 1 && (

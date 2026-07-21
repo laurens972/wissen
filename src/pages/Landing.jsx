@@ -32,8 +32,8 @@ function Hero() {
             />
 
             <h1 className="hero-animate text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6" style={{ animationDelay: '0.3s' }}>
-              Vom Frontalunterricht zu{' '}
-              <span className="marker-green">freiem Lernen</span>.
+              Wir modernisieren{' '}
+              <span className="marker-green">das Lernen</span>.
             </h1>
 
             <p className="hero-animate text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0" style={{ animationDelay: '0.45s' }}>
@@ -60,7 +60,7 @@ function Hero() {
             </div>
           </div>
 
-          {/* Rechts: Live-Produkt-Demo (Chat → Mindmap) */}
+          {/* Rechts: Live-Produkt-Demo (Chat → Grafik) */}
           <div className="hero-animate min-w-0" style={{ animationDelay: '0.5s' }}>
             <HeroDemo />
           </div>
@@ -79,13 +79,15 @@ function TrustBar() {
     { icon: Users, label: 'Für Schüler, Lehrkräfte und Schulleitung' },
   ]
   return (
-    <section className="py-8 bg-white border-b border-slate-100">
+    <section className="py-14 lg:py-16 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12">
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {items.map(({ icon: Icon, label }, i) => (
-            <Reveal key={label} as="li" direction="up" delay={i * 80} className="flex items-center gap-2.5 text-sm font-medium text-slate-600">
-              <Icon className="w-5 h-5 text-wissn-green shrink-0" />
-              {label}
+            <Reveal key={label} as="li" direction="up" delay={i * 80} className="flex flex-col items-center text-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-6 py-8">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-wissn-green-50">
+                <Icon className="w-7 h-7 text-wissn-green" />
+              </span>
+              <span className="text-base sm:text-lg font-semibold text-slate-700 leading-snug">{label}</span>
             </Reveal>
           ))}
         </ul>
@@ -141,9 +143,9 @@ function PartnerLogos() {
 /* Problem Section */
 function ProblemSection() {
   const problems = [
-    { icon: Users, title: 'Ein Tempo für alle', text: 'Im Frontalunterricht lernen 30 Schüler im gleichen Takt. Individuelle Lernwege bleiben auf der Strecke.', href: '/fuer-schulen' },
-    { icon: School, title: 'Organisation frisst die Idee auf', text: 'Wochenpläne, Logbücher und Materialverwaltung auf Papier: Freie Lernformen scheitern selten am Konzept, sondern an der Organisation.', href: '/so-funktionierts' },
-    { icon: GraduationCap, title: 'Resilient gegen Lehrermangel', text: 'Frontalunterricht steht und fällt mit der Lehrkraft vor der Klasse. Freie Lernformen und eine digitale Lernstands-Übersicht machen Schulen resilienter. Lehrkraftzeit fließt gezielt dorthin, wo sie gebraucht wird.', href: '/features' },
+    { icon: Users, title: 'Individuelle Lernwege für jeden', text: 'Die Lehrkraft lädt ihr Material hoch, die KI macht daraus Lernpläne, Karteikarten, Quiz, Lückentexte und Grafiken. Der sokratische Chat-Tutor hilft mit Rückfragen und zitiert aus dem eigenen Unterrichtsstoff. So lernen alle im eigenen Tempo statt im Takt der ganzen Klasse.', href: '/fuer-schulen' },
+    { icon: ListChecks, title: 'Organisation digital statt auf Papier', text: 'Lernpläne, Materialien und Lernstände laufen an einem Ort zusammen, statt in Ordnern und auf Zetteln zu verschwinden. Was die Idee freier Lernformen sonst an Organisation auffrisst, erledigt Wissn im Hintergrund.', href: '/so-funktionierts' },
+    { icon: BarChart3, title: 'Entlastung und Überblick für Lehrkräfte', text: 'Das Fortschritts-Dashboard und die Lernanalyse zeigen pro Thema und Schüler, wo es gerade hakt. Lehrkräfte sehen auf einen Blick, wer Unterstützung braucht, und setzen ihre Zeit gezielt dort ein, statt für alle das Gleiche zu wiederholen.', href: '/features' },
   ]
 
   return (
@@ -152,12 +154,13 @@ function ProblemSection() {
         <Reveal direction="up" className="mb-12">
           <p className="text-xs uppercase tracking-widest text-wissn-green font-semibold mb-3">Warum Wissn</p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
-            Warum der Übergang so schwer ist
+            Drei Gründe für Wissn
           </h2>
           <p className="text-lg text-slate-500 leading-relaxed">
             Immer mehr Schulen wollen weg vom reinen Frontalunterricht, hin zu
-            Lernbüros, Wochenplänen und Projektarbeit. Der Wille ist da. Was fehlt,
-            ist die Infrastruktur.
+            Lernbüros, Wochenplänen und Projektarbeit. Wissn liefert die
+            Infrastruktur, die diesen Übergang im Alltag trägt: KI-Werkzeuge für
+            selbstständiges Lernen und echte Übersicht für Lehrkräfte.
           </p>
         </Reveal>
         <ul className="divide-y divide-slate-200 border-t border-b border-slate-200">
@@ -192,7 +195,7 @@ function FeaturesPreview() {
   const features = [
     { icon: MessageSquare, title: 'Chat-Tutor', description: 'Sokratischer KI-Tutor, der mit Quellen-Zitaten aus dem eigenen Unterrichtsmaterial antwortet.', slug: 'chat-tutor' },
     { icon: BookOpen, title: 'Karteikarten & Quiz', description: 'KI-generiert aus den eigenen Materialien, inklusive Lückentexten für den Selbstcheck.', slug: 'karteikarten-quiz' },
-    { icon: Map, title: 'Mindmaps & Grafiken', description: 'Visuelle Zusammenfassungen, die komplexe Themen auf einen Blick begreifbar machen.', slug: 'mindmaps' },
+    { icon: Map, title: 'Interaktive Grafiken', description: 'Visuelle Zusammenfassungen, die komplexe Themen auf einen Blick begreifbar machen.', slug: 'grafiken' },
     { icon: FileText, title: 'Dokumenten-Analyse', description: 'PDF, Word oder PowerPoint hochladen. Die KI strukturiert die Inhalte automatisch.', slug: 'dokumenten-analyse' },
     { icon: ListChecks, title: 'KI-Lernpläne', description: 'Personalisierte Lernpläne mit abhakbarem Fortschritt: die Grundlage für selbstständiges Arbeiten.', slug: 'lernplaene' },
     { icon: BarChart3, title: 'Lernanalyse', description: 'Lehrkräfte sehen pro Thema und Schüler, wo es hakt: die Grundlage für gezielte Begleitung.', slug: 'analytics' },
@@ -248,7 +251,7 @@ function FeaturesPreview() {
 function HowItWorksPreview() {
   const steps = [
     { num: '01', title: 'Materialien hochladen', text: 'Die Lehrkraft lädt ihre Materialien hoch. Die KI analysiert Inhalte automatisch.' },
-    { num: '02', title: 'KI erstellt Lernwerkzeuge', text: 'Aus den Materialien entstehen Lernpläne, Karteikarten, Quiz und Mindmaps.' },
+    { num: '02', title: 'KI erstellt Lernwerkzeuge', text: 'Aus den Materialien entstehen Lernpläne, Karteikarten, Quiz und Grafiken.' },
     { num: '03', title: 'Selbstständig arbeiten', text: 'Lernende arbeiten im eigenen Tempo, der Chat-Tutor hilft mit Quellen, der Fortschritt bleibt sichtbar.' },
     { num: '04', title: 'Begleiten statt dozieren', text: 'Die Lernanalyse zeigt, wer Unterstützung braucht. Die Lehrkraft wird zum Lernbegleiter.' },
   ]
@@ -300,7 +303,7 @@ function ProductShowcase() {
     { title: 'Meine Fächer', description: 'Alle Fächer mit Themen und Materialien an einem Ort.', image: '/screenshots/schueler/faecher.png' },
     { title: 'Chat-Tutor', description: 'Fachliche Hilfe sofort, mit Quellen-Zitaten aus dem eigenen Material.', image: '/screenshots/schueler/chat-tutor.png' },
     { title: 'Karteikarten', description: 'Automatisch generierte Lernkarten aus den eigenen Materialien.', image: '/screenshots/schueler/karteikarten.png' },
-    { title: 'Grafik', description: 'Visuelle Zusammenfassungen für komplexe Themen.', image: '/screenshots/schueler/mindmap.png' },
+    { title: 'Grafik', description: 'Visuelle Zusammenfassungen für komplexe Themen.', image: '/screenshots/schueler/grafik.png' },
     { title: 'Quiz', description: 'Selbstcheck mit Quiz und Lückentexten: Sitzt der Stoff schon?', image: '/screenshots/schueler/quiz.png' },
   ]
 
@@ -509,7 +512,7 @@ function CTA() {
 export default function Landing() {
   useSEO({
     title: null,
-    description: 'Wissn begleitet Schulen und Unternehmen beim Übergang vom Frontalunterricht zu freien Lernformen. Chat-Tutor mit Quellen, KI-Lernpläne, Karteikarten, Quiz, Mindmaps und Lernanalyse, auf einer Plattform.',
+    description: 'Wissn begleitet Schulen und Unternehmen beim Übergang vom Frontalunterricht zu freien Lernformen. Chat-Tutor mit Quellen, KI-Lernpläne, Karteikarten, Quiz, Grafiken und Lernanalyse, auf einer Plattform.',
   })
 
   return (

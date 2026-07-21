@@ -5,7 +5,7 @@ import {
 
 /*
  * HeroDemo — die Live-Produkt-Session als Karussell.
- * Sokratischer Chat → Karteikarten → Mindmap → Quiz → Lernanalyse → Loop.
+ * Sokratischer Chat → Karteikarten → Grafik → Quiz → Lernanalyse → Loop.
  * Alles zum selben Thema (Photosynthese), damit die Lern-Session zusammenhängt.
  * Rein dekorativ (aria-hidden); die semantische H1 lebt im Hero.
  */
@@ -25,7 +25,7 @@ const CARDS = [
   { q: 'Was sind die Produkte?', a: 'Glucose + Sauerstoff (O₂)' },
 ]
 
-const MINDMAP = {
+const GRAPHIC = {
   root: 'Photosynthese',
   branches: ['Sonnenlicht', 'Chlorophyll', 'CO₂ + H₂O', '→ Glucose', '→ O₂'],
 }
@@ -157,8 +157,8 @@ function StageFlashcards({ reduced, onDone }) {
   )
 }
 
-/* ---------- Stage 2: Mindmap ---------- */
-function Mindmap({ data, reduced }) {
+/* ---------- Stage 2: Grafik ---------- */
+function Graphic({ data, reduced }) {
   const { root, branches } = data
   const cx = 50
   const cy = 50
@@ -228,14 +228,14 @@ function Mindmap({ data, reduced }) {
   )
 }
 
-function StageMindmap({ reduced, onDone }) {
+function StageGraphic({ reduced, onDone }) {
   useEffect(() => {
     const t = setTimeout(onDone, reduced ? 5000 : 4400)
     return () => clearTimeout(t)
   }, [reduced, onDone])
   return (
     <div className="relative h-full">
-      <Mindmap data={MINDMAP} reduced={reduced} />
+      <Graphic data={GRAPHIC} reduced={reduced} />
     </div>
   )
 }
@@ -429,7 +429,7 @@ export default function HeroDemo() {
           <div key={`${stage}-${tick}`} className="stage-enter absolute inset-0 px-4 py-4">
             {stage === 0 && <StageChat reduced={reduced} onDone={onDone} />}
             {stage === 1 && <StageFlashcards reduced={reduced} onDone={onDone} />}
-            {stage === 2 && <StageMindmap reduced={reduced} onDone={onDone} />}
+            {stage === 2 && <StageGraphic reduced={reduced} onDone={onDone} />}
             {stage === 3 && <StageQuiz reduced={reduced} onDone={onDone} />}
             {stage === 4 && <StageAnalysis reduced={reduced} onDone={onDone} />}
           </div>

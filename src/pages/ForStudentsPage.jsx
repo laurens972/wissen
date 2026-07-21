@@ -1,6 +1,6 @@
 import Layout, { useSEO } from '../components/Layout'
 import Reveal from '../components/Reveal'
-import { ArrowRight, MessageSquare, Map, BookOpen, Target, PenTool, Clock } from 'lucide-react'
+import { ArrowRight, MessageSquare, Map, BookOpen, Target, PenTool, Clock, Check } from 'lucide-react'
 
 const benefits = [
   {
@@ -23,9 +23,9 @@ const benefits = [
   },
   {
     icon: Map,
-    title: 'Mindmaps für den Überblick',
-    description: 'Lass dir komplexe Themen als Mindmap visualisieren und behalte den Zusammenhang im Blick.',
-    href: '/features#mindmaps',
+    title: 'Grafiken für den Überblick',
+    description: 'Lass dir komplexe Themen als Grafik visualisieren und behalte den Zusammenhang im Blick.',
+    href: '/features#grafiken',
   },
   {
     icon: PenTool,
@@ -44,7 +44,7 @@ const benefits = [
 export default function ForStudentsPage() {
   useSEO({
     title: 'Für Schüler',
-    description: 'Wissn unterstützt dich beim Lernen: dein Lernplan, ein Chat-Tutor, der nicht vorsagt, sondern hilft, sowie Karteikarten, Quiz und Mindmaps aus deinem Unterrichtsstoff.',
+    description: 'Wissn unterstützt dich beim Lernen: dein Lernplan, ein Chat-Tutor, der nicht vorsagt, sondern hilft, sowie Karteikarten, Quiz und Grafiken aus deinem Unterrichtsstoff.',
   })
 
   return (
@@ -62,6 +62,29 @@ export default function ForStudentsPage() {
               <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto">
                 Mit deinem persönlichen Lernplan lernst du in deinem Tempo, hakst ab, was du schon kannst, und siehst, was als Nächstes drankommt. Der Chat-Tutor hilft dir mit Rückfragen statt fertigen Lösungen, rund um die Uhr.
               </p>
+            </Reveal>
+            {/* Schlagwort-Zusammenfassung der Seite */}
+            <Reveal
+              direction="up"
+              delay={100}
+              as="ul"
+              className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-10"
+            >
+              {[
+                'Eigener Lernplan, eigenes Tempo',
+                'Chat-Tutor, der nicht vorsagt',
+                'Karteikarten, Quiz und Lückentexte',
+                'Grafiken für den Überblick',
+                'Rund um die Uhr verfügbar',
+              ].map((tag) => (
+                <li
+                  key={tag}
+                  className="inline-flex items-center gap-2 rounded-full bg-wissn-green-50 border border-wissn-green-100 px-5 py-2.5 text-base font-semibold text-wissn-green-dark"
+                >
+                  <Check className="w-4.5 h-4.5 text-wissn-green shrink-0" aria-hidden="true" />
+                  {tag}
+                </li>
+              ))}
             </Reveal>
             <Reveal direction="up" delay={150}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

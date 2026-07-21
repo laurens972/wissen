@@ -38,14 +38,14 @@ const features = [
   },
   {
     icon: BrainCircuit,
-    slug: 'mindmaps',
-    eyebrow: 'Mindmaps',
-    title: 'Zusammenhänge sehen mit interaktiven Mindmaps',
-    image: '/screenshots/schueler/mindmap.png',
-    alt: 'Eine automatisch erstellte, interaktive Mindmap gibt einen Überblick über ein Thema',
-    description: 'Die KI verwandelt deine Inhalte in interaktive Mindmaps und Grafiken. So verschaffst du dir schnell einen Überblick über ein ganzes Thema und erkennst, wie die einzelnen Punkte zusammenhängen.',
+    slug: 'grafiken',
+    eyebrow: 'Grafiken',
+    title: 'Zusammenhänge sehen mit interaktiven Grafiken',
+    image: '/screenshots/schueler/grafik.png',
+    alt: 'Eine automatisch erstellte, interaktive Grafik gibt einen Überblick über ein Thema',
+    description: 'Die KI verwandelt deine Inhalte in interaktive Grafiken. So verschaffst du dir schnell einen Überblick über ein ganzes Thema und erkennst, wie die einzelnen Punkte zusammenhängen.',
     details: [
-      'KI erstellt interaktive Mindmaps und Grafiken aus deinen Inhalten',
+      'KI erstellt interaktive Grafiken aus deinen Inhalten',
       'Verschaffe dir schnell einen Überblick über ein ganzes Thema',
       'Klick dich durch Zusammenhänge, statt lange Texte zu wälzen',
     ],
@@ -120,7 +120,7 @@ const roadmap = [
 export default function FeaturesPage() {
   useSEO({
     title: 'Features',
-    description: 'Die Funktionen von Wissn: Chat-Tutor mit sokratischem Modus und Quellen-Zitaten, KI-Karteikarten, Quiz und Lückentexte, interaktive Mindmaps, Dokumenten-Analyse, personalisierte Lernpläne und Lernanalyse für Lehrkräfte.',
+    description: 'Die Funktionen von Wissn: Chat-Tutor mit sokratischem Modus und Quellen-Zitaten, KI-Karteikarten, Quiz und Lückentexte, interaktive Grafiken, Dokumenten-Analyse, personalisierte Lernpläne und Lernanalyse für Lehrkräfte.',
   })
 
   return (
@@ -136,6 +136,30 @@ export default function FeaturesPage() {
           </Reveal>
           <Reveal direction="up" delay={200} as="p" className="text-lg sm:text-xl text-slate-600 leading-relaxed">
             Wissn gibt Schülerinnen und Schülern KI-gestützte Werkzeuge an die Hand, um in ihrem Tempo selbstständig zu arbeiten, und Lehrkräften als Lernbegleitern den Überblick, den freie Lernformen wie das Lernbüro brauchen.
+          </Reveal>
+
+          {/* Schlagwort-Zusammenfassung der Seite */}
+          <Reveal
+            direction="up"
+            delay={250}
+            as="ul"
+            className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mt-8"
+          >
+            {[
+              'Sokratischer Chat-Tutor mit Quellen',
+              'Karteikarten, Quiz und Lückentexte',
+              'Interaktive Grafiken',
+              'KI-Lernpläne mit Fortschritt',
+              'Lernanalyse für Lehrkräfte',
+            ].map((tag) => (
+              <li
+                key={tag}
+                className="inline-flex items-center gap-2 rounded-full bg-wissn-green-50 border border-wissn-green-100 px-5 py-2.5 text-base font-semibold text-wissn-green-dark"
+              >
+                <Check className="w-4.5 h-4.5 text-wissn-green shrink-0" aria-hidden="true" />
+                {tag}
+              </li>
+            ))}
           </Reveal>
         </div>
       </section>

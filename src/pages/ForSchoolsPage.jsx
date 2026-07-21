@@ -2,17 +2,17 @@ import Layout, { useSEO } from '../components/Layout'
 import Reveal from '../components/Reveal'
 import Lightbox from '../components/Lightbox'
 import {
-  CheckCircle, ArrowRight, Shield, Server, GraduationCap, Users,
+  CheckCircle, Check, ArrowRight, Shield, ShieldCheck, Server, GraduationCap, Users,
   ClipboardList, LineChart, MessageCircle, MessagesSquare,
   Layers, Network, ChevronDown, Mail, FileText, Map, BookOpen,
-  School, KeyRound, ClipboardCheck, CalendarDays, Waypoints, Compass, Sparkles,
+  School, ClipboardCheck, CalendarDays, Waypoints, Compass, Sparkles,
 } from 'lucide-react'
 
 // Ehrliche Vertrauens-Leiste statt Fake-Stats-Band.
 const trustItems = [
   { icon: Shield, label: 'DSGVO-konform' },
   { icon: Server, label: 'KI über EU-Server' },
-  { icon: KeyRound, label: 'VIDIS-SSO für Schulen' },
+  { icon: ShieldCheck, label: 'Eltern-Einwilligung nach Art. 8 DSGVO' },
   { icon: GraduationCap, label: 'Von Klasse 5 bis zum Abitur' },
 ]
 
@@ -28,7 +28,7 @@ const argumentRows = [
   {
     eyebrow: 'Weniger Aufwand',
     title: 'Aus einem Dokument werden Lernmaterialien',
-    body: 'Aus einem PDF, Word- oder PowerPoint-Dokument erstellt Wissn Karteikarten, Quiz, Lückentexte und Mindmaps, und einen Lernplan mit Fortschritt. Fachlehrkräfte gewinnen Zeit für fachliche Hilfe und individuelles Feedback.',
+    body: 'Aus einem PDF, Word- oder PowerPoint-Dokument erstellt Wissn Karteikarten, Quiz, Lückentexte und Grafiken, und einen Lernplan mit Fortschritt. Fachlehrkräfte gewinnen Zeit für fachliche Hilfe und individuelles Feedback.',
     image: '/screenshots/schueler/karteikarten.png',
     alt: 'Automatisch erzeugte KI-Karteikarten in Wissn',
   },
@@ -54,7 +54,7 @@ const included = [
   { icon: MessagesSquare, label: 'Dialoge statt Fertiglösungen' },
   { icon: Layers, label: 'KI-Karteikarten' },
   { icon: ClipboardList, label: 'Quiz und Lückentexte' },
-  { icon: Network, label: 'Mindmaps aus Dokumenten' },
+  { icon: Network, label: 'Grafiken aus Dokumenten' },
   { icon: FileText, label: 'Dokumenten-Analyse (PDF, DOCX, PPTX)' },
   { icon: Map, label: 'KI-Lernpläne mit Fortschritt' },
   { icon: LineChart, label: 'Lernanalyse für Lehrkräfte' },
@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     q: 'Wie steht es um den Datenschutz?',
-    a: 'Wissn ist DSGVO-konform, unsere Server stehen in der EU und KI-Anfragen laufen über einen EU-Proxy. Die Anmeldung ist über VIDIS-SSO möglich, für Minderjährige holen wir die Eltern-Einwilligung nach Art. 8 DSGVO ein. Schülerdaten geben wir nicht an Dritte weiter. Für die Prüfung durch Ihren Datenschutzbeauftragten stellen wir alle Unterlagen bereit.',
+    a: 'Wissn ist DSGVO-konform, unsere Server stehen in der EU und KI-Anfragen laufen über einen EU-Proxy. Für Minderjährige holen wir die Eltern-Einwilligung nach Art. 8 DSGVO ein. Schülerdaten geben wir nicht an Dritte weiter. Für die Prüfung durch Ihren Datenschutzbeauftragten stellen wir alle Unterlagen bereit.',
   },
   {
     q: 'Können Lehrkräfte mit Wissn Tests erstellen?',
@@ -126,7 +126,7 @@ const faqs = [
 export default function ForSchoolsPage() {
   useSEO({
     title: 'Für Schulen im Wandel zum Lernbüro',
-    description: 'Wissn begleitet Schulen beim Übergang vom Frontalunterricht zu freien Lernformen: sokratischer KI-Tutor, KI-Lernmaterialien und eine Lernanalyse für Lehrkräfte. DSGVO-konform, KI über EU-Server, VIDIS-SSO.',
+    description: 'Wissn begleitet Schulen beim Übergang vom Frontalunterricht zu freien Lernformen: sokratischer KI-Tutor, KI-Lernmaterialien und eine Lernanalyse für Lehrkräfte. DSGVO-konform, KI über EU-Server.',
   })
 
   return (
@@ -146,6 +146,29 @@ export default function ForSchoolsPage() {
               <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8 max-w-xl">
                 Wissn begleitet Ihre Schule Schritt für Schritt beim Übergang zu freien Lernformen: mit einem sokratischen KI-Tutor, KI-Lernmaterialien und einer Lernanalyse, die Lehrkräfte entlasten, und einem Lernbüro-Modul, das gemeinsam mit unseren Pilotschulen entsteht.
               </p>
+              {/* Schlagwort-Zusammenfassung der Seite */}
+              <Reveal
+                direction="up"
+                delay={250}
+                as="ul"
+                className="flex flex-wrap justify-start gap-2.5 sm:gap-3 mb-8"
+              >
+                {[
+                  'DSGVO-konform, Server in der EU',
+                  'KI-Lernmaterialien aus eigenem Stoff',
+                  'Lernanalyse entlastet Lehrkräfte',
+                  'Einstieg über Pilotphase',
+                  'Lernbüro-Modul in Entwicklung',
+                ].map((tag) => (
+                  <li
+                    key={tag}
+                    className="inline-flex items-center gap-2 rounded-full bg-wissn-green-50 border border-wissn-green-100 px-5 py-2.5 text-base font-semibold text-wissn-green-dark"
+                  >
+                    <Check className="w-4.5 h-4.5 text-wissn-green shrink-0" aria-hidden="true" />
+                    {tag}
+                  </li>
+                ))}
+              </Reveal>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <a
                   href="/kontakt"
@@ -349,7 +372,6 @@ export default function ForSchoolsPage() {
               {[
                 'Server ausschließlich in der EU',
                 'KI-Anfragen über EU-Proxy',
-                'Anmeldung über VIDIS-SSO Ihrer Schule',
                 'Eltern-Einwilligung nach Art. 8 DSGVO für Minderjährige',
                 'Jugendschutz mit Content-Reporting',
                 'Keine Weitergabe von Schülerdaten',
