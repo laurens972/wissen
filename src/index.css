@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wissn-green: #6B9B37;
+  --color-wissn-green-dark: #5A8530;
+  --color-wissn-green-light: #7FB344;
+  /* Weißer Text auf dem Marken-Grün erreicht nur 3,3:1 — zu wenig für WCAG 2.1 AA
+     (4,5:1, gefordert durch BFSG/EN 301 549). Diese abgedunkelte Variante kommt auf
+     5,37:1 und ist für Flächen mit weißer Schrift gedacht. */
+  --color-wissn-green-btn: #4F7529;
+  --color-wissn-green-50: #F0F7E8;
+  --color-wissn-green-100: #DCE9CC;
+
+  --color-slate-900: #1E293B;
+  --color-slate-700: #334155;
+  --color-slate-500: #64748B;
+  --color-slate-400: #94A3B8;
+  --color-slate-300: #CBD5E1;
+  --color-slate-200: #E2E8F0;
+  --color-slate-100: #F1F5F9;
+  --color-gray-50: #F8F9FA;
+}
+
+/* Hero fade-in animation */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: hero-fade-up 0.8s ease-out forwards;
+}
+
+/* Signatur: Textmarker-Unterstreichung.
+   Ein leicht schräger, abgerundeter Highlighter-Strich hinter einem Wort.
+   Für helle Flächen. Sparsam einsetzen, 1 bis 2 Wörter pro Headline. */
+.marker {
+  background: linear-gradient(
+    100deg,
+    transparent 1%,
+    rgba(253, 230, 138, 0.55) 3%,
+    rgba(253, 230, 138, 0.55) 97%,
+    transparent 99%
+  );
+  padding: 0 0.12em;
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Marker-Variante für dunkle Flächen (dezenter Grün-Ton). */
+.marker-green {
+  background: linear-gradient(
+    100deg,
+    transparent 1%,
+    rgba(127, 179, 68, 0.3) 3%,
+    rgba(127, 179, 68, 0.3) 97%,
+    transparent 99%
+  );
+  padding: 0 0.12em;
+  border-radius: 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Reveal-Animationen (translateX ±40px) dürfen auf Mobile kein
+     horizontales Scrollen erzeugen. clip statt hidden: erzeugt keinen
+     neuen Scroll-Container. */
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1E293B;
+  background-color: #FFFFFF;
+}
+
+/* HeroDemo — Chat-Bubble erscheint */
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.msg-in {
+  animation: msg-in 0.4s ease-out both;
+}
+
+/* HeroDemo — Typewriter-Cursor */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+.type-cursor {
+  display: inline-block;
+  margin-left: 1px;
+  color: var(--color-wissn-green);
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* HeroDemo — Mindmap-Knoten ploppen rein */
+@keyframes node-pop {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+.mm-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: node-pop 0.55s ease-out both;
+}
+
+/* HeroDemo — Verbindungslinien zeichnen sich */
+@keyframes line-draw {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+.mm-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: line-draw 0.65s ease-out both;
+}
+
+/* HeroDemo — Swipe zwischen den Stufen (rein von rechts = nach links) */
+@keyframes stage-enter {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.stage-enter {
+  animation: stage-enter 0.6s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+/* HeroDemo — Analyse-Balken wachsen von links */
+@keyframes bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.bar-fill {
+  transform-origin: left;
+  animation: bar-grow 0.9s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+/* HeroDemo — Karteikarten-Flip (3D) */
+.flip-card {
+  perspective: 1000px;
+}
+.flip-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip-card[data-flipped='true'] .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.25);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* Scroll-Reveal — Inhalte erscheinen nacheinander von unten/links/rechts */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-up {
+  transform: translateY(28px);
+}
+.reveal-left {
+  transform: translateX(-40px);
+}
+.reveal-right {
+  transform: translateX(40px);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Cookie-Banner — Leiste fährt hoch, Dialog blendet auf */
+@keyframes banner-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.banner-in {
+  animation: banner-in 0.35s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+@keyframes settings-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.settings-in {
+  animation: settings-in 0.25s ease-out both;
+}
+
+/* Motion-Reduzierung: alles direkt im Endzustand zeigen */
+@media (prefers-reduced-motion: reduce) {
+  .banner-in,
+  .settings-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-animate,
+  .msg-in,
+  .mm-node,
+  .stage-enter {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .type-cursor {
+    animation: none !important;
+  }
+  .flip-inner {
+    transition: none !important;
+  }
+  .mm-line {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+  .bar-fill {
+    animation: none !important;
+    transform: none !important;
+  }
+}

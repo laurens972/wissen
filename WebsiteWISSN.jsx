@@ -394,6 +394,14 @@ export function Footer() {
               Die KI-gestützte Lernplattform für Schulen. Intelligenter lernen
               mit Chat-Tutor, Mindmaps und personalisierten Lernplänen.
             </p>
+            <div className="flex items-center gap-4 mt-5">
+              <a href="https://instagram.com/wissn.de" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="Instagram">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="https://tiktok.com/@wissn.de" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="TikTok">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.16z"/></svg>
+              </a>
+            </div>
           </div>
           <div>
             <h4 className="font-semibold text-sm mb-4 text-slate-300 uppercase tracking-wider">Produkt</h4>
@@ -826,9 +834,8 @@ function HowItWorksPreview() {
 /* Product Showcase */
 function ProductShowcase() {
   const screenshots = [
-    { title: 'Chat-Tutor', description: 'KI-gestützter Dialog, der Fragen versteht und verständlich erklärt.', color: 'from-emerald-100 to-teal-100' },
-    { title: 'Mindmap-Generator', description: 'Automatische visuelle Zusammenfassungen aus hochgeladenen Dokumenten.', color: 'from-blue-100 to-indigo-100' },
-    { title: 'Karteikarten & Quiz', description: 'Intelligente Lernkarten und Quizfragen — automatisch generiert.', color: 'from-violet-100 to-purple-100' },
+    { title: 'Chat-Tutor', description: 'KI-gestützter Dialog, der Fragen versteht und verständlich erklärt — mit Lernfortschritts-Tracking.', image: '/screenshots/schueler-chat-tutor.png' },
+    { title: 'Lehrer-Dashboard', description: 'Klassen verwalten, Lernfortschritt einsehen und Materialien zentral organisieren.', image: '/screenshots/lehrer-dashboard.png' },
   ]
 
   return (
@@ -839,14 +846,14 @@ function ProductShowcase() {
             So sieht Wissn in Aktion aus
           </h2>
           <p className="text-lg text-slate-500 leading-relaxed">
-            Ein Blick in die Lernplattform — von Chat-Tutor bis Karteikarten.
+            Ein Blick in die Lernplattform — App zu 90 % fertiggestellt, erste Pilotprojekte an Schulen laufen.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {screenshots.map(({ title, description, color }) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {screenshots.map(({ title, description, image }) => (
             <div key={title} className="rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg transition-all">
-              <div className={`h-48 bg-gradient-to-br ${color} flex items-center justify-center`}>
-                <span className="text-sm font-medium text-slate-400">Screenshot: {title}</span>
+              <div className="bg-slate-50 p-4">
+                <img src={image} alt={title} className="w-full rounded-lg shadow-sm" />
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">{title}</h3>
@@ -873,15 +880,14 @@ function TeamPreview() {
             Zwei Gründer mit einer gemeinsamen Vision: Lernen grundlegend verbessern.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
           {[
-            { initials: 'LH', color: 'from-wissn-green to-emerald-500', name: '[NAME]', role: '[ROLLE]' },
-            { initials: 'MK', color: 'from-blue-400 to-indigo-500', name: '[NAME]', role: '[ROLLE]' },
-          ].map(({ initials, color, name, role }) => (
-            <div key={initials} className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all">
-              <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${color} flex items-center justify-center text-white font-bold text-lg shrink-0`}>
-                {initials}
-              </div>
+            { photo: '/team/laurens-samberg.png', name: 'Laurens Samberg', role: 'Co-Founder & CTO' },
+            { photo: '/team/felix-maurer.png', name: 'Felix Maurer', role: 'Co-Founder & CMO' },
+            { photo: '/team/anton-schoepe.png', name: 'Anton Schoepe', role: 'Advisor & Gesellschafter' },
+          ].map(({ photo, name, role }) => (
+            <div key={name} className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all">
+              <img src={photo} alt={name} className="w-14 h-14 rounded-full object-cover shrink-0" />
               <div>
                 <h3 className="font-semibold text-slate-900">{name}</h3>
                 <p className="text-sm text-slate-500">{role}</p>
@@ -1587,20 +1593,28 @@ import { ArrowRight, Linkedin, Cloud, Brain, Shield, Rocket } from 'lucide-react
 
 const team = [
   {
-    initials: 'LH',
+    photo: '/team/laurens-samberg.png',
     color: 'from-wissn-green to-emerald-500',
-    name: '[NAME]',
-    role: '[ROLLE]',
-    bio: '[BIO — 2-3 Sätze über Hintergrund, Motivation und Expertise]',
-    linkedin: '[LINKEDIN-URL]',
+    name: 'Laurens Samberg',
+    role: 'Co-Founder & CTO',
+    bio: '18 Jahre, Schüler am BSZ Meißen mit Leistungskurs Informations- und Kommunikationstechnik. Programmiererfahrung durch Schulprojekte, eigene Softwareprojekte und ein Praktikum bei SAP. Aktiv im YFN Chapter Sachsen. Verantwortlich für die technische Entwicklung der Plattform.',
+    linkedin: 'https://linkedin.com/in/laurens-jacob-samberg-2bb464373',
   },
   {
-    initials: 'MK',
+    photo: '/team/felix-maurer.png',
     color: 'from-blue-400 to-indigo-500',
-    name: '[NAME]',
-    role: '[ROLLE]',
-    bio: '[BIO — 2-3 Sätze über Hintergrund, Motivation und Expertise]',
-    linkedin: '[LINKEDIN-URL]',
+    name: 'Felix Maurer',
+    role: 'Co-Founder & CMO',
+    bio: '18 Jahre, Schüler am BSZ Meißen mit Leistungskurs Informations- und Kommunikationstechnik. Erfahrung durch ein Praktikum im Social-Media-Management und ein starkes Netzwerk durch Fußball-Engagement. Aktiv im YFN Chapter Sachsen. Verantwortlich für Marketing und Community.',
+    linkedin: 'https://linkedin.com/in/felix-maurer-431562373',
+  },
+  {
+    photo: '/team/anton-schoepe.png',
+    color: 'from-amber-400 to-orange-500',
+    name: 'Anton Schoepe',
+    role: 'Advisor & Gesellschafter',
+    bio: 'Gründer von Intojob und YFN Chapter Lead Sachsen. Bringt Startup-Erfahrung und ein starkes Gründernetzwerk ein. Unterstützt Wissn als Mentor und strategischer Berater.',
+    linkedin: 'https://linkedin.com/in/anton-schoepe-bb0654238',
   },
 ]
 
@@ -1618,7 +1632,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-wissn-green-100 text-wissn-green text-sm font-medium mb-6">
               <Rocket className="w-4 h-4" />
-              Public Beta — seit 2025
+              App zu 90 % fertig — erste Pilotprojekte an Schulen
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
               Wir sind{' '}
@@ -1667,12 +1681,10 @@ export default function AboutPage() {
               Wir verbinden Bildungserfahrung mit technischer Expertise, um Lernen grundlegend zu verbessern.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            {team.map(({ initials, color, name, role, bio, linkedin }) => (
-              <div key={initials} className="text-center p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all">
-                <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${color} flex items-center justify-center mx-auto mb-5 shadow-lg text-white text-2xl font-bold`}>
-                  {initials}
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {team.map(({ photo, color, name, role, bio, linkedin }) => (
+              <div key={name} className="text-center p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all">
+                <img src={photo} alt={name} className="w-20 h-20 rounded-full object-cover mx-auto mb-5 shadow-lg" />
                 <h3 className="text-lg font-semibold text-slate-900">{name}</h3>
                 <p className="text-sm text-wissn-green font-medium mb-3">{role}</p>
                 <p className="text-sm text-slate-500 leading-relaxed mb-4">{bio}</p>
@@ -1760,17 +1772,18 @@ export default function ImpressumPage() {
           <div className="prose prose-slate max-w-none space-y-8 text-slate-600 leading-relaxed">
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">Angaben gemäß § 5 TMG</h2>
-              <p>[Vor- und Nachname]<br />[Straße Nr.]<br />[PLZ Ort]</p>
+              <p>Wissn UG (haftungsbeschränkt) i.G.<br />Eugen-d'Albert-Straße 11<br />01640 Coswig</p>
+              <p className="mt-2"><strong>Vertreten durch:</strong><br />Laurens Samberg<br />Felix Maurer</p>
             </div>
 
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">Kontakt</h2>
-              <p>E-Mail: [E-Mail]<br />Telefon: [Telefon]</p>
+              <p>E-Mail: laurens.samberg@wissn-ai.de<br />Telefon: +49 157 75210572</p>
             </div>
 
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-              <p>[Vor- und Nachname]<br />[Straße Nr.]<br />[PLZ Ort]</p>
+              <p>Laurens Samberg<br />Eugen-d'Albert-Straße 11<br />01640 Coswig</p>
             </div>
 
             <div>
