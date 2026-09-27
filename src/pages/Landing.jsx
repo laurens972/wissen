@@ -436,7 +436,7 @@ function TeamPreview() {
           {[
             { photo: '/team/laurens-samberg.png', name: 'Laurens Samberg', role: 'Co-Founder & CTO' },
             { photo: '/team/felix-maurer.png', name: 'Felix Maurer', role: 'Co-Founder & CMO' },
-            { photo: '/team/anton-schoepe.png', name: 'Anton Schoepe', role: 'Advisor & Gesellschafter' },
+            { photo: '/team/anton-schoepe.png', name: 'Anton Schoepe', role: 'Advisor' },
           ].map(({ photo, name, role }, i) => (
             <Reveal key={name} direction={i % 2 === 0 ? 'left' : 'right'} delay={(i % 3) * 100}>
               <a

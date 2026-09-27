@@ -20,7 +20,7 @@ const team = [
   {
     photo: '/team/anton-schoepe.png',
     name: 'Anton Schoepe',
-    role: 'Advisor & Gesellschafter',
+    role: 'Advisor',
     bio: 'Gründer von Intojob und YFN Chapter Lead Sachsen. Bringt Startup-Erfahrung und ein starkes Gründernetzwerk ein. Unterstützt Wissn als Mentor und strategischer Berater.',
     linkedin: 'https://linkedin.com/in/anton-schoepe-bb0654238',
   },

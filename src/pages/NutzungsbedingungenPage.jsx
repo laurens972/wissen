@@ -16,7 +16,7 @@ export default function NutzungsbedingungenPage() {
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">1. Geltungsbereich</h2>
               <p>
-                Diese Nutzungsbedingungen gelten für die Nutzung der Lernplattform Wissn, betrieben von der Wissn UG (haftungsbeschränkt) i.G., Eugen-d'Albert-Straße 11, 01640 Coswig.
+                Diese Nutzungsbedingungen gelten für die Nutzung der Lernplattform Wissn, betrieben von der Wissn GbR i.G., Eugen-d'Albert-Straße 11, 01640 Coswig.
                 Mit der Registrierung erkennen Sie diese Bedingungen an.
               </p>
             </div>
