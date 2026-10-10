@@ -37,7 +37,7 @@ export default function DatenschutzPage() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
             Datenschutzerklärung
           </h1>
-          <p className="text-sm text-slate-500 mb-10">Stand: Juli 2026</p>
+          <p className="text-sm text-slate-500 mb-10">Stand: Oktober 2026</p>
 
           <div className="prose prose-slate max-w-none space-y-8 text-slate-600 leading-relaxed">
             {/* Art. 12 Abs. 1 DSGVO verlangt gerade gegenüber Kindern eine klare,
@@ -57,7 +57,7 @@ export default function DatenschutzPage() {
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">1. Verantwortlicher</h2>
               <p>
-                Wissn GbR i.G.
+                Wissn GbR
                 <br />
                 Laurens Samberg
                 <br />
@@ -152,8 +152,9 @@ export default function DatenschutzPage() {
               <p>
                 Für die Nutzung der Lernplattform ist eine Registrierung erforderlich. Die
                 Authentifizierung erfolgt über Supabase (Supabase, Inc.). Dabei verarbeiten wir
-                deine E-Mail-Adresse und ein verschlüsselt gespeichertes Passwort, ausschließlich
-                zur Bereitstellung des Dienstes. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
+                deinen Vor- und Nachnamen, deine E-Mail-Adresse, ein verschlüsselt gespeichertes
+                Passwort sowie den Zeitpunkt, zu dem du die Nutzungsbedingungen akzeptiert hast,
+                ausschließlich zur Bereitstellung des Dienstes. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
                 (Erfüllung des Nutzungsvertrags).
               </p>
               <p className="mt-3">
@@ -167,8 +168,21 @@ export default function DatenschutzPage() {
             </div>
 
             <div>
+              <h2 className="text-xl font-semibold text-slate-900 mb-3">6. Kontaktaufnahme</h2>
+              <p>
+                Wenn du uns per E-Mail oder Telefon kontaktierst, verarbeiten wir die Angaben, die du
+                uns dabei mitteilst (zum Beispiel Name, E-Mail-Adresse und den Inhalt deiner
+                Nachricht), um deine Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
+                DSGVO, wenn es um einen Vertrag geht, sonst Art. 6 Abs. 1 lit. f DSGVO (unser
+                berechtigtes Interesse an der Beantwortung von Anfragen). Wir löschen die Daten,
+                sobald dein Anliegen erledigt ist und keine gesetzlichen Aufbewahrungspflichten
+                entgegenstehen.
+              </p>
+            </div>
+
+            <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">
-                6. Eingebettete Lern-App
+                7. Eingebettete Lern-App
               </h2>
               <p>
                 Im Bereich „Lern-App“ binden wir unsere Lernanwendung unter der Adresse
@@ -181,7 +195,7 @@ export default function DatenschutzPage() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-slate-900 mb-3">7. Reichweitenmessung</h2>
+              <h2 className="text-xl font-semibold text-slate-900 mb-3">8. Reichweitenmessung</h2>
               <p>
                 Wir setzen <strong>kein Google Analytics</strong> und keine vergleichbaren
                 Tracking-Dienste ein. Falls wir künftig Nutzungszahlen erheben, verwenden wir dafür
@@ -197,7 +211,7 @@ export default function DatenschutzPage() {
 
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">
-                8. Einwilligung und Widerruf
+                9. Einwilligung und Widerruf
               </h2>
               <p>
                 Eine Einwilligung ist immer freiwillig. Die Nutzung dieser Website ist auch ohne
@@ -227,7 +241,7 @@ export default function DatenschutzPage() {
 
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">
-                9. Kinder und Jugendliche
+                10. Kinder und Jugendliche
               </h2>
               <p>
                 Wissn richtet sich auch an Schülerinnen und Schüler. In Deutschland ist eine
@@ -245,7 +259,7 @@ export default function DatenschutzPage() {
 
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">
-                10. Rechte der betroffenen Personen
+                11. Rechte der betroffenen Personen
               </h2>
               <p>Du hast hinsichtlich deiner personenbezogenen Daten folgende Rechte:</p>
               <ul className="list-disc pl-6 space-y-1 mt-2">
@@ -263,7 +277,7 @@ export default function DatenschutzPage() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-slate-900 mb-3">11. Beschwerderecht</h2>
+              <h2 className="text-xl font-semibold text-slate-900 mb-3">12. Beschwerderecht</h2>
               <p>
                 Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung
                 deiner personenbezogenen Daten zu beschweren (Art. 77 DSGVO). Für uns zuständig ist
@@ -273,7 +287,7 @@ export default function DatenschutzPage() {
 
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">
-                12. Änderungen dieser Erklärung
+                13. Änderungen dieser Erklärung
               </h2>
               <p>
                 Wir passen diese Datenschutzerklärung an, wenn sich die verarbeiteten Daten oder die

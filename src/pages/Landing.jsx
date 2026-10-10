@@ -96,50 +96,6 @@ function TrustBar() {
   )
 }
 
-/* Partner / Förderer Logo-Wall */
-function PartnerLogos() {
-  // Logo-Dateien in public/partners/ ablegen (siehe Dateinamen unten).
-  // href optional — bei Klick öffnet die jeweilige Seite in neuem Tab.
-  const partners = [
-    { name: 'Google for Startups', logo: '/partners/google-for-startups.png', href: 'https://startup.google.com/' },
-    { name: 'Medienzentren', logo: '/partners/medienzentrum.png', href: null },
-    { name: 'Wirtschaftsförderung', logo: '/partners/wirtschaftsfoerderung.png', href: null },
-  ]
-
-  return (
-    <section className="py-14 bg-white border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-16">
-          {partners.map(({ name, logo, href }) => {
-            const inner = (
-              <img
-                src={logo}
-                alt={name}
-                title={name}
-                className="h-10 sm:h-12 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-              />
-            )
-            return href ? (
-              <a
-                key={name}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${name} (öffnet in neuem Tab)`}
-                className="group block no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 rounded-lg"
-              >
-                {inner}
-              </a>
-            ) : (
-              <div key={name} className="group">{inner}</div>
-            )
-          })}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 /* Problem Section */
 function ProblemSection() {
   const problems = [

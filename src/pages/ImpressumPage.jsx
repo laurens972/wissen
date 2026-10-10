@@ -3,7 +3,7 @@ import Layout, { useSEO } from '../components/Layout'
 export default function ImpressumPage() {
   useSEO({
     title: 'Impressum',
-    description: 'Impressum von Wissn: Angaben gemäß § 5 TMG.',
+    description: 'Impressum von Wissn: Angaben gemäß § 5 DDG.',
   })
 
   return (
@@ -14,8 +14,8 @@ export default function ImpressumPage() {
 
           <div className="prose prose-slate max-w-none space-y-8 text-slate-600 leading-relaxed">
             <div>
-              <h2 className="text-xl font-semibold text-slate-900 mb-3">Angaben gemäß § 5 TMG</h2>
-              <p>Wissn GbR i.G.<br />Eugen-d'Albert-Straße 11<br />01640 Coswig</p>
+              <h2 className="text-xl font-semibold text-slate-900 mb-3">Angaben gemäß § 5 DDG</h2>
+              <p>Wissn GbR<br />Eugen-d'Albert-Straße 11<br />01640 Coswig</p>
               <p className="mt-2"><strong>Vertreten durch:</strong><br />Laurens Samberg<br />Felix Maurer</p>
             </div>
 
@@ -25,26 +25,27 @@ export default function ImpressumPage() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-slate-900 mb-3">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+              <h2 className="text-xl font-semibold text-slate-900 mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
               <p>Laurens Samberg<br />Eugen-d'Albert-Straße 11<br />01640 Coswig</p>
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-slate-900 mb-3">EU-Streitschlichtung</h2>
+              <h2 className="text-xl font-semibold text-slate-900 mb-3">Verbraucherstreitbeilegung</h2>
+              {/* Die EU-Plattform zur Online-Streitbeilegung (OS-Plattform) wurde zum
+                  20. Juli 2025 eingestellt (Verordnung (EU) 2024/3228). Der Link dorthin
+                  ist entfallen. Die Informationspflicht nach § 36 VSBG bleibt bestehen:
+                  Es muss gesagt werden, ob wir an einem Schlichtungsverfahren teilnehmen. */}
               <p>
-                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
-                <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-wissn-green hover:underline">
-                  https://ec.europa.eu/consumers/odr/
-                </a>
-                . Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+                Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
               </p>
             </div>
 
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">Haftung für Inhalte</h2>
               <p>
-                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-                Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen
+                Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+                Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen
                 oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
               </p>
             </div>
