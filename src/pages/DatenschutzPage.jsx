@@ -57,7 +57,7 @@ export default function DatenschutzPage() {
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">1. Verantwortlicher</h2>
               <p>
-                Wissn GbR
+                Wissn-AI GbR
                 <br />
                 Laurens Samberg
                 <br />

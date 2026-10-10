@@ -15,7 +15,7 @@ export default function ImpressumPage() {
           <div className="prose prose-slate max-w-none space-y-8 text-slate-600 leading-relaxed">
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">Angaben gemäß § 5 DDG</h2>
-              <p>Wissn GbR<br />Eugen-d'Albert-Straße 11<br />01640 Coswig</p>
+              <p>Wissn-AI GbR<br />Eugen-d'Albert-Straße 11<br />01640 Coswig</p>
               <p className="mt-2"><strong>Vertreten durch:</strong><br />Laurens Samberg<br />Felix Maurer</p>
             </div>
 
