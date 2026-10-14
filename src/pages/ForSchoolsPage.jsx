@@ -1,6 +1,6 @@
 import Layout, { useSEO } from '../components/Layout'
 import Reveal from '../components/Reveal'
-import Lightbox from '../components/Lightbox'
+import IpadFrame from '../components/IpadFrame'
 import {
   CheckCircle, Check, ArrowRight, Shield, ShieldCheck, Server, GraduationCap, Users,
   ClipboardList, LineChart, MessageCircle, MessagesSquare,
@@ -22,29 +22,29 @@ const argumentRows = [
     eyebrow: 'Sokratischer KI-Tutor',
     title: 'Ein Lernbegleiter, der fragt statt vorsagt',
     body: 'Der KI-Tutor führt Schülerinnen und Schüler im sokratischen Dialog zur Lösung, statt sie einfach zu liefern. Er zitiert dabei aus dem hinterlegten Unterrichtsmaterial. Die Antworten bleiben an Ihren Stoff gebunden, nicht an beliebiges Internetwissen.',
-    image: '/screenshots/schueler/sokratischer-dialog.png',
-    alt: 'Sokratischer Dialog mit dem KI-Tutor von Wissn mit Quellen aus dem Unterrichtsmaterial',
+    image: '/screenshots/schueler/chat-tutor.webp',
+    alt: 'Der KI-Tutor von Wissn startet im sokratischen Modus mit einem Überblick, belegt mit Quellenverweis aufs Unterrichtsmaterial',
   },
   {
     eyebrow: 'Weniger Aufwand',
     title: 'Aus einem Dokument werden Lernmaterialien',
     body: 'Aus einem PDF, Word- oder PowerPoint-Dokument erstellt Wissn Karteikarten, Quiz, Lückentexte und Grafiken, und einen Lernplan mit Fortschritt. Fachlehrkräfte gewinnen Zeit für fachliche Hilfe und individuelles Feedback.',
-    image: '/screenshots/schueler/karteikarten.png',
-    alt: 'Automatisch erzeugte KI-Karteikarten in Wissn',
+    image: '/screenshots/schueler/mindmap.webp',
+    alt: 'Aus einem Unterrichtsdokument erstellte Mindmap in Wissn mit Kapitelverweisen',
   },
   {
     eyebrow: 'Für Lehrkräfte',
     title: 'Lernanalyse zeigt, wo Schüler wirklich hängen',
     body: 'Wissn zeigt pro Schüler den Weg vom Fach über das Thema bis zum Verständnis einzelner Inhalte. Lehrkräfte sehen auf einen Blick, wer wo Unterstützung braucht, und gehen mit belastbaren Daten statt Vermutungen ins Gespräch.',
-    image: '/screenshots/lehrer/analyse.png',
-    alt: 'Lernanalyse in Wissn mit Verständnis pro Schüler nach Fach und Thema',
+    image: '/screenshots/lehrer/analyse-schueler.webp',
+    alt: 'Lernanalyse in Wissn mit Lernweg und Verständnis pro Schwerpunkt',
   },
   {
     eyebrow: 'Resilient gegen Lehrermangel',
     title: 'Lehrkraftzeit dorthin, wo sie wirklich zählt',
     body: 'Freie Lernformen und eine klare Lernanalyse machen Ihre Schule widerstandsfähiger: Lehrkraftzeit fließt gezielt zu den Schülern, die gerade hängen. Fällt eine Stunde aus, arbeiten die Lernenden mit Tutor, Materialien und Lernplan selbstständig weiter.',
-    image: '/screenshots/lehrer/klassen.png',
-    alt: 'Klassenverwaltung in Wissn mit Überblick über die Lerngruppen',
+    image: '/screenshots/schueler/hilfe.webp',
+    alt: 'Hilfe-Auswahl in Wissn: Lernende rufen per Knopfdruck die Lehrkraft oder reden erst mit dem Lern-Buddy, dem KI-Tutor',
   },
 ]
 
@@ -186,14 +186,11 @@ export default function ForSchoolsPage() {
               </div>
             </Reveal>
             <Reveal direction="right" delay={100}>
-              <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-xl bg-white">
-                <Lightbox
-                  src="/screenshots/lehrer/dashboard.png"
-                  alt="Lehrer-Dashboard von Wissn"
-                  imgClassName="w-full h-auto block"
-                  loading="eager"
-                />
-              </div>
+              <IpadFrame
+                src="/screenshots/lehrer/dashboard.webp"
+                alt="Lehrer-Dashboard von Wissn mit Klassen, Materialien und dem Einstieg in die Lernanalyse"
+                loading="eager"
+              />
             </Reveal>
           </div>
         </div>
@@ -249,14 +246,7 @@ export default function ForSchoolsPage() {
                     delay={100}
                     className={flip ? 'lg:order-1' : ''}
                   >
-                    <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-lg bg-white">
-                      <Lightbox
-                        src={row.image}
-                        alt={row.alt}
-                        imgClassName="w-full h-auto block"
-                        loading="lazy"
-                      />
-                    </div>
+                    <IpadFrame src={row.image} alt={row.alt} loading="lazy" />
                   </Reveal>
                 </div>
               )

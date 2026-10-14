@@ -2,7 +2,8 @@ import { useState } from 'react'
 import Layout, { useSEO } from '../components/Layout'
 import HeroDemo from '../components/HeroDemo'
 import Reveal from '../components/Reveal'
-import Lightbox from '../components/Lightbox'
+import IpadFrame from '../components/IpadFrame'
+import AppStoreBadge from '../components/AppStoreBadge'
 import {
   ArrowRight, BrainCircuit, MessageSquare, FileText,
   Map, BookOpen, BarChart3, Users,
@@ -255,22 +256,24 @@ function ProductShowcase() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const schuelerScreens = [
-    { title: 'Schüler-Dashboard', description: 'Lernpläne, Fortschritt und Materialien auf einen Blick.', image: '/screenshots/schueler/dashboard.png' },
-    { title: 'Meine Fächer', description: 'Alle Fächer mit Themen und Materialien an einem Ort.', image: '/screenshots/schueler/faecher.png' },
-    { title: 'Chat-Tutor', description: 'Fachliche Hilfe sofort, mit Quellen-Zitaten aus dem eigenen Material.', image: '/screenshots/schueler/chat-tutor.png' },
-    { title: 'Karteikarten', description: 'Automatisch generierte Lernkarten aus den eigenen Materialien.', image: '/screenshots/schueler/karteikarten.png' },
-    { title: 'Grafik', description: 'Visuelle Zusammenfassungen für komplexe Themen.', image: '/screenshots/schueler/grafik.png' },
-    { title: 'Quiz', description: 'Selbstcheck mit Quiz und Lückentexten: Sitzt der Stoff schon?', image: '/screenshots/schueler/quiz.png' },
+    { title: 'Schüler-Dashboard', description: 'Weiterlernen, nächste Tests und alle Fächer auf einen Blick.', image: '/screenshots/schueler/dashboard.webp', alt: 'Schüler-Dashboard mit Weiterlernen-Karte, nächsten Tests und den eigenen Fächern' },
+    { title: 'Lernpläne', description: 'Was heute dran ist und was diese Woche ansteht, mit Kalender und Fortschritt.', image: '/screenshots/schueler/lernplan.webp', alt: 'Lernplan-Übersicht mit „Heute dran“, Wochenansicht und Kalender' },
+    { title: 'Chat-Tutor', description: 'Fragt im sokratischen Modus zurück statt vorzusagen und zitiert das eigene Material.', image: '/screenshots/schueler/chat-tutor.webp', alt: 'Chat-Tutor im sokratischen Modus mit Überblick über die Kernkonzepte und Quellenverweis' },
+    { title: 'Karteikarten', description: 'Lernkarten aus den eigenen Materialien. Wo der Stoff dünn ist, ergänzt die KI und sagt das offen dazu.', image: '/screenshots/schueler/karteikarten.webp', alt: 'Karteikarte mit Quellenhinweis und dem Hinweis, wie viele Karten die KI ergänzt hat' },
+    { title: 'Mindmap', description: 'Die KI fasst ein Thema als interaktive Mindmap zusammen.', image: '/screenshots/schueler/mindmap.webp', alt: 'Interaktive Mindmap zur Dramenanalyse mit Kapitelverweisen aus dem Unterrichtsmaterial' },
+    { title: 'Quiz', description: 'Selbstcheck mit Auswahl- und Freitextfragen, inklusive KI-Feedback zur eigenen Antwort.', image: '/screenshots/schueler/quiz.webp', alt: 'Quiz-Freitextfrage mit eigener Antwort und ausführlichem KI-Feedback' },
+    { title: 'Hilfe holen', description: 'Per Knopfdruck die Lehrkraft rufen oder erst mit dem Lern-Buddy reden, dem KI-Tutor.', image: '/screenshots/schueler/hilfe.webp', alt: 'Auswahl „Wie möchtest du Hilfe bekommen?“ mit Lehrkraft rufen oder erst mit dem Lern-Buddy reden' },
   ]
 
   const lehrerScreens = [
-    { title: 'Lehrer-Dashboard', description: 'Klassen, Materialien und Lernstände im Überblick.', image: '/screenshots/lehrer/dashboard.png' },
-    { title: 'Klassenverwaltung', description: 'Lerngruppen per Join-Code oder QR erstellen und verwalten.', image: '/screenshots/lehrer/klassen.png' },
-    { title: 'Materialien', description: 'Themen mit Materialien bestücken und nach Gruppen organisieren.', image: '/screenshots/lehrer/materialien.png' },
-    { title: 'Tests', description: 'Tests ankündigen und Schwerpunkte festlegen. Die KI bereitet die Materialien auf.', image: '/screenshots/lehrer/tests.png' },
-    { title: 'Test erstellen', description: 'Neue Tests mit Schwerpunkten und Dateien anlegen.', image: '/screenshots/lehrer/test-erstellen.png' },
-    { title: 'Schulverwaltung', description: 'Übersicht über die gesamte Schule mit Lerngruppen, Lehrkräften und Lernenden.', image: '/screenshots/lehrer/schulverwaltung.png' },
-    { title: 'Lernanalyse', description: 'Pro Thema und Schüler sichtbar, wo es hakt: die Grundlage für gezielte Begleitung.', image: '/screenshots/lehrer/analyse.png' },
+    { title: 'Lehrer-Dashboard', description: 'Klassen, Materialien und Lernstände im Überblick.', image: '/screenshots/lehrer/dashboard.webp', alt: 'Lehrer-Dashboard mit Klassen, Materialien und Schülerzahl und dem Einstieg in die Lernanalyse' },
+    { title: 'Klassenverwaltung', description: 'Lerngruppen per Join-Code oder QR erstellen und verwalten.', image: '/screenshots/lehrer/klassen.webp', alt: 'Klassenübersicht mit Anzahl der Fächer und Status pro Klasse' },
+    { title: 'Fächer', description: 'Fächer pro Klasse verwalten, als Pflichtfach für alle oder gezielt einzelnen Schülern zugewiesen.', image: '/screenshots/lehrer/faecher.webp', alt: 'Fächerverwaltung einer Klasse mit Pflichtfächern und Menü zum Zuweisen von Schülern' },
+    { title: 'Materialien', description: 'Unterrichtsmaterial hochladen und nach Klasse und Fach organisieren, mit Sichtbarkeit pro Datei.', image: '/screenshots/lehrer/materialien.webp', alt: 'Materialverwaltung mit Dateien nach Klasse und Fach, Status und Sichtbarkeit' },
+    { title: 'Test ankündigen', description: 'Tests ankündigen und Schwerpunkte festlegen. Die KI bereitet die Materialien auf.', image: '/screenshots/lehrer/test-ankuendigen.webp', alt: 'Formular zum Ankündigen eines Tests mit Thema, Datum, Schwerpunkten und Dateien' },
+    { title: 'Lernanalyse', description: 'Pro Thema sichtbar, wie weit die Klasse bei jedem Schwerpunkt ist.', image: '/screenshots/lehrer/analyse-klasse.webp', alt: 'Lernanalyse einer Klasse mit Verständnis und Verteilung pro Schwerpunkt' },
+    { title: 'Lernanalyse pro Schüler', description: 'Lernweg und Verständnis pro Schwerpunkt. Eine Hilfestellung für die Förderung, keine Bewertung.', image: '/screenshots/lehrer/analyse-schueler.webp', alt: 'Lernanalyse für einzelne Lernende mit Lernweg und Verständnis pro Schwerpunkt' },
+    { title: 'Schulverwaltung', description: 'Übersicht über die gesamte Schule mit Lerngruppen, Lehrkräften und Lernenden.', image: '/screenshots/lehrer/schulverwaltung.webp', alt: 'Schulverwaltung mit Übersicht über Klassen, Lehrkräfte und Lernende' },
   ]
 
   const screens = activeTab === 'schueler' ? schuelerScreens : lehrerScreens
@@ -291,6 +294,9 @@ function ProductShowcase() {
           <p className="text-lg text-slate-500 leading-relaxed">
             Erste Pilotschulen arbeiten bereits mit Wissn.
           </p>
+          <div className="mt-6 flex justify-center">
+            <AppStoreBadge />
+          </div>
         </Reveal>
 
         {/* Tabs */}
@@ -322,15 +328,15 @@ function ProductShowcase() {
         {/* Main Screenshot */}
         <Reveal direction="up" className="max-w-4xl mx-auto">
           <div className="relative rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-lg">
-            <div className="bg-slate-50 p-4 sm:p-6">
-              <Lightbox src={current.image} alt={current.title} imgClassName="w-full rounded-lg shadow-sm" />
+            <div className="bg-slate-50 p-5 sm:p-10">
+              <IpadFrame src={current.image} alt={current.alt} />
             </div>
-            <div className="p-6 flex items-center justify-between">
+            <div className="p-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-1">{current.title}</h3>
                 <p className="text-sm text-slate-500">{current.description}</p>
               </div>
-              <div className="flex items-center gap-2 shrink-0 ml-4">
+              <div className="flex items-center gap-2 shrink-0 self-end sm:self-auto sm:ml-4">
                 <button
                   onClick={() => setActiveIndex((activeIndex - 1 + screens.length) % screens.length)}
                   aria-label="Vorheriger Screenshot"

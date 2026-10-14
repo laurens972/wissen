@@ -1,6 +1,6 @@
 import Layout, { useSEO } from '../components/Layout'
 import Reveal from '../components/Reveal'
-import Lightbox from '../components/Lightbox'
+import IpadFrame from '../components/IpadFrame'
 import {
   MessageSquare, BookOpen, BrainCircuit, FileText, ListChecks, BarChart3,
   ArrowRight, Check,
@@ -13,8 +13,8 @@ const features = [
     slug: 'chat-tutor',
     eyebrow: 'Chat-Tutor',
     title: 'Ein Tutor, der Fragen stellt statt Lösungen zu verraten',
-    image: '/screenshots/schueler/chat-tutor.png',
-    alt: 'Der Chat-Tutor beantwortet eine Schülerfrage im Wissn-Lernbereich',
+    image: '/screenshots/schueler/chat-tutor.webp',
+    alt: 'Der Chat-Tutor im sokratischen Modus erklärt die Kernkonzepte eines Themas mit Quellenverweis aufs Unterrichtsmaterial',
     description: 'Der Chat-Tutor arbeitet auf Wunsch im sokratischen Modus: Statt die Lösung vorzusagen, stellt er gezielte Rückfragen und begleitet dich, bis du selbst darauf kommst. Und wenn deine Lehrkraft gerade eine andere Gruppe betreut, ist er sofort für dich da.',
     details: [
       'Sokratischer Modus: gezielte Rückfragen führen dich zur eigenen Lösung, statt sie vorzusagen',
@@ -27,11 +27,11 @@ const features = [
     slug: 'karteikarten-quiz',
     eyebrow: 'Üben',
     title: 'Karteikarten, Quiz und Lückentexte automatisch aus deinen Materialien',
-    image: '/screenshots/schueler/karteikarten.png',
-    alt: 'Automatisch erstellte Karteikarten und Quizfragen zum Üben',
+    image: '/screenshots/schueler/karteikarten.webp',
+    alt: 'Eine KI-Karteikarte mit Quellenhinweis aufs Dokument und dem Hinweis, wie viele Karten die KI ergänzt hat',
     description: 'Aus den Materialien deines Fachs erstellt die KI passende Übungen. So wiederholst du aktiv, statt nur zu lesen, und siehst sofort, was schon sitzt und was du noch üben solltest.',
     details: [
-      'Karteikarten entstehen automatisch aus den Inhalten deines Fachs',
+      'Karteikarten entstehen automatisch aus den Inhalten deines Fachs. Ergänzt die KI etwas, steht das offen dabei',
       'Quiz- und Lückentext-Übungen zum aktiven Wiederholen',
       'Übe in deinem Tempo und behalte deinen Lernstand im Blick',
     ],
@@ -41,11 +41,11 @@ const features = [
     slug: 'grafiken',
     eyebrow: 'Grafiken',
     title: 'Zusammenhänge sehen mit interaktiven Grafiken',
-    image: '/screenshots/schueler/grafik.png',
-    alt: 'Eine automatisch erstellte, interaktive Grafik gibt einen Überblick über ein Thema',
-    description: 'Die KI verwandelt deine Inhalte in interaktive Grafiken. So verschaffst du dir schnell einen Überblick über ein ganzes Thema und erkennst, wie die einzelnen Punkte zusammenhängen.',
+    image: '/screenshots/schueler/mindmap.webp',
+    alt: 'Eine automatisch erstellte, interaktive Mindmap gibt einen Überblick über ein Thema',
+    description: 'Die KI fasst deine Inhalte als interaktive Mindmap zusammen. So verschaffst du dir schnell einen Überblick über ein ganzes Thema und erkennst, wie die einzelnen Punkte zusammenhängen.',
     details: [
-      'KI erstellt interaktive Grafiken aus deinen Inhalten',
+      'KI erstellt interaktive Mindmaps aus deinen Inhalten',
       'Verschaffe dir schnell einen Überblick über ein ganzes Thema',
       'Klick dich durch Zusammenhänge, statt lange Texte zu wälzen',
     ],
@@ -55,8 +55,8 @@ const features = [
     slug: 'dokumenten-analyse',
     eyebrow: 'Dokumenten-Analyse',
     title: 'Dokumente hochladen, die KI strukturiert die Inhalte',
-    image: '/screenshots/lehrer/materialien.png',
-    alt: 'Hochgeladene Materialien werden nach Klassen und Fächern verwaltet',
+    image: '/screenshots/lehrer/materialien.webp',
+    alt: 'Hochgeladene Materialien werden nach Klasse und Fach verwaltet, mit Status und Sichtbarkeit',
     description: 'Lade PDF-, Word- oder PowerPoint-Dateien hoch. Die KI analysiert sie, strukturiert die Inhalte und macht sie durchsuchbar, die Grundlage für Karteikarten, Quiz und alle weiteren Lernwerkzeuge.',
     details: [
       'Unterstützt PDF-, Word- und PowerPoint-Dateien',
@@ -69,8 +69,8 @@ const features = [
     slug: 'lernplaene',
     eyebrow: 'Lernpläne',
     title: 'Personalisierte Lernpläne mit abhakbarem Fortschritt',
-    image: '/screenshots/schueler/lernplan.png',
-    alt: 'Ein personalisierter Lernplan zeigt die nächsten Schritte mit abhakbarem Fortschritt',
+    image: '/screenshots/schueler/lernplan.webp',
+    alt: 'Die Lernplan-Übersicht zeigt, was heute dran ist, mit Kalender und Fortschritt',
     description: 'Die KI erstellt einen Lernplan, der zu deinem Ziel und deinem Tempo passt. Du hakst erledigte Schritte ab und behältst so jederzeit den Überblick, wo du stehst und was als Nächstes ansteht.',
     details: [
       'KI-generierter Lernplan, abgestimmt auf dein Ziel und dein Tempo',
@@ -83,8 +83,8 @@ const features = [
     slug: 'analytics',
     eyebrow: 'Lernanalyse',
     title: 'Lernanalyse für Lehrkräfte, bis auf die Verständnis-Ebene',
-    image: '/screenshots/lehrer/analyse.png',
-    alt: 'Die Lernanalyse zeigt den Lernstand im Drill-down von Fach über Thema bis zum einzelnen Schüler',
+    image: '/screenshots/lehrer/analyse-klasse.webp',
+    alt: 'Die Lernanalyse zeigt pro Schwerpunkt, wie weit die Klasse beim Verständnis ist',
     description: 'Lehrkräfte behalten den Überblick, ohne Zettelwirtschaft. Im Drill-down geht es vom Fach über das Thema bis zum Verständnis einzelner Schülerinnen und Schüler, die Datengrundlage für Lehrkräfte als Lernbegleiter.',
     details: [
       'Drill-down von Fach über Thema bis zum Verständnis einzelner Schülerinnen und Schüler',
@@ -177,16 +177,13 @@ export default function FeaturesPage() {
                 {/* Media */}
                 <Reveal direction={i % 2 === 0 ? 'left' : 'right'} className="order-2 lg:order-none flex-1 w-full">
                   {image ? (
-                    <Lightbox
-                      src={image}
-                      alt={alt}
-                      loading="lazy"
-                      imgClassName="w-full rounded-2xl border border-slate-200 shadow-sm"
-                    />
+                    <IpadFrame src={image} alt={alt} loading="lazy" />
                   ) : (
-                    <div className="w-full aspect-[4/3] rounded-2xl bg-wissn-green-50 border border-wissn-green-100 flex items-center justify-center">
-                      <Icon className="w-20 h-20 text-wissn-green" strokeWidth={1.5} />
-                    </div>
+                    <IpadFrame>
+                      <div className="h-full w-full bg-wissn-green-50 flex items-center justify-center">
+                        <Icon className="w-20 h-20 text-wissn-green" strokeWidth={1.5} aria-hidden="true" />
+                      </div>
+                    </IpadFrame>
                   )}
                 </Reveal>
 
