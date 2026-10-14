@@ -34,7 +34,14 @@ export default function KontaktPage() {
                 <Phone className="w-6 h-6 text-wissn-green" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-1">Telefon</h3>
-              <a href="tel:+4915775210572" className="text-slate-500 hover:text-slate-700 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 rounded">+49 157 75210572</a>
+              <p className="text-slate-500">
+                <span className="font-medium text-slate-700">Laurens:</span>{' '}
+                <a href="tel:+4915775210572" className="text-slate-500 hover:text-slate-700 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 rounded">+49 157 75210572</a>
+              </p>
+              <p className="text-slate-500 mt-1">
+                <span className="font-medium text-slate-700">Felix:</span>{' '}
+                <a href="tel:+4916090910550" className="text-slate-500 hover:text-slate-700 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 rounded">+49 160 90910550</a>
+              </p>
             </Reveal>
           </div>
 
