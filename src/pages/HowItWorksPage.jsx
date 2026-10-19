@@ -25,7 +25,7 @@ const steps = [
     description: 'Aus dem hochgeladenen Material erstellt die KI passende Lernwerkzeuge, abgestimmt auf Inhalt und Niveau der Klasse.',
     details: [
       'Lernpläne, Karteikarten, Quiz und Lückentexte',
-      'Grafiken zur Visualisierung von Zusammenhängen',
+      'Mindmaps zur Visualisierung von Zusammenhängen',
       'Alles basiert auf dem Material der Lehrkraft, nicht auf generischem Wissen',
     ],
   },

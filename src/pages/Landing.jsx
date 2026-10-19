@@ -61,7 +61,7 @@ function Hero() {
             </div>
           </div>
 
-          {/* Rechts: Live-Produkt-Demo (Chat → Grafik) */}
+          {/* Rechts: Live-Produkt-Demo (Chat → Mindmap) */}
           <div className="hero-animate min-w-0" style={{ animationDelay: '0.5s' }}>
             <HeroDemo />
           </div>
@@ -100,7 +100,7 @@ function TrustBar() {
 /* Problem Section */
 function ProblemSection() {
   const problems = [
-    { icon: Users, title: 'Individuelle Lernwege für jeden', text: 'Die Lehrkraft lädt ihr Material hoch, die KI macht daraus Lernpläne, Karteikarten, Quiz, Lückentexte und Grafiken. Der sokratische Chat-Tutor hilft mit Rückfragen und zitiert aus dem eigenen Unterrichtsstoff. So lernen alle im eigenen Tempo statt im Takt der ganzen Klasse.', href: '/fuer-schulen' },
+    { icon: Users, title: 'Individuelle Lernwege für jeden', text: 'Die Lehrkraft lädt ihr Material hoch, die KI macht daraus Lernpläne, Karteikarten, Quiz, Lückentexte und Mindmaps. Der sokratische Chat-Tutor hilft mit Rückfragen und zitiert aus dem eigenen Unterrichtsstoff. So lernen alle im eigenen Tempo statt im Takt der ganzen Klasse.', href: '/fuer-schulen' },
     { icon: ListChecks, title: 'Organisation digital statt auf Papier', text: 'Lernpläne, Materialien und Lernstände laufen an einem Ort zusammen, statt in Ordnern und auf Zetteln zu verschwinden. Was die Idee freier Lernformen sonst an Organisation auffrisst, erledigt Wissn im Hintergrund.', href: '/so-funktionierts' },
     { icon: BarChart3, title: 'Entlastung und Überblick für Lehrkräfte', text: 'Das Fortschritts-Dashboard und die Lernanalyse zeigen pro Thema und Schüler, wo es gerade hakt. Lehrkräfte sehen auf einen Blick, wer Unterstützung braucht, und setzen ihre Zeit gezielt dort ein, statt für alle das Gleiche zu wiederholen.', href: '/features' },
   ]
@@ -152,7 +152,7 @@ function FeaturesPreview() {
   const features = [
     { icon: MessageSquare, title: 'Chat-Tutor', description: 'Sokratischer KI-Tutor, der mit Quellen-Zitaten aus dem eigenen Unterrichtsmaterial antwortet.', slug: 'chat-tutor' },
     { icon: BookOpen, title: 'Karteikarten & Quiz', description: 'KI-generiert aus den eigenen Materialien, inklusive Lückentexten für den Selbstcheck.', slug: 'karteikarten-quiz' },
-    { icon: Map, title: 'Interaktive Grafiken', description: 'Visuelle Zusammenfassungen, die komplexe Themen auf einen Blick begreifbar machen.', slug: 'grafiken' },
+    { icon: Map, title: 'Interaktive Mindmaps', description: 'Visuelle Zusammenfassungen, die komplexe Themen auf einen Blick begreifbar machen.', slug: 'mindmaps' },
     { icon: FileText, title: 'Dokumenten-Analyse', description: 'PDF, Word oder PowerPoint hochladen. Die KI strukturiert die Inhalte automatisch.', slug: 'dokumenten-analyse' },
     { icon: ListChecks, title: 'KI-Lernpläne', description: 'Personalisierte Lernpläne mit abhakbarem Fortschritt: die Grundlage für selbstständiges Arbeiten.', slug: 'lernplaene' },
     { icon: BarChart3, title: 'Lernanalyse', description: 'Lehrkräfte sehen pro Thema und Schüler, wo es hakt: die Grundlage für gezielte Begleitung.', slug: 'analytics' },
@@ -208,7 +208,7 @@ function FeaturesPreview() {
 function HowItWorksPreview() {
   const steps = [
     { num: '01', title: 'Materialien hochladen', text: 'Die Lehrkraft lädt ihre Materialien hoch. Die KI analysiert Inhalte automatisch.' },
-    { num: '02', title: 'KI erstellt Lernwerkzeuge', text: 'Aus den Materialien entstehen Lernpläne, Karteikarten, Quiz und Grafiken.' },
+    { num: '02', title: 'KI erstellt Lernwerkzeuge', text: 'Aus den Materialien entstehen Lernpläne, Karteikarten, Quiz und Mindmaps.' },
     { num: '03', title: 'Selbstständig arbeiten', text: 'Lernende arbeiten im eigenen Tempo, der Chat-Tutor hilft mit Quellen, der Fortschritt bleibt sichtbar.' },
     { num: '04', title: 'Begleiten statt dozieren', text: 'Die Lernanalyse zeigt, wer Unterstützung braucht. Die Lehrkraft wird zum Lernbegleiter.' },
   ]
@@ -260,7 +260,7 @@ function ProductShowcase() {
     { title: 'Lernpläne', description: 'Was heute dran ist und was diese Woche ansteht, mit Kalender und Fortschritt.', image: '/screenshots/schueler/lernplan.webp', alt: 'Lernplan-Übersicht mit „Heute dran“, Wochenansicht und Kalender' },
     { title: 'Chat-Tutor', description: 'Fragt im sokratischen Modus zurück statt vorzusagen und zitiert das eigene Material.', image: '/screenshots/schueler/chat-tutor.webp', alt: 'Chat-Tutor im sokratischen Modus mit Überblick über die Kernkonzepte und Quellenverweis' },
     { title: 'Karteikarten', description: 'Lernkarten aus den eigenen Materialien. Wo der Stoff dünn ist, ergänzt die KI und sagt das offen dazu.', image: '/screenshots/schueler/karteikarten.webp', alt: 'Karteikarte mit Quellenhinweis und dem Hinweis, wie viele Karten die KI ergänzt hat' },
-    { title: 'Grafik', description: 'Die KI fasst ein Thema als interaktive Grafik zusammen.', image: '/screenshots/schueler/grafik.webp', alt: 'Interaktive Grafik zur Dramenanalyse mit Kapitelverweisen aus dem Unterrichtsmaterial' },
+    { title: 'Mindmap', description: 'Die KI fasst ein Thema als interaktive Mindmap zusammen.', image: '/screenshots/schueler/mindmap.webp', alt: 'Interaktive Mindmap zur Dramenanalyse mit Kapitelverweisen aus dem Unterrichtsmaterial' },
     { title: 'Quiz', description: 'Selbstcheck mit Auswahl- und Freitextfragen, inklusive KI-Feedback zur eigenen Antwort.', image: '/screenshots/schueler/quiz.webp', alt: 'Quiz-Freitextfrage mit eigener Antwort und ausführlichem KI-Feedback' },
     { title: 'Hilfe holen', description: 'Per Knopfdruck die Lehrkraft rufen oder erst mit dem Lern-Buddy reden, dem KI-Tutor.', image: '/screenshots/schueler/hilfe.webp', alt: 'Auswahl „Wie möchtest du Hilfe bekommen?“ mit Lehrkraft rufen oder erst mit dem Lern-Buddy reden' },
   ]
@@ -474,7 +474,7 @@ function CTA() {
 export default function Landing() {
   useSEO({
     title: null,
-    description: 'Wissn begleitet Schulen und Unternehmen beim Übergang vom Frontalunterricht zu freien Lernformen. Chat-Tutor mit Quellen, KI-Lernpläne, Karteikarten, Quiz, Grafiken und Lernanalyse, auf einer Plattform.',
+    description: 'Wissn begleitet Schulen und Unternehmen beim Übergang vom Frontalunterricht zu freien Lernformen. Chat-Tutor mit Quellen, KI-Lernpläne, Karteikarten, Quiz, Mindmaps und Lernanalyse, auf einer Plattform.',
   })
 
   return (

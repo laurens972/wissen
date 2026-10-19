@@ -23,9 +23,9 @@ const benefits = [
   },
   {
     icon: Map,
-    title: 'Grafiken für den Überblick',
-    description: 'Lass dir komplexe Themen als Grafik visualisieren und behalte den Zusammenhang im Blick.',
-    href: '/features#grafiken',
+    title: 'Mindmaps für den Überblick',
+    description: 'Lass dir komplexe Themen als Mindmap visualisieren und behalte den Zusammenhang im Blick.',
+    href: '/features#mindmaps',
   },
   {
     icon: PenTool,
@@ -44,7 +44,7 @@ const benefits = [
 export default function ForStudentsPage() {
   useSEO({
     title: 'Für Schüler',
-    description: 'Wissn unterstützt dich beim Lernen: dein Lernplan, ein Chat-Tutor, der nicht vorsagt, sondern hilft, sowie Karteikarten, Quiz und Grafiken aus deinem Unterrichtsstoff.',
+    description: 'Wissn unterstützt dich beim Lernen: dein Lernplan, ein Chat-Tutor, der nicht vorsagt, sondern hilft, sowie Karteikarten, Quiz und Mindmaps aus deinem Unterrichtsstoff.',
   })
 
   return (
@@ -74,7 +74,7 @@ export default function ForStudentsPage() {
                 'Eigener Lernplan, eigenes Tempo',
                 'Chat-Tutor, der nicht vorsagt',
                 'Karteikarten, Quiz und Lückentexte',
-                'Grafiken für den Überblick',
+                'Mindmaps für den Überblick',
                 'Rund um die Uhr verfügbar',
               ].map((tag) => (
                 <li

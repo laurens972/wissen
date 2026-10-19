@@ -115,7 +115,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <WissnLogo size={36} />
             <p className="text-slate-400 mt-4 max-w-sm leading-relaxed text-sm">
-              Die KI-gestützte Lernplattform für Schulen. Chat-Tutor, Grafiken
+              Die KI-gestützte Lernplattform für Schulen. Chat-Tutor, Mindmaps
               und Karteikarten, gemacht für Schüler und Lehrkräfte.
             </p>
             <div className="mt-5">

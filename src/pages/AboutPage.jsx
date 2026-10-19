@@ -106,7 +106,7 @@ export default function AboutPage() {
                 <p>
                   <strong className="text-slate-900">Unsere Lösung:</strong> Wissn begleitet Schulen bei genau diesem Übergang. Fachlehrkräfte
                   laden ihr Unterrichtsmaterial hoch, ein KI-Tutor unterstützt Schülerinnen und Schüler mit sokratischen Dialogen,
-                  Quellenangaben, Karteikarten, Quiz und Grafiken, und KI-Lernpläne begleiten den individuellen Fortschritt. Die Lernanalyse
+                  Quellenangaben, Karteikarten, Quiz und Mindmaps, und KI-Lernpläne begleiten den individuellen Fortschritt. Die Lernanalyse
                   gibt Lehrkräften die Grundlage für Feedback und Förderung. Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen und
                   Freiheitsgraden entsteht aktuell gemeinsam mit unseren Pilotschulen.
                 </p>

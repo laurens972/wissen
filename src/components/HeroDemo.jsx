@@ -5,7 +5,7 @@ import {
 
 /*
  * HeroDemo — die Live-Produkt-Session als Karussell.
- * Sokratischer Chat → Karteikarten → Grafik → Quiz → Lernanalyse → Loop.
+ * Sokratischer Chat → Karteikarten → Mindmap → Quiz → Lernanalyse → Loop.
  * Alles zum selben Thema (Photosynthese), damit die Lern-Session zusammenhängt.
  * Rein dekorativ (aria-hidden); die semantische H1 lebt im Hero.
  */
@@ -51,7 +51,7 @@ const ANALYSIS = {
 const TABS = [
   { icon: MessageSquare, label: 'Tutor' },
   { icon: Layers, label: 'Karten' },
-  { icon: Network, label: 'Grafik' },
+  { icon: Network, label: 'Mindmap' },
   { icon: ListChecks, label: 'Quiz' },
   { icon: BarChart3, label: 'Analyse' },
 ]
@@ -157,7 +157,7 @@ function StageFlashcards({ reduced, onDone }) {
   )
 }
 
-/* ---------- Stage 2: Grafik ---------- */
+/* ---------- Stage 2: Mindmap ---------- */
 function Graphic({ data, reduced }) {
   const { root, branches } = data
   const cx = 50

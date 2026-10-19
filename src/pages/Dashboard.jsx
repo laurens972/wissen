@@ -92,8 +92,8 @@ function OverviewTab() {
     },
     {
       icon: Map,
-      title: 'Automatische Grafiken',
-      description: 'Lade Dokumente hoch und erhalte visuelle Zusammenfassungen als Grafik.',
+      title: 'Automatische Mindmaps',
+      description: 'Lade Dokumente hoch und erhalte visuelle Zusammenfassungen als Mindmap.',
     },
     {
       icon: BookOpen,

@@ -38,14 +38,14 @@ const features = [
   },
   {
     icon: BrainCircuit,
-    slug: 'grafiken',
-    eyebrow: 'Grafiken',
-    title: 'Zusammenhänge sehen mit interaktiven Grafiken',
-    image: '/screenshots/schueler/grafik.webp',
-    alt: 'Eine automatisch erstellte, interaktive Grafik gibt einen Überblick über ein Thema',
-    description: 'Die KI fasst deine Inhalte als interaktive Grafik zusammen. So verschaffst du dir schnell einen Überblick über ein ganzes Thema und erkennst, wie die einzelnen Punkte zusammenhängen.',
+    slug: 'mindmaps',
+    eyebrow: 'Mindmaps',
+    title: 'Zusammenhänge sehen mit interaktiven Mindmaps',
+    image: '/screenshots/schueler/mindmap.webp',
+    alt: 'Eine automatisch erstellte, interaktive Mindmap gibt einen Überblick über ein Thema',
+    description: 'Die KI fasst deine Inhalte als interaktive Mindmap zusammen. So verschaffst du dir schnell einen Überblick über ein ganzes Thema und erkennst, wie die einzelnen Punkte zusammenhängen.',
     details: [
-      'KI erstellt interaktive Grafiken aus deinen Inhalten',
+      'KI erstellt interaktive Mindmaps aus deinen Inhalten',
       'Verschaffe dir schnell einen Überblick über ein ganzes Thema',
       'Klick dich durch Zusammenhänge, statt lange Texte zu wälzen',
     ],
@@ -120,7 +120,7 @@ const roadmap = [
 export default function FeaturesPage() {
   useSEO({
     title: 'Features',
-    description: 'Die Funktionen von Wissn: Chat-Tutor mit sokratischem Modus und Quellen-Zitaten, KI-Karteikarten, Quiz und Lückentexte, interaktive Grafiken, Dokumenten-Analyse, personalisierte Lernpläne und Lernanalyse für Lehrkräfte.',
+    description: 'Die Funktionen von Wissn: Chat-Tutor mit sokratischem Modus und Quellen-Zitaten, KI-Karteikarten, Quiz und Lückentexte, interaktive Mindmaps, Dokumenten-Analyse, personalisierte Lernpläne und Lernanalyse für Lehrkräfte.',
   })
 
   return (
@@ -148,7 +148,7 @@ export default function FeaturesPage() {
             {[
               'Sokratischer Chat-Tutor mit Quellen',
               'Karteikarten, Quiz und Lückentexte',
-              'Interaktive Grafiken',
+              'Interaktive Mindmaps',
               'KI-Lernpläne mit Fortschritt',
               'Lernanalyse für Lehrkräfte',
             ].map((tag) => (

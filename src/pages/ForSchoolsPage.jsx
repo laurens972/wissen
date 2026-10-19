@@ -28,9 +28,9 @@ const argumentRows = [
   {
     eyebrow: 'Weniger Aufwand',
     title: 'Aus einem Dokument werden Lernmaterialien',
-    body: 'Aus einem PDF, Word- oder PowerPoint-Dokument erstellt Wissn Karteikarten, Quiz, Lückentexte und Grafiken, und einen Lernplan mit Fortschritt. Fachlehrkräfte gewinnen Zeit für fachliche Hilfe und individuelles Feedback.',
-    image: '/screenshots/schueler/grafik.webp',
-    alt: 'Aus einem Unterrichtsdokument erstellte Grafik in Wissn mit Kapitelverweisen',
+    body: 'Aus einem PDF, Word- oder PowerPoint-Dokument erstellt Wissn Karteikarten, Quiz, Lückentexte und Mindmaps, und einen Lernplan mit Fortschritt. Fachlehrkräfte gewinnen Zeit für fachliche Hilfe und individuelles Feedback.',
+    image: '/screenshots/schueler/mindmap.webp',
+    alt: 'Aus einem Unterrichtsdokument erstellte Mindmap in Wissn mit Kapitelverweisen',
   },
   {
     eyebrow: 'Für Lehrkräfte',
@@ -54,7 +54,7 @@ const included = [
   { icon: MessagesSquare, label: 'Dialoge statt Fertiglösungen' },
   { icon: Layers, label: 'KI-Karteikarten' },
   { icon: ClipboardList, label: 'Quiz und Lückentexte' },
-  { icon: Network, label: 'Grafiken aus Dokumenten' },
+  { icon: Network, label: 'Mindmaps aus Dokumenten' },
   { icon: FileText, label: 'Dokumenten-Analyse (PDF, DOCX, PPTX)' },
   { icon: Map, label: 'KI-Lernpläne mit Fortschritt' },
   { icon: LineChart, label: 'Lernanalyse für Lehrkräfte' },
