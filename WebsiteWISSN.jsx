@@ -18,8 +18,8 @@
 
     <!-- SEO -->
     <title>Wissn — Weil du's Wissn willst | KI-Lernplattform für Schulen</title>
-    <meta name="description" content="Wissn — Die KI-gestützte Lernplattform für Schulen. Intelligenter Chat-Tutor, automatische Mindmaps, Karteikarten und personalisierte Lernpläne." />
-    <meta name="keywords" content="KI Lernplattform, Schule, Lernen, Chat-Tutor, Mindmaps, Karteikarten, Quiz, DSGVO, Bildung" />
+    <meta name="description" content="Wissn — Die KI-gestützte Lernplattform für Schulen. Intelligenter Chat-Tutor, automatische Grafiken, Karteikarten und personalisierte Lernpläne." />
+    <meta name="keywords" content="KI Lernplattform, Schule, Lernen, Chat-Tutor, Grafiken, Karteikarten, Quiz, DSGVO, Bildung" />
     <meta name="author" content="Wissn" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://wissn.de/" />
@@ -27,7 +27,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Wissn — KI-gestützte Lernplattform für Schulen" />
-    <meta property="og:description" content="Intelligenter Chat-Tutor, automatische Mindmaps, Karteikarten und personalisierte Lernpläne — individuelle Förderung für jeden Schüler." />
+    <meta property="og:description" content="Intelligenter Chat-Tutor, automatische Grafiken, Karteikarten und personalisierte Lernpläne — individuelle Förderung für jeden Schüler." />
     <meta property="og:image" content="/wissn-logo-clean.png" />
     <meta property="og:url" content="https://wissn.de/" />
     <meta property="og:locale" content="de_DE" />
@@ -35,7 +35,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Wissn — KI-gestützte Lernplattform" />
-    <meta name="twitter:description" content="Die intelligente Lernplattform für Schulen mit KI Chat-Tutor, Mindmaps und personalisierten Lernplänen." />
+    <meta name="twitter:description" content="Die intelligente Lernplattform für Schulen mit KI Chat-Tutor, Grafiken und personalisierten Lernplänen." />
     <meta name="twitter:image" content="/wissn-logo-clean.png" />
 
     <!-- Favicon -->
@@ -55,7 +55,7 @@
       "name": "Wissn",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web",
-      "description": "KI-gestützte Lernplattform für Schulen mit Chat-Tutor, Mindmaps, Karteikarten und personalisierten Lernplänen.",
+      "description": "KI-gestützte Lernplattform für Schulen mit Chat-Tutor, Grafiken, Karteikarten und personalisierten Lernplänen.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -392,7 +392,7 @@ export function Footer() {
             <WissnLogo size={36} />
             <p className="text-slate-400 mt-4 max-w-sm leading-relaxed text-sm">
               Die KI-gestützte Lernplattform für Schulen. Intelligenter lernen
-              mit Chat-Tutor, Mindmaps und personalisierten Lernplänen.
+              mit Chat-Tutor, Grafiken und personalisierten Lernplänen.
             </p>
             <div className="flex items-center gap-4 mt-5">
               <a href="https://instagram.com/wissn.de" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="Instagram">
@@ -643,7 +643,7 @@ function VideoHero() {
 
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl mx-auto">
             Die KI-gestützte Lernplattform für Schulen. Intelligenter Chat-Tutor,
-            automatische Mindmaps, Karteikarten und personalisierte Lernpläne.
+            automatische Grafiken, Karteikarten und personalisierte Lernpläne.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -748,7 +748,7 @@ function ProblemSection() {
 function FeaturesPreview() {
   const features = [
     { icon: MessageSquare, color: 'from-emerald-400 to-teal-500', title: 'Chat-Tutor', description: 'Sofort verständliche Antworten auf jede Frage.' },
-    { icon: Map, color: 'from-blue-400 to-indigo-500', title: 'Mindmaps', description: 'Visuelle Zusammenfassungen aus deinen Dokumenten.' },
+    { icon: Map, color: 'from-blue-400 to-indigo-500', title: 'Grafiken', description: 'Visuelle Zusammenfassungen aus deinen Dokumenten.' },
     { icon: BookOpen, color: 'from-violet-400 to-purple-500', title: 'Karteikarten & Quiz', description: 'Automatisch generierte Lernkarten und Quizfragen.' },
     { icon: FileText, color: 'from-orange-400 to-red-500', title: 'Dokumenten-Analyse', description: 'KI-gestützte Analyse deiner Skripte und Materialien.' },
     { icon: BrainCircuit, color: 'from-pink-400 to-rose-500', title: 'Sokratische Dialoge', description: 'Die KI fragt zurück und prüft dein Verständnis.' },
@@ -796,7 +796,7 @@ function HowItWorksPreview() {
   const steps = [
     { num: '01', color: 'from-blue-400 to-indigo-500', title: 'Dokument hochladen', text: 'Lade dein Skript oder Lehrbuch-Kapitel als PDF hoch.' },
     { num: '02', color: 'from-violet-400 to-purple-500', title: 'KI analysiert', text: 'Wissn erkennt Themen und erstellt deinen Lernplan.' },
-    { num: '03', color: 'from-emerald-400 to-teal-500', title: 'Interaktiv lernen', text: 'Chat, Mindmaps, Karteikarten — alles in einer App.' },
+    { num: '03', color: 'from-emerald-400 to-teal-500', title: 'Interaktiv lernen', text: 'Chat, Grafiken, Karteikarten — alles in einer App.' },
     { num: '04', color: 'from-orange-400 to-red-500', title: 'Wissen festigen', text: 'Wiederholung und sokratische Dialoge verankern das Wissen.' },
   ]
 
@@ -955,7 +955,7 @@ function CTA() {
 export default function Landing() {
   useSEO({
     title: null,
-    description: 'Wissn — Die KI-gestützte Lernplattform für Schulen. Chat-Tutor, Mindmaps, Karteikarten und personalisierte Lernpläne.',
+    description: 'Wissn — Die KI-gestützte Lernplattform für Schulen. Chat-Tutor, Grafiken, Karteikarten und personalisierte Lernpläne.',
   })
 
   return (
@@ -1000,11 +1000,11 @@ const features = [
     icon: Map,
     color: 'from-blue-400 to-indigo-500',
     bg: 'bg-blue-50',
-    title: 'Automatische Mindmaps',
-    description: 'Lade dein Skript hoch und erhalte eine visuelle Zusammenfassung als Mindmap.',
+    title: 'Automatische Grafiken',
+    description: 'Lade dein Skript hoch und erhalte eine visuelle Zusammenfassung als Grafik.',
     details: [
       'Komplexe Zusammenhänge werden visuell greifbar',
-      'Interaktive Mindmaps zum Zoomen und Navigieren',
+      'Interaktive Grafiken zum Zoomen und Navigieren',
       'Export als Bild oder PDF',
     ],
   },
@@ -1061,7 +1061,7 @@ const features = [
 export default function FeaturesPage() {
   useSEO({
     title: 'Features',
-    description: 'Alle Features von Wissn: KI Chat-Tutor, automatische Mindmaps, Karteikarten, Quiz, Dokumenten-Analyse und mehr.',
+    description: 'Alle Features von Wissn: KI Chat-Tutor, automatische Grafiken, Karteikarten, Quiz, Dokumenten-Analyse und mehr.',
   })
 
   return (
@@ -1166,7 +1166,7 @@ const steps = [
     details: [
       'Identifiziert Kernthemen und Zusammenhänge',
       'Erstellt automatische Zusammenfassungen',
-      'Generiert Mindmaps für visuelle Übersicht',
+      'Generiert Grafiken für visuelle Übersicht',
     ],
   },
   {
@@ -1174,7 +1174,7 @@ const steps = [
     icon: Layers,
     color: 'from-emerald-400 to-teal-500',
     title: 'Interaktiv lernen',
-    description: 'Nutze Chat-Tutor, Mindmaps, Karteikarten und Quizfragen — die KI passt sich deinem Tempo an.',
+    description: 'Nutze Chat-Tutor, Grafiken, Karteikarten und Quizfragen — die KI passt sich deinem Tempo an.',
     details: [
       'Stelle Fragen zu deinen Dokumenten im Chat',
       'Lerne mit automatisch generierten Karteikarten',
@@ -1331,7 +1331,7 @@ const benefits = [
 
 const comparisonRows = [
   { feature: 'KI Chat-Tutor mit Rückfragen', wissn: true, others: false },
-  { feature: 'Automatische Mindmaps aus Dokumenten', wissn: true, others: false },
+  { feature: 'Automatische Grafiken aus Dokumenten', wissn: true, others: false },
   { feature: 'Personalisierte Lernpläne', wissn: true, others: 'Teilweise' },
   { feature: 'Karteikarten & Quiz-Generator', wissn: true, others: 'Teilweise' },
   { feature: 'Sokratische Dialoge', wissn: true, others: false },
@@ -1464,7 +1464,7 @@ import { ArrowRight, GraduationCap, Sparkles } from 'lucide-react'
 export default function ForStudentsPage() {
   useSEO({
     title: 'Für Schüler',
-    description: 'Wissn hilft Schülern, effizienter zu lernen — mit KI-Chat-Tutor, Mindmaps, Karteikarten und personalisierten Lernplänen.',
+    description: 'Wissn hilft Schülern, effizienter zu lernen — mit KI-Chat-Tutor, Grafiken, Karteikarten und personalisierten Lernplänen.',
   })
 
   return (
@@ -1508,7 +1508,7 @@ export default function ForStudentsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: 'Fragen jederzeit stellen', description: 'Der KI-Tutor erklärt dir Themen so oft du willst — ohne genervt zu sein.' },
-              { title: 'Automatische Zusammenfassungen', description: 'Lade dein Skript hoch und erhalte Zusammenfassungen, Mindmaps und Karteikarten.' },
+              { title: 'Automatische Zusammenfassungen', description: 'Lade dein Skript hoch und erhalte Zusammenfassungen, Grafiken und Karteikarten.' },
               { title: 'Quiz & Karteikarten', description: 'Teste dein Wissen mit automatisch generierten Quizfragen und Lernkarten.' },
               { title: 'Lerne in deinem Tempo', description: 'Die KI passt sich deinem Wissensstand an und wiederholt, was du noch nicht kannst.' },
               { title: 'Prüfungsvorbereitung', description: 'Gezieltes Training für anstehende Klausuren — effektiv und stressfrei.' },
@@ -1659,7 +1659,7 @@ export default function AboutPage() {
               </p>
               <p>
                 <strong className="text-slate-900">Unsere Lösung:</strong> Wissn gibt jedem Schüler einen KI-Tutor, der geduldig erklärt,
-                gezielt nachfragt und den Lernstoff mit Mindmaps, Karteikarten und sokratischen Dialogen verankert.
+                gezielt nachfragt und den Lernstoff mit Grafiken, Karteikarten und sokratischen Dialogen verankert.
                 Lehrkräfte erhalten Einblicke in den Lernfortschritt und können gezielt unterstützen.
               </p>
               <p>
@@ -2439,8 +2439,8 @@ function OverviewTab() {
     },
     {
       icon: Map,
-      title: 'Automatische Mindmaps',
-      description: 'Lade Dokumente hoch und erhalte visuelle Zusammenfassungen als Mindmap.',
+      title: 'Automatische Grafiken',
+      description: 'Lade Dokumente hoch und erhalte visuelle Zusammenfassungen als Grafik.',
     },
     {
       icon: BookOpen,
