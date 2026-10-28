@@ -1,4 +1,4 @@
-import Layout, { useSEO } from '../components/Layout'
+import Layout, { useSEO, APP_URL } from '../components/Layout'
 import { ArrowRight, ShieldCheck, Clock, LineChart, Lock } from 'lucide-react'
 import Reveal from '../components/Reveal'
 
@@ -48,7 +48,7 @@ export default function ForParentsPage() {
             </Reveal>
             <Reveal direction="up" delay={150}>
               <a
-                href="/app"
+                href={APP_URL}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-wissn-green-btn text-white font-semibold text-lg hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2"
               >
                 Kostenlos ausprobieren
@@ -117,7 +117,7 @@ export default function ForParentsPage() {
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">Erleben Sie, wie Ihr Kind mit Wissn lernt</h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">Kostenlos starten, ohne Verpflichtung.</p>
             <a
-              href="/app"
+              href={APP_URL}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-wissn-green-btn text-white font-semibold text-lg hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2"
             >
               Jetzt kostenlos starten

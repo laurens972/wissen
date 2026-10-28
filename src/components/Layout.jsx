@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { supabase } from '../lib/supabase'
 import { useConsent } from '../context/ConsentContext'
 import WissnLogo from './WissnLogo'
 import AppStoreBadge from './AppStoreBadge'
@@ -15,17 +14,13 @@ export function useSEO({ title, description }) {
   }, [title, description])
 }
 
+/* Die Lern-App. Anmelden und Registrieren gibt es nur dort. */
+export const APP_URL = 'https://app.wissn-ai.de'
+
 /* Header */
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [user, setUser] = useState(null)
   const location = useLocation()
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => setUser(session?.user ?? null))
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => setUser(session?.user ?? null))
-    return () => subscription.unsubscribe()
-  }, [])
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -63,8 +58,8 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href={user ? "/dashboard" : "/app"} className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-wissn-green-btn text-white text-sm font-semibold hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2">
-              {user ? 'Zur Lernapp' : 'Kostenlos starten'}
+            <a href={APP_URL} className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-wissn-green-btn text-white text-sm font-semibold hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2">
+              Kostenlos starten
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -93,8 +88,8 @@ export function Header() {
               </a>
             ))}
             <div className="pt-2">
-              <a href={user ? "/dashboard" : "/app"} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-wissn-green-btn text-white text-sm font-semibold hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2">
-                {user ? 'Zur Lernapp' : 'Kostenlos starten'}
+              <a href={APP_URL} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-wissn-green-btn text-white text-sm font-semibold hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2">
+                Kostenlos starten
               </a>
             </div>
           </div>

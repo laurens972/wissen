@@ -1,4 +1,4 @@
-import Layout, { useSEO } from '../components/Layout'
+import Layout, { useSEO, APP_URL } from '../components/Layout'
 import Reveal from '../components/Reveal'
 import { ArrowRight, MessageSquare, Map, BookOpen, Target, PenTool, Clock, Check } from 'lucide-react'
 
@@ -89,7 +89,7 @@ export default function ForStudentsPage() {
             <Reveal direction="up" delay={150}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="/app"
+                  href={APP_URL}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-wissn-green-btn text-white font-semibold text-lg hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2"
                 >
                   Kostenlos starten
@@ -141,7 +141,7 @@ export default function ForStudentsPage() {
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">Bereit für dein eigenes Lerntempo?</h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">Starte jetzt kostenlos und probiere Wissn direkt aus.</p>
             <a
-              href="/app"
+              href={APP_URL}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-wissn-green-btn text-white font-semibold text-lg hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2"
             >
               Jetzt kostenlos starten
