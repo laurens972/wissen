@@ -28,7 +28,7 @@ function Hero() {
             <img
               src="/wissn-logo-icon.png"
               alt="Wissn Logo"
-              className="hero-animate w-20 h-20 sm:w-24 sm:h-24 object-contain mx-auto lg:mx-0 mb-6"
+              className="hero-animate w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-full mx-auto lg:mx-0 mb-6"
               style={{ animationDelay: '0s' }}
             />
 

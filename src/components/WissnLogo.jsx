@@ -6,7 +6,7 @@ export default function WissnLogo({ size = 48, showText = false, className = '' 
         alt="Wissn Logo"
         width={size}
         height={size}
-        className="object-contain block"
+        className="object-contain block rounded-full"
       />
       {showText && (
         <img
