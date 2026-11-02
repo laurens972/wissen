@@ -154,7 +154,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-500">
-          &copy; {new Date().getFullYear()} Wissn. Alle Rechte vorbehalten.
+          &copy; {new Date().getFullYear()} GbR Samberg, Laurens Jacob und Maurer, Felix (Wissn-AI GbR). Alle Rechte vorbehalten.
         </div>
       </div>
     </footer>
