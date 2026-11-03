@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import {
-  BrainCircuit, MessageSquare, Layers, Network, ListChecks, Check, BarChart3,
+  BrainCircuit, MessageSquare, Layers, Network, ClipboardCheck, Check, BarChart3,
 } from 'lucide-react'
 
 /*
  * HeroDemo — die Live-Produkt-Session als Karussell.
- * Sokratischer Chat → Karteikarten → Mindmap → Quiz → Lernanalyse → Loop.
+ * Sokratischer Chat → Karteikarten → Mindmap → Probeklausur → Lernanalyse → Loop.
  * Alles zum selben Thema (Photosynthese), damit die Lern-Session zusammenhängt.
  * Rein dekorativ (aria-hidden); die semantische H1 lebt im Hero.
  */
@@ -30,12 +30,50 @@ const GRAPHIC = {
   branches: ['Sonnenlicht', 'Chlorophyll', 'CO₂ + H₂O', '→ Glucose', '→ O₂'],
 }
 
-const MC = {
-  q: 'Was entsteht bei der Photosynthese?',
-  options: ['Glucose + O₂', 'CO₂ + Wärme', 'nur Wasser'],
-  correct: 0,
+// Begriffe wie in der App: Teile I–III, Aufgabentypen, BE, Ergebnis nur in BE und
+// Prozent (keine Note). Leistungskontrolle = Teil I Anforderungsbereich I, Teil II/III
+// Anforderungsbereich II (AFB III gibt es erst beim Niveau Klausur).
+// Gezeigt wird ein Ausschnitt (Aufgaben 1, 2, 4, 6); punkte/max je Teil sind die Summen
+// einer vollen Leistungskontrolle mit 6 Aufgaben und 16 BE (App-Spanne 12–18 BE).
+const PK = {
+  niveau: 'Leistungskontrolle',
+  fach: 'Biologie · Photosynthese',
+  dauer: 'ca. 20 min',
+  teile: [
+    { nr: 'I', name: 'Wiedergeben', punkte: 5, max: 5 },
+    { nr: 'II', name: 'Anwenden', punkte: 4, max: 5 },
+    { nr: 'III', name: 'Sachaufgabe', punkte: 3, max: 6 },
+  ],
+  // teil = Index in teile. satz: gerade Stellen Text, ungerade Stellen Lücken.
+  aufgaben: [
+    {
+      teil: 0, nr: 1, be: 1, art: 'Ankreuzen',
+      frage: 'Wo in der Pflanzenzelle findet die Photosynthese statt?',
+      optionen: ['In den Mitochondrien', 'In den Chloroplasten', 'Im Zellkern'],
+      richtig: 1,
+    },
+    {
+      teil: 0, nr: 2, be: 2, art: 'Lückentext',
+      frage: 'Ergänze die Lücken.',
+      satz: ['Pflanzen bilden aus ', 'Kohlenstoffdioxid', ' und ', 'Wasser', ' mit Lichtenergie Glucose und Sauerstoff.'],
+    },
+    {
+      teil: 1, nr: 4, be: 3, art: 'Ankreuzen und begründen',
+      frage: 'Was passiert mit einer Pflanze im dunklen Keller?',
+      optionen: ['Wächst normal weiter', 'Geht nach Wochen ein', 'Bildet mehr Glucose'], // kurz: kein Umbruch auf Handys
+      richtig: 1,
+      antwort: 'Ohne Licht keine Photosynthese, also keine Glucose mehr.',
+    },
+    {
+      teil: 2, nr: 6, be: 6, art: 'Erklären und begründen',
+      situation: 'Eine Wasserpest unter einer Lampe gibt Bläschen ab. Je näher die Lampe, desto mehr.',
+      frage: 'Erkläre die Beobachtung.',
+      antwort: 'Die Bläschen sind Sauerstoff. Mehr Licht → mehr Photosynthese.',
+    },
+  ],
+  // Wie in der App: geprüftes Konzept + „Aufgabe N · X BE verloren“ (hier die letzte Aufgabe)
+  ueben: 'Lichtabhängigkeit der Photosynthese',
 }
-const TXT = { q: 'Welches Gas nehmen Pflanzen auf?', answer: 'CO₂' }
 
 const ANALYSIS = {
   student: 'Anna, Klasse 7b',
@@ -52,7 +90,7 @@ const TABS = [
   { icon: MessageSquare, label: 'Tutor' },
   { icon: Layers, label: 'Karten' },
   { icon: Network, label: 'Mindmap' },
-  { icon: ListChecks, label: 'Quiz' },
+  { icon: ClipboardCheck, label: 'Probeklausur' },
   { icon: BarChart3, label: 'Analyse' },
 ]
 
@@ -240,83 +278,263 @@ function StageGraphic({ reduced, onDone }) {
   )
 }
 
-/* ---------- Stage 3: Quiz (Multiple-Choice + Textantwort) ---------- */
-function StageQuiz({ reduced, onDone }) {
-  const [step, setStep] = useState(0) // 0 MC → 1 reveal → 2 text → 3 done
-  const [typed, setTyped] = useState(reduced ? TXT.answer.length : 0)
+/* ---------- Stage 3: Probeklausur (Teile I–III → Bewertung in BE) ---------- */
+// Tempo bewusst ruhig (PO-Wunsch): Besucher sollen Aufgabe und Antwort mitlesen können.
+const PK_TEMPO = {
+  lesen: 2000, // bevor angekreuzt/gefüllt/getippt wird
+  lesenSituation: 2800,
+  kreuzZuText: 900, // nach dem Kreuz, bevor die Begründung beginnt
+  luecke: 1200, // zwischen zwei Lücken
+  zeichen: 50, // je getipptem Zeichen
+  halten: 1500, // fertige Aufgabe stehen lassen
+}
+
+// Animationsschritte je Aufgabe: ein Kreuz, dann je Lücke einer, dann je Zeichen einer.
+const lueckenZahl = (a) => (a.satz ? (a.satz.length - 1) / 2 : 0)
+const schritte = (a) => (a.optionen ? 1 : 0) + lueckenZahl(a) + (a.antwort?.length ?? 0)
+
+function pkPause(a, n) {
+  if (n === 0) return a.situation ? PK_TEMPO.lesenSituation : PK_TEMPO.lesen
+  if (a.satz) return PK_TEMPO.luecke
+  if (a.optionen && n === 1) return PK_TEMPO.kreuzZuText
+  return PK_TEMPO.zeichen
+}
+
+function StageProbeklausur({ reduced, onDone }) {
+  // step 0–3 = Aufgabe wird bearbeitet (n = erledigte Schritte), 4 = Abgabe, 5 = Ergebnis
+  const [step, setStep] = useState(reduced ? 5 : 0)
+  const [n, setN] = useState(0)
 
   useEffect(() => {
-    if (reduced) {
-      const t = setTimeout(onDone, 5600)
-      return () => clearTimeout(t)
-    }
-    if (step >= 3) {
-      const t = setTimeout(onDone, 2600)
-      return () => clearTimeout(t)
-    }
-    const delays = [2000, 2200, 3400]
-    const t = setTimeout(() => setStep((s) => s + 1), delays[step])
+    let t
+    if (step === 5) t = setTimeout(onDone, reduced ? 5600 : 5000)
+    else if (step === 4) t = setTimeout(() => (n === 0 ? setN(1) : setStep(5)), n === 0 ? 800 : 1400)
+    else if (n < schritte(PK.aufgaben[step])) t = setTimeout(() => setN(n + 1), pkPause(PK.aufgaben[step], n))
+    else
+      t = setTimeout(() => {
+        setN(0)
+        setStep(step + 1)
+      }, PK_TEMPO.halten)
     return () => clearTimeout(t)
-  }, [step, reduced, onDone])
+  }, [step, n, reduced, onDone])
 
-  const revealed = reduced || step >= 1
-  const showText = reduced || step >= 2
+  if (step === 5) return <PkErgebnis reduced={reduced} />
 
-  useEffect(() => {
-    if (reduced || !showText) return
-    if (typed >= TXT.answer.length) return
-    const t = setTimeout(() => setTyped((n) => n + 1), 180)
-    return () => clearTimeout(t)
-  }, [showText, typed, reduced])
-
-  const textDone = typed >= TXT.answer.length
+  const a = PK.aufgaben[Math.min(step, 3)]
+  const k = step === 4 ? schritte(a) : n // bei der Abgabe ist die letzte Aufgabe fertig
+  const vorText = (a.optionen ? 1 : 0) + lueckenZahl(a)
+  const gekreuzt = Boolean(a.optionen) && k >= 1
+  const gefuellt = Math.max(0, k - (a.optionen ? 1 : 0))
+  const getippt = Math.max(0, k - vorText)
+  const tippt = a.antwort && step < 4 && k >= vorText && getippt < a.antwort.length
 
   return (
     <div className="flex h-full flex-col gap-3">
-      {/* Multiple-Choice */}
+      {/* Blatt-Kopf (Dauer in der Unterzeile: als Pille bricht der Titel auf Handys um) */}
       <div>
-        <p className="mb-2 text-sm font-semibold text-slate-700">{MC.q}</p>
-        <div className="space-y-1.5">
-          {MC.options.map((opt, i) => {
-            const isCorrect = i === MC.correct
-            const active = revealed && isCorrect
-            return (
+        <p className="text-sm font-semibold text-slate-700">Probeklausur · {PK.niveau}</p>
+        <p className="text-xs text-slate-400">
+          {PK.fach} · {PK.dauer}
+        </p>
+      </div>
+
+      {/* Teile I–III */}
+      <div className="grid grid-cols-3 gap-2">
+        {PK.teile.map((x, i) => {
+          const aktiv = step < 4 && i === a.teil
+          return (
+            <div key={x.nr}>
               <div
-                key={opt}
-                className={`msg-in flex items-center justify-between rounded-lg border px-3 py-1.5 text-sm transition-colors ${
-                  active
-                    ? 'border-wissn-green bg-wissn-green-50 font-medium text-wissn-green-dark'
-                    : 'border-slate-200 bg-white text-slate-600'
+                className={`h-1 rounded-full transition-colors duration-500 ${
+                  i <= a.teil ? 'bg-wissn-green' : 'bg-slate-200'
                 }`}
-                style={{ animationDelay: `${i * 0.1}s` }}
+              />
+              <p
+                className={`mt-1.5 text-[10px] font-semibold uppercase tracking-wide ${
+                  aktiv ? 'text-wissn-green-dark' : 'text-slate-400'
+                }`}
               >
-                {opt}
-                {active && <Check className="h-4 w-4 text-wissn-green" />}
-              </div>
-            )
-          })}
+                Teil {x.nr}
+              </p>
+              <p className={`text-[11px] font-medium ${aktiv ? 'text-slate-700' : 'text-slate-400'}`}>{x.name}</p>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Aufgabe — langsamer Einflug, damit der Wechsel mitzulesen ist. min-h-0 +
+          overflow-hidden: auf sehr schmalen Handys wird eher die Karte gekappt als
+          der Abgabe-Knopf aus der festen Bühne geschoben */}
+      <div
+        key={a.nr}
+        className="msg-in min-h-0 overflow-hidden rounded-xl border border-slate-200 bg-white p-3"
+        style={{ animationDuration: '0.7s' }}
+      >
+        <div className="mb-1.5 flex items-center justify-between gap-2 text-[11px] font-medium text-slate-400">
+          <span>
+            Aufgabe {a.nr} · {a.art}
+          </span>
+          <span className="flex-none rounded-full bg-wissn-green-50 px-2 py-0.5 font-semibold text-wissn-green-dark">
+            {a.be} BE
+          </span>
+        </div>
+        {a.situation && (
+          <p className="mb-2 rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs text-slate-500">
+            <span className="font-semibold text-slate-600">Situation: </span>
+            {a.situation}
+          </p>
+        )}
+        <p className="text-sm font-medium text-slate-700">{a.frage}</p>
+
+        {a.optionen && (
+          <div className="mt-2 space-y-1 sm:space-y-1.5">
+            {a.optionen.map((o, i) => {
+              const an = gekreuzt && i === a.richtig
+              return (
+                <div
+                  key={o}
+                  className={`flex items-center gap-2 rounded-lg border px-3 py-1 text-sm transition-colors duration-500 sm:py-1.5 ${
+                    an ? 'border-wissn-green bg-wissn-green-50 font-medium text-wissn-green-dark' : 'border-slate-200 text-slate-600'
+                  }`}
+                >
+                  <span
+                    className={`flex h-4 w-4 flex-none items-center justify-center rounded border transition-colors duration-500 ${
+                      an ? 'border-wissn-green bg-wissn-green' : 'border-slate-300 bg-white'
+                    }`}
+                  >
+                    {an && <Check className="h-3 w-3 text-white" />}
+                  </span>
+                  {o}
+                </div>
+              )
+            })}
+          </div>
+        )}
+
+        {/* Lückentext: Marken (1), (2) wie in der App, werden nacheinander gefüllt */}
+        {a.satz && (
+          <p className="mt-2 text-sm leading-8 text-slate-700">
+            {a.satz.map((s, i) => {
+              if (i % 2 === 0) return <span key={i}>{s}</span>
+              const nr = (i + 1) / 2
+              return nr <= gefuellt ? (
+                <span
+                  key={i}
+                  className="msg-in mx-0.5 inline-block rounded-md bg-wissn-green-50 px-2 font-semibold leading-6 text-wissn-green-dark ring-1 ring-wissn-green"
+                >
+                  {s}
+                </span>
+              ) : (
+                <span
+                  key={i}
+                  className="mx-0.5 inline-block min-w-[4.5rem] rounded-md border border-dashed border-slate-300 px-2 text-center leading-6 text-slate-400"
+                >
+                  ({nr})
+                </span>
+              )
+            })}
+          </p>
+        )}
+
+        {a.antwort && (
+          <>
+            {a.optionen && <p className="mb-1 mt-2.5 text-[11px] font-medium text-slate-400">Begründung</p>}
+            <div
+              className={`min-h-[38px] rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 ${
+                a.optionen ? '' : 'mt-2'
+              }`}
+            >
+              {a.antwort.slice(0, getippt)}
+              {tippt && <span className="type-cursor">▍</span>}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Abgabe erst am Ende: während der Aufgaben braucht die Karte den Platz */}
+      {step === 4 && (
+        <div className="msg-in mt-auto flex items-center justify-center gap-2 rounded-xl bg-wissn-green-btn py-2.5 text-sm font-semibold text-white">
+          {n === 0 ? (
+            'Fertig & prüfen'
+          ) : (
+            <>
+              <span className="h-2 w-2 animate-pulse rounded-full bg-white" />
+              Wird geprüft …
+            </>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function PkErgebnis({ reduced }) {
+  const max = PK.teile.reduce((s, t) => s + t.max, 0)
+  const punkte = PK.teile.reduce((s, t) => s + t.punkte, 0)
+  const delay = (s) => ({ animationDelay: reduced ? '0s' : `${s}s` })
+  // Letzte Aufgabe = einzige Aufgabe in Teil III → verlorene BE = Teil-Differenz
+  const letzte = PK.aufgaben[PK.aufgaben.length - 1]
+  const verloren = PK.teile[letzte.teil].max - PK.teile[letzte.teil].punkte
+
+  return (
+    <div className="flex h-full flex-col justify-center gap-4">
+      <div className="msg-in">
+        <p className="text-xs text-slate-400">Dein Ergebnis · {PK.niveau}</p>
+        <div className="mt-1 flex items-baseline gap-2">
+          <span className="text-2xl font-bold text-slate-800">
+            {punkte} von {max} BE
+          </span>
+          <span className="rounded-full bg-wissn-green-50 px-2.5 py-0.5 text-sm font-semibold text-wissn-green-dark">
+            {Math.round((punkte / max) * 100)} %
+          </span>
         </div>
       </div>
 
-      {/* Textantwort */}
-      {showText && (
-        <div className="msg-in mt-auto border-t border-slate-100 pt-3">
-          <p className="mb-2 text-sm font-semibold text-slate-700">{TXT.q}</p>
-          <div
-            className={`flex items-center justify-between rounded-lg border px-3 py-2 text-sm ${
-              textDone
-                ? 'border-wissn-green bg-wissn-green-50'
-                : 'border-slate-200 bg-white'
-            }`}
-          >
-            <span className="text-slate-700">
-              {reduced ? TXT.answer : TXT.answer.slice(0, typed)}
-              {!textDone && <span className="type-cursor">▍</span>}
-            </span>
-            {textDone && <Check className="h-4 w-4 text-wissn-green" />}
-          </div>
+      {/* So lief es: ein Balken je Teil */}
+      <div className="space-y-3">
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">So lief es</p>
+        {PK.teile.map((t, i) => {
+          const voll = t.punkte === t.max
+          return (
+            <div key={t.nr} className="msg-in" style={delay(0.3 + i * 0.4)}>
+              <div className="mb-1 flex items-center justify-between text-xs">
+                <span className="font-medium text-slate-600">
+                  Teil {t.nr} · {t.name}
+                </span>
+                <span className={`font-semibold ${voll ? 'text-wissn-green-dark' : 'text-amber-600'}`}>
+                  {t.punkte} / {t.max} BE
+                </span>
+              </div>
+              <div className="h-2 overflow-hidden rounded-full bg-slate-100">
+                <div
+                  className={`bar-fill h-full rounded-full ${
+                    voll ? 'bg-gradient-to-r from-wissn-green to-emerald-500' : 'bg-amber-400'
+                  }`}
+                  style={{ width: `${(t.punkte / t.max) * 100}%`, ...delay(0.4 + i * 0.4) }}
+                />
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Übungs-Empfehlung → Chat */}
+      <div
+        className="msg-in flex items-center justify-between gap-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2"
+        style={delay(1.8)}
+      >
+        <div className="min-w-0">
+          <p className="text-[11px] font-medium text-amber-700">Das solltest du noch üben</p>
+          <p className="text-xs font-semibold text-slate-700">{PK.ueben}</p>
+          <p className="text-[11px] text-slate-500">
+            Aufgabe {letzte.nr} · {verloren} BE verloren
+          </p>
         </div>
-      )}
+        <span className="flex flex-none items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold text-wissn-green-dark shadow-sm">
+          <MessageSquare className="h-3.5 w-3.5" />
+          Im Chat üben
+        </span>
+      </div>
     </div>
   )
 }
@@ -424,13 +642,14 @@ export default function HeroDemo() {
           </span>
         </div>
 
-        {/* Bühne (Karussell) */}
-        <div className="relative h-[420px] overflow-hidden">
+        {/* Bühne (Karussell) — auf Handys 40 px höher, sonst passt die Probeklausur-Aufgabe
+            „Ankreuzen und begründen“ (umbrechender Text) nicht in die feste Höhe */}
+        <div className="relative h-[460px] overflow-hidden sm:h-[420px]">
           <div key={`${stage}-${tick}`} className="stage-enter absolute inset-0 px-4 py-4">
             {stage === 0 && <StageChat reduced={reduced} onDone={onDone} />}
             {stage === 1 && <StageFlashcards reduced={reduced} onDone={onDone} />}
             {stage === 2 && <StageGraphic reduced={reduced} onDone={onDone} />}
-            {stage === 3 && <StageQuiz reduced={reduced} onDone={onDone} />}
+            {stage === 3 && <StageProbeklausur reduced={reduced} onDone={onDone} />}
             {stage === 4 && <StageAnalysis reduced={reduced} onDone={onDone} />}
           </div>
         </div>
@@ -453,7 +672,8 @@ export default function HeroDemo() {
                     : 'text-slate-400 hover:bg-slate-100 hover:text-slate-600'
                 }`}
               >
-                <Icon className="h-3.5 w-3.5" />
+                {/* Symbole erst ab sm: „Probeklausur“ braucht auf Handys den Platz */}
+                <Icon className="hidden h-3.5 w-3.5 flex-none sm:block" />
                 {t.label}
               </button>
             )
