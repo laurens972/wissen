@@ -5,7 +5,7 @@ import Layout, { useSEO } from '../components/Layout'
 export default function NutzungsbedingungenPage() {
   useSEO({
     title: 'Nutzungsbedingungen',
-    description: 'Nutzungsbedingungen (AGB) der Lernplattform WISSN der Wissn AI GbR, Version 3.0.',
+    description: 'Nutzungsbedingungen (AGB) der Lernplattform WISSN der Wissn-AI GbR, Version 3.0.',
   })
 
   return (
@@ -22,13 +22,13 @@ export default function NutzungsbedingungenPage() {
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">1. Vertragspartner und Geltungsbereich</h2>
               <p>
-                Diese Nutzungsbedingungen gelten für die Nutzung der WISSN-App, der Web-App unter https://app.wissn-ai.de und aller damit verbundenen Dienste.
+                Diese Nutzungsbedingungen gelten für die Nutzung der WISSN-App für iOS und Android (App Store und Google Play), der Web-App unter https://app.wissn-ai.de und aller damit verbundenen Dienste.
               </p>
               <p>
                 Anbieter und Vertragspartner ist die
               </p>
               <p>
-                Wissn AI GbR<br />
+                Wissn-AI GbR<br />
                 vertreten durch die Gesellschafter Laurens Samberg und Felix Maurer<br />
                 Eugen-d'Albert-Straße 11<br />
                 01640 Coswig<br />
@@ -57,11 +57,11 @@ export default function NutzungsbedingungenPage() {
               <h2 className="text-xl font-semibold text-slate-900 mb-3">3. Schulische und private Nutzung</h2>
               <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">3.1 Nutzung über eine Schule</h3>
               <p>
-                Treten Sie mit dem Schulpasswort einer Schule bei, nutzen Sie WISSN im Rahmen der Vereinbarung zwischen Ihrer Schule und der Wissn AI GbR. Für die schulische Nutzung ist Ihre Schule datenschutzrechtlich verantwortlich; wir verarbeiten die Daten in ihrem Auftrag. Die Schule bestimmt, welche Klassen, Fächer und Materialien es gibt und wer welche Rolle hat (Schülerin oder Schüler, Lehrkraft, Schuladministration). Lehrkräfte erhalten ihre Rolle nur mit dem Lehrkräfte-Passwort ihrer Schule.
+                Treten Sie mit dem Schulpasswort einer Schule bei, nutzen Sie WISSN im Rahmen der Vereinbarung zwischen Ihrer Schule und der Wissn-AI GbR. Für die schulische Nutzung ist Ihre Schule datenschutzrechtlich verantwortlich; wir verarbeiten die Daten in ihrem Auftrag. Die Schule bestimmt, welche Klassen, Fächer und Materialien es gibt und wer welche Rolle hat (Schülerin oder Schüler, Lehrkraft, Schuladministration). Lehrkräfte erhalten ihre Rolle nur mit dem Lehrkräfte-Passwort ihrer Schule.
               </p>
               <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">3.2 Nutzung ohne Schule und persönlicher Bereich</h3>
               <p>
-                Ohne Schulzuordnung und im persönlichen Bereich nutzen Sie WISSN direkt auf Grundlage dieser Nutzungsbedingungen. Verantwortlich für Ihre Daten ist dann die Wissn AI GbR.
+                Ohne Schulzuordnung und im persönlichen Bereich nutzen Sie WISSN direkt auf Grundlage dieser Nutzungsbedingungen. Verantwortlich für Ihre Daten ist dann die Wissn-AI GbR.
               </p>
               <p>
                 Einzelheiten zur Verantwortung und zu Ihren Daten stehen in der Datenschutzerklärung.
@@ -226,7 +226,7 @@ export default function NutzungsbedingungenPage() {
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">13. Kontakt</h2>
               <p>
-                Wissn AI GbR<br />
+                Wissn-AI GbR<br />
                 Eugen-d'Albert-Straße 11, 01640 Coswig<br />
                 E-Mail: info@wissn-ai.de<br />
                 Datenschutz: datenschutz@wissn-ai.de
@@ -238,7 +238,7 @@ export default function NutzungsbedingungenPage() {
               <strong>Durch Nutzung von WISSN bestätigen Sie, diese Nutzungsbedingungen gelesen und verstanden zu haben.</strong>
             </p>
             <p>
-              Letzte Aktualisierung: 1. Oktober 2026 (Version 3.0: Anbieter Wissn AI GbR, schulische und private Nutzung, Altersregel, KI über Google Cloud Vertex AI in der EU, keine Benotung durch KI)
+              Letzte Aktualisierung: 1. Oktober 2026 (Version 3.0: Anbieter Wissn-AI GbR, schulische und private Nutzung, Altersregel, KI über Google Cloud Vertex AI in der EU, keine Benotung durch KI)
             </p>
           </div>
         </div>
