@@ -272,7 +272,7 @@ function ProductShowcase() {
     { title: 'Materialien', description: 'Unterrichtsmaterial hochladen und nach Klasse und Fach organisieren, mit Sichtbarkeit pro Datei.', image: '/screenshots/lehrer/materialien.webp', alt: 'Materialverwaltung mit Dateien nach Klasse und Fach, Status und Sichtbarkeit' },
     { title: 'Test ankündigen', description: 'Tests ankündigen und Schwerpunkte festlegen. Die KI bereitet die Materialien auf.', image: '/screenshots/lehrer/test-ankuendigen.webp', alt: 'Formular zum Ankündigen eines Tests mit Thema, Datum, Schwerpunkten und Dateien' },
     { title: 'Lernanalyse', description: 'Pro Thema sichtbar, wie weit die Klasse bei jedem Schwerpunkt ist.', image: '/screenshots/lehrer/analyse-klasse.webp', alt: 'Lernanalyse einer Klasse mit Verständnis und Verteilung pro Schwerpunkt' },
-    { title: 'Lernanalyse pro Schüler', description: 'Lernweg und Verständnis pro Schwerpunkt. Eine Hilfestellung für die Förderung, keine Bewertung.', image: '/screenshots/lehrer/analyse-schueler.webp', alt: 'Lernanalyse für einzelne Lernende mit Lernweg und Verständnis pro Schwerpunkt' },
+    { title: 'Lernanalyse pro Schüler', description: 'Lernweg und Verständnis pro Schwerpunkt. Eine Hilfestellung für die Förderung, nicht für Noten oder Zeugnisse.', image: '/screenshots/lehrer/analyse-schueler.webp', alt: 'Lernanalyse für einzelne Lernende mit Lernweg und Verständnis pro Schwerpunkt' },
     { title: 'Schulverwaltung', description: 'Übersicht über die gesamte Schule mit Lerngruppen, Lehrkräften und Lernenden.', image: '/screenshots/lehrer/schulverwaltung.webp', alt: 'Schulverwaltung mit Übersicht über Klassen, Lehrkräfte und Lernende' },
   ]
 

@@ -16,7 +16,7 @@ export default function NutzungsbedingungenPage() {
 
           <div className="prose prose-slate max-w-none space-y-8 text-slate-600 leading-relaxed">
             <p>
-              <strong>Stand: 1. Oktober 2026</strong><br />
+              <strong>Stand: 5. November 2026</strong><br />
               <strong>Version: 3.0</strong>
             </p>
             <div>
@@ -90,21 +90,14 @@ export default function NutzungsbedingungenPage() {
                 <li>Die KI kann <strong>Sachverhalte falsch darstellen</strong> oder missverstehen</li>
                 <li>Die KI ersetzt <strong>KEINE</strong> Lehrkraft und kein Fachbuch</li>
               </ul>
-              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">5.2 Keine Bewertung und keine Noten</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">5.2 Rückmeldungen zum Üben, keine Noten</h3>
               <p>
-                KI-Antworten, Quiz-Auswertungen und die Lernstandsanzeige für Lehrkräfte sind Hilfestellungen. Sie sind <strong>keine Bewertung, keine Note und keine Prüfungsleistung</strong>. WISSN trifft keine automatisierten Entscheidungen über Sie. Was aus einer Lernstandsanzeige folgt, entscheidet allein die Lehrkraft.
+                KI-Antworten, Quiz-Auswertungen und die Lernstandsanzeige für Lehrkräfte sind <strong>Rückmeldungen zum Üben</strong>. Dabei schätzt die KI ein, ob Antworten richtig sind, und in der Probeklausur gibt es Punkte. Diese Einschätzungen können falsch sein. Die Rückmeldungen sind <strong>keine Note und keine Prüfungsleistung</strong>. Lehrkräfte dürfen sie nicht als Grundlage für Noten, Zeugnisse oder Versetzungsentscheidungen verwenden. WISSN trifft keine automatisierten Entscheidungen über Sie. Was aus einer Lernstandsanzeige folgt, entscheidet allein die Lehrkraft.
               </p>
-              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">5.3 Keine Gewährleistung für Richtigkeit</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">5.3 Grenzen der KI-Inhalte</h3>
               <p>
-                <strong>Wir übernehmen KEINE Haftung für:</strong>
+                KI-Inhalte entstehen automatisch. Wir prüfen sie nicht einzeln und sagen nicht zu, dass Erklärungen, Definitionen, Fakten, Quiz-Fragen und Quiz-Auswertungen, Mindmaps und Karteikarten richtig, vollständig oder aktuell sind. Für Schäden haften wir nur nach Abschnitt 6.
               </p>
-              <ul className="list-disc pl-6 space-y-1.5 text-slate-700">
-                <li>Die inhaltliche Richtigkeit der KI-generierten Inhalte</li>
-                <li>Fehler in Erklärungen, Definitionen oder Fakten</li>
-                <li>Falsche Antworten in Quizzes</li>
-                <li>Unvollständige oder irreführende Mindmaps</li>
-                <li>Fehlerhafte Karteikarten</li>
-              </ul>
               <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">5.4 Empfehlung zur Nutzung</h3>
               <ul className="list-disc pl-6 space-y-1.5 text-slate-700">
                 <li><strong>Nutzen Sie WISSN als Lernhilfe, nicht als einzige Quelle</strong></li>
@@ -114,28 +107,18 @@ export default function NutzungsbedingungenPage() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-slate-900 mb-3">6. Haftungsausschluss</h2>
-              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">6.1 Beschränkung der Haftung</h3>
+              <h2 className="text-xl font-semibold text-slate-900 mb-3">6. Haftung</h2>
+              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">6.1 Unbeschränkte Haftung</h3>
               <p>
-                Soweit gesetzlich zulässig, haften wir NICHT für:
+                Wir haften unbeschränkt bei Vorsatz und grober Fahrlässigkeit, bei Verletzung des Lebens, des Körpers oder der Gesundheit, nach dem Produkthaftungsgesetz und soweit wir eine Garantie übernommen haben.
               </p>
-              <ul className="list-disc pl-6 space-y-1.5 text-slate-700">
-                <li><strong>Direkte Schäden</strong> durch Nutzung falscher KI-Informationen</li>
-                <li><strong>Indirekte Schäden</strong> wie schlechte Prüfungsergebnisse</li>
-                <li><strong>Folgeschäden</strong> aus der Verwendung der App</li>
-              </ul>
-              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">6.2 Ausnahmen</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">6.2 Leichte Fahrlässigkeit</h3>
               <p>
-                Die Haftungsbeschränkung gilt NICHT bei:
+                Bei leichter Fahrlässigkeit haften wir nur, wenn wir eine wesentliche Vertragspflicht verletzen. Wesentlich sind Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung Sie regelmäßig vertrauen dürfen, zum Beispiel die sorgfältige Speicherung Ihrer Inhalte. In diesem Fall ist unsere Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt. Im Übrigen haften wir nicht für leichte Fahrlässigkeit.
               </p>
-              <ul className="list-disc pl-6 space-y-1.5 text-slate-700">
-                <li>Vorsatz oder grober Fahrlässigkeit</li>
-                <li>Verletzung von Leben, Körper oder Gesundheit</li>
-                <li>Verletzung wesentlicher Vertragspflichten</li>
-              </ul>
-              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">6.3 Maximale Haftung</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mt-6 mb-2">6.3 Weitere Regeln</h3>
               <p>
-                Unsere Haftung ist auf den Betrag begrenzt, den Sie in den letzten 12 Monaten für WISSN bezahlt haben.
+                Diese Regeln gelten auch für unsere Gesellschafter und Erfüllungsgehilfen. Ihre gesetzlichen Rechte bei Mängeln digitaler Produkte bleiben unberührt.
               </p>
             </div>
 
@@ -152,6 +135,7 @@ export default function NutzungsbedingungenPage() {
               <ul className="list-disc pl-6 space-y-1.5 text-slate-700">
                 <li>Sie interagieren mit einem <strong>KI-System</strong>, nicht mit einem Menschen</li>
                 <li>Die Antworten werden <strong>automatisch erzeugt</strong> und in der App als KI-Inhalt gekennzeichnet</li>
+                <li>Zusätzlich kennzeichnen wir KI-Inhalte <strong>maschinenlesbar</strong>: in den Antworten unseres KI-Servers und in Mindmap-Bildern, die Sie in der Web-App exportieren</li>
                 <li>Die KI hat <strong>kein echtes Verständnis</strong> der Inhalte</li>
               </ul>
               <p>
@@ -238,7 +222,7 @@ export default function NutzungsbedingungenPage() {
               <strong>Durch Nutzung von WISSN bestätigen Sie, diese Nutzungsbedingungen gelesen und verstanden zu haben.</strong>
             </p>
             <p>
-              Letzte Aktualisierung: 1. Oktober 2026 (Version 3.0: Anbieter Wissn-AI GbR, schulische und private Nutzung, Altersregel, KI über Google Cloud Vertex AI in der EU, keine Benotung durch KI)
+              Letzte Aktualisierung: 5. November 2026 (Korrektur zugunsten der Nutzer, ohne neue Zustimmung: Haftung in 5.3 und 6 neu gefasst. In 5.2 Rückmeldungen zum Üben statt „keine Bewertung“ und Verwendungsverbot für Noten, das für Schulen schon im Auftragsverarbeitungsvertrag steht). 4. November 2026 (Firmenname einheitlich Wissn-AI GbR, App Store und Google Play im Geltungsbereich, maschinenlesbare KI-Kennzeichnung). Version 3.0 vom 1. Oktober 2026: Anbieter Wissn-AI GbR, schulische und private Nutzung, Altersregel, KI über Google Cloud Vertex AI in der EU, keine Benotung durch KI
             </p>
           </div>
         </div>
