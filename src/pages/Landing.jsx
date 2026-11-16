@@ -3,7 +3,7 @@ import Layout, { useSEO } from '../components/Layout'
 import HeroDemo from '../components/HeroDemo'
 import Reveal from '../components/Reveal'
 import IpadFrame from '../components/IpadFrame'
-import AppStoreBadge from '../components/AppStoreBadge'
+import AppStoreBadge, { GooglePlayBadge } from '../components/AppStoreBadge'
 import {
   ArrowRight, BrainCircuit, MessageSquare, FileText,
   Map, BookOpen, BarChart3, Users,
@@ -294,8 +294,9 @@ function ProductShowcase() {
           <p className="text-lg text-slate-500 leading-relaxed">
             Erste Pilotschulen arbeiten bereits mit Wissn.
           </p>
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
             <AppStoreBadge />
+            <GooglePlayBadge />
           </div>
         </Reveal>
 
@@ -397,7 +398,7 @@ function TeamPreview() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
           {[
             { photo: '/team/laurens-samberg.png', name: 'Laurens Samberg', role: 'Co-Founder & CTO' },
-            { photo: '/team/felix-maurer.png', name: 'Felix Maurer', role: 'Co-Founder & CMO' },
+            { photo: '/team/felix-maurer.png', name: 'Felix Maurer', role: 'Co-Founder & CEO' },
             { photo: '/team/anton-schoepe.png', name: 'Anton Schoepe', role: 'Advisor' },
           ].map(({ photo, name, role }, i) => (
             <Reveal key={name} direction={i % 2 === 0 ? 'left' : 'right'} delay={(i % 3) * 100}>

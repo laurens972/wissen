@@ -13,7 +13,7 @@ const team = [
   {
     photo: '/team/felix-maurer.png',
     name: 'Felix Maurer',
-    role: 'Co-Founder & CMO',
+    role: 'Co-Founder & CEO',
     bio: '18 Jahre, Schüler am BSZ Meißen mit Leistungskurs Informations- und Kommunikationstechnik. Erfahrung im Social-Media-Management und ein großes Netzwerk durch sportliches und soziales Engagement. Aktiv im YFN Chapter Sachsen. Verantwortlich für Marketing und Community.',
     linkedin: 'https://linkedin.com/in/felix-maurer-431562373',
   },

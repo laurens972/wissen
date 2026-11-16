@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConsent } from '../context/ConsentContext'
 import WissnLogo from './WissnLogo'
-import AppStoreBadge from './AppStoreBadge'
+import AppStoreBadge, { GooglePlayBadge } from './AppStoreBadge'
 import { Search, Menu, X, ArrowRight } from 'lucide-react'
 
 /* SEO Hook */
@@ -113,8 +113,9 @@ export function Footer() {
               Die KI-gestützte Lernplattform für Schulen. Chat-Tutor, Mindmaps
               und Karteikarten, gemacht für Schüler und Lehrkräfte.
             </p>
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap items-center gap-3">
               <AppStoreBadge className="h-11" />
+              <GooglePlayBadge className="h-11" />
             </div>
             <div className="flex items-center gap-4 mt-5">
               <a href="https://instagram.com/wissn.de" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="Instagram">
