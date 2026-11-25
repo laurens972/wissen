@@ -37,7 +37,7 @@ export default function DatenschutzPage() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
             Datenschutzerklärung
           </h1>
-          <p className="text-sm text-slate-500 mb-10">Stand: Oktober 2026</p>
+          <p className="text-sm text-slate-500 mb-10">Stand: November 2026</p>
 
           <div className="prose prose-slate max-w-none space-y-8 text-slate-600 leading-relaxed">
             {/* Art. 12 Abs. 1 DSGVO verlangt gerade gegenüber Kindern eine klare,
@@ -61,11 +61,11 @@ export default function DatenschutzPage() {
                 <br />
                 Laurens Samberg
                 <br />
-                Eugen-d'Albert-Straße 11
+                Köhlerstraße 90
                 <br />
                 01640 Coswig
                 <br />
-                E-Mail: laurens.samberg@wissn-ai.de
+                E-Mail: datenschutz@wissn-ai.de
               </p>
             </div>
 
@@ -272,7 +272,7 @@ export default function DatenschutzPage() {
                 <li>Recht auf Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
               </ul>
               <p className="mt-3">
-                Zur Ausübung deiner Rechte wende dich bitte an: laurens.samberg@wissn-ai.de
+                Zur Ausübung deiner Rechte wende dich bitte an: datenschutz@wissn-ai.de
               </p>
             </div>
 
