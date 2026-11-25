@@ -23,7 +23,11 @@ export default function ImpressumPage() {
 
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">Kontakt</h2>
-              <p>E-Mail: laurens.samberg@wissn-ai.de<br />Telefon: +49 157 75210572</p>
+              {/* PO-Entscheid 25.11.2026: hier nur die Sammeladresse, keine
+                  persönliche Adresse oder Nummer. § 5 DDG verlangt neben der
+                  E-Mail einen zweiten schnellen Kontaktweg; der steht auf
+                  /kontakt (Telefon). */}
+              <p>E-Mail: kontakt@wissn-ai.de</p>
             </div>
 
             <div>
