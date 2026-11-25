@@ -16,8 +16,11 @@ export default function ImpressumPage() {
             <div>
               <h2 className="text-xl font-semibold text-slate-900 mb-3">Angaben gemäß § 5 DDG</h2>
               {/* Name exakt wie Gewerbeanmeldung und D&B (D-U-N-S 317356035) — Apple prüft,
-                  ob die Website zum Rechtsträger passt. Nicht kürzen oder umformulieren. */}
-              <p>GbR Samberg, Laurens Jacob und Maurer, Felix<br />Geschäftsbezeichnung: Wissn-AI GbR<br />Eugen-d'Albert-Straße 11<br />01640 Coswig</p>
+                  ob die Website zum Rechtsträger passt. Nicht kürzen oder umformulieren.
+                  Geschäftsanschrift seit der Gewerbeummeldung (Stand 25.11.2026):
+                  Köhlerstraße 90. Die Anschrift unter „Verantwortlich für den Inhalt“
+                  ist davon getrennt und bleibt die von Laurens Samberg. */}
+              <p>GbR Samberg, Laurens Jacob und Maurer, Felix<br />Geschäftsbezeichnung: Wissn-AI GbR<br />Köhlerstraße 90<br />01640 Coswig</p>
               <p className="mt-2"><strong>Vertreten durch die Gesellschafter:</strong><br />Laurens Jacob Samberg<br />Felix Maurer</p>
             </div>
 
