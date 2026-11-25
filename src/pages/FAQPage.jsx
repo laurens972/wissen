@@ -6,11 +6,11 @@ import Reveal from '../components/Reveal'
 const faqs = [
   {
     question: 'Was ist Wissn?',
-    answer: 'Wissn ist eine Plattform, die Schulen beim Übergang vom Frontalunterricht zu freien Lernformen wie dem Lernbüro-Konzept begleitet. Schülerinnen und Schüler nutzen schon heute einen sokratischen KI-Tutor mit Quellenangaben aus dem Unterrichtsmaterial, KI-Karteikarten, Quiz, Lückentexte, Mindmaps und individuelle KI-Lernpläne. Lehrkräfte erhalten eine Lernanalyse zum Fortschritt ihrer Klassen. Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen und Lerncoaching entsteht aktuell gemeinsam mit unseren Pilotschulen.',
+    answer: 'Wissn ist eine Plattform, die Schulen beim Übergang vom Frontalunterricht zu freien Lernformen wie dem Lernbüro-Konzept begleitet. Schülerinnen und Schüler nutzen schon heute einen sokratischen KI-Tutor mit Quellenangaben aus dem Unterrichtsmaterial, KI-Karteikarten, Quiz, Lückentexte, Mindmaps und individuelle KI-Lernpläne. Lehrkräfte erhalten eine Lernanalyse zum Fortschritt ihrer Klassen und werden per Hilfe-Ruf gerufen, wenn ein Kind nicht weiterkommt.',
   },
   {
     question: 'Was ist ein Lernbüro?',
-    answer: 'Im Lernbüro lösen sich starre Unterrichtsstunden zugunsten von selbstständiger Arbeit an Lernbausteinen. Fachlehrkräfte verantworten weiterhin Inhalte, Inputs und Bewertung, begleiten die Schüler dabei aber stärker als Lernbegleiter statt als zentrale Wissensvermittler. Am Ende eines Lernbausteins steht meist ein authentisches Lernprodukt. Wissn unterstützt diesen Ansatz schon heute mit KI-Werkzeugen wie Chat-Tutor, Karteikarten und Lernanalyse. Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen und Freiheitsgraden befindet sich in Entwicklung.',
+    answer: 'Im Lernbüro lösen sich starre Unterrichtsstunden zugunsten von selbstständiger Arbeit an Lernbausteinen. Fachlehrkräfte verantworten weiterhin Inhalte, Inputs und Bewertung, begleiten die Schüler dabei aber stärker als Lernbegleiter statt als zentrale Wissensvermittler. Am Ende eines Lernbausteins steht meist ein authentisches Lernprodukt. Wissn unterstützt diesen Ansatz mit Lernplänen für die Arbeit am Lernbaustein, mit Chat-Tutor, Karteikarten und der Lernanalyse für die Lehrkraft.',
   },
   {
     question: 'Ersetzt Wissn die Lehrkraft?',
@@ -21,16 +21,20 @@ const faqs = [
     answer: 'Nein. Viele Schulen starten mit einer Pilotphase in einem einzelnen Fach oder einer Jahrgangsstufe und weiten das Lernbüro-Konzept schrittweise aus, sobald sich das Modell bewährt hat.',
   },
   {
-    question: 'Was ist das Logbuch?',
-    answer: 'Im Logbuch-Konzept dokumentieren Schülerinnen und Schüler ihren Lernfortschritt: welche Lernbausteine bearbeitet wurden, welche Etappen abgeschlossen sind und wie die Reflexion mit dem Lerncoach verlaufen ist. Bei Wissn liefert heute die Lernanalyse für Lehrkräfte einen vergleichbaren Überblick über den Fortschritt einzelner Schüler und Klassen. Ein dediziertes Logbuch für Schülerinnen und Schüler ist Teil des Lernbüro-Moduls, das wir aktuell mit unseren Pilotschulen entwickeln.',
+    question: 'Ersetzt Wissn Logbuch und Coaching-Gespräche?',
+    answer: 'Nein. Logbuch, Coaching-Gespräche und Freiheitsgrade führt jede Schule so, wie es zu ihrem Konzept passt. Wissn liefert die Lernwerkzeuge für die Arbeit am Lernbaustein: Lernplan, KI-Tutor und Übungen. Die Lernanalyse zeigt der Lehrkraft den Stand ihrer Klasse und ist eine gute Grundlage für das Coaching-Gespräch.',
   },
   {
-    question: 'Was sind Freiheitsgrade?',
-    answer: 'Freiheitsgrade regeln, wie viel Entscheidungsspielraum ein Schüler beim Lernen hat, etwa bei Reihenfolge, Tempo oder Arbeitsort. Sie werden zwischen Schüler und Lerncoach vereinbart und wachsen mit zunehmender Selbstständigkeit von Stufe 1 bis 3. Dieses Konzept ist Teil des Lernbüro-Moduls, das wir gemeinsam mit Pilotschulen entwickeln. Heute unterstützt Wissn selbstständiges Arbeiten bereits mit KI-Lernplänen, die individuelles Tempo und Fortschritt berücksichtigen.',
+    question: 'Sieht die Lehrkraft, was ein Kind den KI-Tutor fragt?',
+    answer: 'Nein. Die Lehrkraft sieht den Lernstand je Thema, den Lernweg je Schwerpunkt, die Ergebnisse aus dem Quiz und offene Hilfe-Rufe. Die Gespräche mit dem KI-Tutor liest sie nicht.',
+  },
+  {
+    question: 'Welche Lernhilfen gibt es für Kinder mit Förderbedarf?',
+    answer: 'Antworten, Material und die Aufgaben der Probeklausur lassen sich vorlesen, Tempo und Stimme stellt jedes Kind selbst ein. Fragen an den Tutor gehen auch als Sprachnachricht, und der Tutor antwortet in der Sprache, die im Profil eingestellt ist. Der Lernplan teilt den Stoff in einzelne Schwerpunkte. Die Lernhilfen stehen allen offen, kein Kind wird in der App als Förderkind markiert.',
   },
   {
     question: 'Wie unterstützt Wissn bei Tests und Klassenarbeiten?',
-    answer: 'Lehrkräfte können Tests in Wissn ankündigen und dabei die inhaltlichen Schwerpunkte festlegen. Schülerinnen und Schüler bereiten sich mit einer KI-gestützten Voranalyse gezielt auf diese Schwerpunkte vor. Durchführung und Benotung laufen weiterhin klassisch über die Lehrkraft. Wissn ersetzt keine Prüfungssituation, sondern unterstützt die Vorbereitung darauf. Ein Modul für selbstständige Etappen-Tests im Lernbüro-Format befindet sich in Entwicklung.',
+    answer: 'Lehrkräfte können Tests in Wissn ankündigen und dabei die inhaltlichen Schwerpunkte festlegen. Schülerinnen und Schüler bereiten sich gezielt auf diese Schwerpunkte vor, zum Beispiel mit einer Probeklausur zum Üben. Durchführung und Benotung der echten Arbeit laufen weiterhin klassisch über die Lehrkraft.',
   },
   {
     question: 'Für welche Klassenstufen ist Wissn geeignet?',
@@ -42,11 +46,11 @@ const faqs = [
   },
   {
     question: 'Wie sieht es mit Datenschutz aus?',
-    answer: 'Wissn ist DSGVO-konform gebaut: KI-Anfragen laufen über einen EU-Proxy, alle Daten werden auf Servern in der EU gespeichert. Für minderjährige Schülerinnen und Schüler holen wir die Einwilligung der Eltern nach Art. 8 DSGVO ein. Details findest du in unserer Datenschutzerklärung.',
+    answer: 'Wissn ist DSGVO-konform gebaut. Die Daten liegen in Frankfurt. Die KI stammt von Google und läuft über Google Cloud innerhalb der EU. Name, E-Mail-Adresse und Schule eines Kindes gehen nicht an die KI, und Google nutzt die Eingaben nicht zum Training seiner Modelle. Für minderjährige Schülerinnen und Schüler holen wir die Einwilligung der Eltern nach Art. 8 DSGVO ein. Details findest du in unserer Datenschutzerklärung.',
   },
   {
     question: 'Welche Fächer und Inhalte deckt Wissn ab?',
-    answer: 'Der KI-Tutor unterstützt bei den gängigen Schulfächern und arbeitet mit den Unterrichtsmaterialien, die Fachlehrkräfte hochladen, etwa als PDF, Word- oder PowerPoint-Datei. Aus diesen Materialien erstellt die KI Karteikarten, Quiz, Lückentexte und Mindmaps und zitiert bei Antworten die passenden Quellen.',
+    answer: 'Der KI-Tutor unterstützt bei den gängigen Schulfächern und arbeitet in erster Linie mit den Unterrichtsmaterialien, die Fachlehrkräfte hochladen, etwa als PDF, Word- oder PowerPoint-Datei. Schülerinnen und Schüler können zusätzlich eigene Unterlagen hochladen. Aus diesen Materialien erstellt die KI Karteikarten, Quiz, Lückentexte und Mindmaps und zitiert bei Antworten die passenden Quellen.',
   },
   {
     question: 'Wie starte ich mit Wissn an meiner Schule?',

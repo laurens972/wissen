@@ -9,7 +9,9 @@ import {
   Map, BookOpen, BarChart3, Users,
   GraduationCap, School, ChevronLeft, ChevronRight,
   ShieldCheck, Server, ListChecks,
+  BellRing, ClipboardCheck, Volume2,
 } from 'lucide-react'
+import Lernhilfen from '../components/Lernhilfen'
 
 /* Hero */
 function Hero() {
@@ -32,15 +34,16 @@ function Hero() {
               style={{ animationDelay: '0s' }}
             />
 
-            <h1 className="hero-animate text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6" style={{ animationDelay: '0.3s' }}>
-              Wir modernisieren{' '}
-              <span className="marker-green">das Lernen</span>.
+            <h1 className="hero-animate text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight mb-6" style={{ animationDelay: '0.3s' }}>
+              KI für die Schule, bei der die Lehrkraft{' '}
+              <span className="marker-green">den Überblick behält</span>.
             </h1>
 
             <p className="hero-animate text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0" style={{ animationDelay: '0.45s' }}>
-              Wissn begleitet Schulen und Unternehmen beim Übergang zu freien
-              Lernformen, mit KI-Werkzeugen für selbstständiges Lernen und
-              echter Übersicht für Lernbegleiter.
+              Schülerinnen und Schüler lernen mit dem Material aus dem eigenen
+              Unterricht, im eigenen Tempo und mit Lernhilfen für alle. Die
+              Lehrkraft sieht je Thema den Lernstand und wird gerufen, wenn
+              jemand Hilfe braucht.
             </p>
 
             <div className="hero-animate flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4" style={{ animationDelay: '0.6s' }}>
@@ -49,7 +52,7 @@ function Hero() {
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-wissn-green-btn text-white font-semibold text-lg hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
               >
                 <School className="w-5 h-5" />
-                Gespräch vereinbaren
+                Pilot anfragen
               </a>
               <a
                 href="/so-funktionierts"
@@ -75,7 +78,7 @@ function Hero() {
 function TrustBar() {
   const items = [
     { icon: ShieldCheck, label: 'DSGVO-konform' },
-    { icon: Server, label: 'Server in der EU' },
+    { icon: Server, label: 'Daten in der EU gespeichert' },
     { icon: GraduationCap, label: 'Ab Klasse 5 einsetzbar' },
     { icon: Users, label: 'Für Schüler, Lehrkräfte und Schulleitung' },
   ]
@@ -92,6 +95,20 @@ function TrustBar() {
             </Reveal>
           ))}
         </ul>
+        {/* Partnerschule: öffentlich genannt wird nur, wer zugestimmt hat. */}
+        <Reveal direction="up" className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left">
+          <img
+            src="/partner/evangelische-schule-coswig.jpg"
+            alt="Logo der Evangelischen Schule Coswig"
+            className="h-24 w-auto"
+            loading="lazy"
+          />
+          <p className="text-base text-slate-600 leading-relaxed max-w-md">
+            <span className="block text-xs uppercase tracking-widest text-wissn-green font-semibold mb-1">Partnerschule</span>
+            Wir entwickeln Wissn im Schulalltag weiter, gemeinsam mit der
+            Evangelischen Schule Coswig.
+          </p>
+        </Reveal>
       </div>
     </section>
   )
@@ -100,9 +117,9 @@ function TrustBar() {
 /* Problem Section */
 function ProblemSection() {
   const problems = [
-    { icon: Users, title: 'Individuelle Lernwege für jeden', text: 'Die Lehrkraft lädt ihr Material hoch, die KI macht daraus Lernpläne, Karteikarten, Quiz, Lückentexte und Mindmaps. Der sokratische Chat-Tutor hilft mit Rückfragen und zitiert aus dem eigenen Unterrichtsstoff. So lernen alle im eigenen Tempo statt im Takt der ganzen Klasse.', href: '/fuer-schulen' },
+    { icon: BarChart3, title: 'Die Lehrkraft behält den Überblick', text: 'Die Lernanalyse zeigt je Thema und Schwerpunkt, wie weit die Klasse ist und wer Unterstützung braucht. Braucht ein Kind sofort Hilfe, ruft es die Lehrkraft per Knopfdruck. Die Gespräche mit dem KI-Tutor liest die Lehrkraft nicht.', href: '/fuer-schulen#lehrkraft' },
+    { icon: Users, title: 'Individuelle Lernwege für jeden', text: 'Das Material kommt in erster Linie von der Lehrkraft, eigene Unterlagen können Schülerinnen und Schüler zusätzlich hochladen. Die KI macht daraus Lernpläne, Karteikarten, Quiz, Probeklausuren und Mindmaps. Der sokratische Chat-Tutor hilft mit Rückfragen und zitiert aus dem eigenen Unterrichtsstoff. So lernen alle im eigenen Tempo statt im Takt der ganzen Klasse.', href: '/fuer-schulen' },
     { icon: ListChecks, title: 'Organisation digital statt auf Papier', text: 'Lernpläne, Materialien und Lernstände laufen an einem Ort zusammen, statt in Ordnern und auf Zetteln zu verschwinden. Was die Idee freier Lernformen sonst an Organisation auffrisst, erledigt Wissn im Hintergrund.', href: '/so-funktionierts' },
-    { icon: BarChart3, title: 'Entlastung und Überblick für Lehrkräfte', text: 'Das Fortschritts-Dashboard und die Lernanalyse zeigen pro Thema und Schüler, wo es gerade hakt. Lehrkräfte sehen auf einen Blick, wer Unterstützung braucht, und setzen ihre Zeit gezielt dort ein, statt für alle das Gleiche zu wiederholen.', href: '/features' },
   ]
 
   return (
@@ -147,15 +164,48 @@ function ProblemSection() {
   )
 }
 
+/* Inklusion: Lernhilfen, die jedes Kind selbst einschaltet */
+function InklusionSection() {
+  return (
+    <section id="inklusion" className="scroll-mt-28 py-14 lg:py-20 bg-slate-50 border-y border-slate-100">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal direction="up" className="max-w-2xl mb-12">
+          <p className="text-xs uppercase tracking-widest text-wissn-green font-semibold mb-3">Inklusion</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+            Lernhilfen für Kinder, die mehr Unterstützung brauchen
+          </h2>
+          <p className="text-lg text-slate-500 leading-relaxed">
+            Manche Kinder lesen langsamer, schreiben ungern oder lernen Deutsch
+            als zweite Sprache. Gemeinsam mit Schulen bauen wir Lernhilfen ein,
+            die Kindern mit Lese-Rechtschreib-Schwäche oder Lernschwierigkeiten
+            den Zugang zum Stoff erleichtern sollen.
+          </p>
+        </Reveal>
+        <Lernhilfen />
+        <div className="mt-8">
+          <a href="/fuer-schulen#inklusion" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-wissn-green font-semibold hover:bg-wissn-green-50 transition-colors no-underline">
+            Mehr zur Inklusion mit Wissn
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 /* Features Preview */
 function FeaturesPreview() {
+  // Reihenfolge mit Absicht: erst, was die Lehrkraft bekommt, dann die Lernwerkzeuge.
   const features = [
+    { icon: BarChart3, title: 'Lernanalyse', description: 'Lehrkräfte sehen je Thema und Schwerpunkt, wie weit die Klasse ist und wer Unterstützung braucht.', slug: 'analytics' },
+    { icon: BellRing, title: 'Hilfe-Ruf', description: 'Ein Kind kommt nicht weiter und ruft per Knopfdruck die Lehrkraft.', slug: 'hilfe-ruf' },
     { icon: MessageSquare, title: 'Chat-Tutor', description: 'Sokratischer KI-Tutor, der mit Quellen-Zitaten aus dem eigenen Unterrichtsmaterial antwortet.', slug: 'chat-tutor' },
+    { icon: ListChecks, title: 'KI-Lernpläne', description: 'Personalisierte Lernpläne mit abhakbarem Fortschritt: die Grundlage für selbstständiges Arbeiten.', slug: 'lernplaene' },
+    { icon: ClipboardCheck, title: 'Probeklausur', description: 'Übungsklausur über die Schwerpunkte des eigenen Lernplans, mit Rückmeldung zu jeder Antwort.', slug: 'karteikarten-quiz' },
     { icon: BookOpen, title: 'Karteikarten & Quiz', description: 'KI-generiert aus den eigenen Materialien, inklusive Lückentexten für den Selbstcheck.', slug: 'karteikarten-quiz' },
     { icon: Map, title: 'Interaktive Mindmaps', description: 'Visuelle Zusammenfassungen, die komplexe Themen auf einen Blick begreifbar machen.', slug: 'mindmaps' },
-    { icon: FileText, title: 'Dokumenten-Analyse', description: 'PDF, Word oder PowerPoint hochladen. Die KI strukturiert die Inhalte automatisch.', slug: 'dokumenten-analyse' },
-    { icon: ListChecks, title: 'KI-Lernpläne', description: 'Personalisierte Lernpläne mit abhakbarem Fortschritt: die Grundlage für selbstständiges Arbeiten.', slug: 'lernplaene' },
-    { icon: BarChart3, title: 'Lernanalyse', description: 'Lehrkräfte sehen pro Thema und Schüler, wo es hakt: die Grundlage für gezielte Begleitung.', slug: 'analytics' },
+    { icon: FileText, title: 'Material hochladen', description: 'Die Lehrkraft stellt das Material bereit, Lernende laden zusätzlich eigene Unterlagen hoch: PDF, Word, PowerPoint oder ein Foto vom Arbeitsblatt.', slug: 'dokumenten-analyse' },
+    { icon: Volume2, title: 'Lernhilfen', description: 'Vorlesen im eigenen Tempo, Sprachnachrichten und Antworten in der eigenen Sprache.', slug: 'lernhilfen' },
   ]
 
   return (
@@ -207,7 +257,7 @@ function FeaturesPreview() {
 /* How it works Preview */
 function HowItWorksPreview() {
   const steps = [
-    { num: '01', title: 'Materialien hochladen', text: 'Die Lehrkraft lädt ihre Materialien hoch. Die KI analysiert Inhalte automatisch.' },
+    { num: '01', title: 'Materialien hochladen', text: 'Die Lehrkraft lädt ihre Materialien hoch, Lernende ergänzen bei Bedarf eigene Unterlagen. Die KI analysiert die Inhalte automatisch.' },
     { num: '02', title: 'KI erstellt Lernwerkzeuge', text: 'Aus den Materialien entstehen Lernpläne, Karteikarten, Quiz und Mindmaps.' },
     { num: '03', title: 'Selbstständig arbeiten', text: 'Lernende arbeiten im eigenen Tempo, der Chat-Tutor hilft mit Quellen, der Fortschritt bleibt sichtbar.' },
     { num: '04', title: 'Begleiten statt dozieren', text: 'Die Lernanalyse zeigt, wer Unterstützung braucht. Die Lehrkraft wird zum Lernbegleiter.' },
@@ -267,7 +317,7 @@ function ProductShowcase() {
 
   const lehrerScreens = [
     { title: 'Lehrer-Dashboard', description: 'Klassen, Materialien und Lernstände im Überblick.', image: '/screenshots/lehrer/dashboard.webp', alt: 'Lehrer-Dashboard mit Klassen, Materialien und Schülerzahl und dem Einstieg in die Lernanalyse' },
-    { title: 'Klassenverwaltung', description: 'Lerngruppen per Join-Code oder QR erstellen und verwalten.', image: '/screenshots/lehrer/klassen.webp', alt: 'Klassenübersicht mit Anzahl der Fächer und Status pro Klasse' },
+    { title: 'Klassenverwaltung', description: 'Alle Klassen der Schule im Überblick, mit Fächern und Status.', image: '/screenshots/lehrer/klassen.webp', alt: 'Klassenübersicht mit Anzahl der Fächer und Status pro Klasse' },
     { title: 'Fächer', description: 'Fächer pro Klasse verwalten, als Pflichtfach für alle oder gezielt einzelnen Schülern zugewiesen.', image: '/screenshots/lehrer/faecher.webp', alt: 'Fächerverwaltung einer Klasse mit Pflichtfächern und Menü zum Zuweisen von Schülern' },
     { title: 'Materialien', description: 'Unterrichtsmaterial hochladen und nach Klasse und Fach organisieren, mit Sichtbarkeit pro Datei.', image: '/screenshots/lehrer/materialien.webp', alt: 'Materialverwaltung mit Dateien nach Klasse und Fach, Status und Sichtbarkeit' },
     { title: 'Test ankündigen', description: 'Tests ankündigen und Schwerpunkte festlegen. Die KI bereitet die Materialien auf.', image: '/screenshots/lehrer/test-ankuendigen.webp', alt: 'Formular zum Ankündigen eines Tests mit Thema, Datum, Schwerpunkten und Dateien' },
@@ -292,7 +342,8 @@ function ProductShowcase() {
             So sieht Wissn in Aktion aus
           </h2>
           <p className="text-lg text-slate-500 leading-relaxed">
-            Erste Pilotschulen arbeiten bereits mit Wissn.
+            Im Einsatz an unserer Partnerschule, der Evangelischen Schule
+            Coswig, und an weiteren Pilotschulen.
           </p>
           <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
             <AppStoreBadge />
@@ -445,15 +496,16 @@ function CTA() {
               Bereit für den nächsten Schritt?
             </Reveal>
             <Reveal direction="up" delay={200} as="p" className="text-lg text-slate-400 leading-relaxed mb-10 max-w-xl mx-auto">
-              Ob einzelne Klasse oder ganze Organisation: Wir begleiten Schulen
-              und Unternehmen beim Übergang zu freien Lernformen, Schritt für Schritt.
+              Ob einzelne Klasse oder ganze Schule: Wir starten mit einer
+              Pilotphase in einem Fach oder einer Klasse und begleiten Ihr
+              Kollegium Schritt für Schritt.
             </Reveal>
             <Reveal direction="up" delay={300} className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="/kontakt"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-wissn-green-btn text-white font-semibold text-lg hover:bg-wissn-green-dark active:scale-[0.98] transition-all no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
               >
-                Gespräch vereinbaren
+                Pilot anfragen
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
@@ -475,7 +527,7 @@ function CTA() {
 export default function Landing() {
   useSEO({
     title: null,
-    description: 'Wissn begleitet Schulen und Unternehmen beim Übergang vom Frontalunterricht zu freien Lernformen. Chat-Tutor mit Quellen, KI-Lernpläne, Karteikarten, Quiz, Mindmaps und Lernanalyse, auf einer Plattform.',
+    description: 'Wissn ist die KI-Lernplattform für Schulen: Schülerinnen und Schüler lernen mit dem Material aus dem eigenen Unterricht, Lehrkräfte sehen je Thema den Lernstand und werden gerufen, wenn jemand Hilfe braucht. Mit Lernhilfen für Inklusion.',
   })
 
   return (
@@ -483,6 +535,7 @@ export default function Landing() {
       <Hero />
       <TrustBar />
       <ProblemSection />
+      <InklusionSection />
       <FeaturesPreview />
       <HowItWorksPreview />
       <ProductShowcase />

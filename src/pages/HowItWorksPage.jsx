@@ -11,8 +11,9 @@ const steps = [
     number: '01',
     icon: Upload,
     title: 'Materialien hochladen',
-    description: 'Die Lehrkraft lädt vorhandenes Unterrichtsmaterial hoch. Die KI analysiert und strukturiert es automatisch.',
+    description: 'Das Material kommt in erster Linie von der Lehrkraft: Sie lädt ihr vorhandenes Unterrichtsmaterial hoch. Die KI analysiert und strukturiert es automatisch.',
     details: [
+      'Schülerinnen und Schüler können zusätzlich eigene Unterlagen hochladen',
       'PDF, DOCX und PPTX werden direkt verarbeitet',
       'KI erkennt Inhalte, Struktur und zentrale Themen',
       'Fachliche Verantwortung bleibt bei der Lehrkraft',

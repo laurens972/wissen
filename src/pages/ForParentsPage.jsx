@@ -20,8 +20,8 @@ const points = [
   },
   {
     icon: Lock,
-    title: 'KI-Anfragen laufen über einen EU-Proxy',
-    description: 'Die Daten Ihres Kindes werden DSGVO-konform in der EU verarbeitet und nicht an Dritte weitergegeben.',
+    title: 'KI-Verarbeitung innerhalb der EU',
+    description: 'Die Daten Ihres Kindes liegen in Frankfurt. Die KI stammt von Google und läuft innerhalb der EU. Name, E-Mail-Adresse und Schule Ihres Kindes gehen nicht an die KI, und Google nutzt die Eingaben nicht zum Training seiner Modelle.',
   },
 ]
 
@@ -96,7 +96,7 @@ export default function ForParentsPage() {
             </li>
             <li className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-wissn-green" aria-hidden="true" />
-              Server in der EU
+              Daten in der EU gespeichert
             </li>
             <li className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-wissn-green" aria-hidden="true" />

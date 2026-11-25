@@ -8,7 +8,7 @@ import { Search, Menu, X, ArrowRight } from 'lucide-react'
 /* SEO Hook */
 export function useSEO({ title, description }) {
   useEffect(() => {
-    document.title = title ? `${title} | Wissn` : 'Wissn. Weil du\'s Wissn willst'
+    document.title = title ? `${title} | Wissn` : 'Wissn | KI für die Schule mit Überblick für Lehrkräfte'
     const meta = document.querySelector('meta[name="description"]')
     if (meta && description) meta.setAttribute('content', description)
   }, [title, description])
@@ -110,8 +110,9 @@ export function Footer() {
           <div className="md:col-span-2">
             <WissnLogo size={36} />
             <p className="text-slate-400 mt-4 max-w-sm leading-relaxed text-sm">
-              Die KI-gestützte Lernplattform für Schulen. Chat-Tutor, Mindmaps
-              und Karteikarten, gemacht für Schüler und Lehrkräfte.
+              Die KI-Lernplattform für Schulen. Schülerinnen und Schüler
+              lernen mit dem Material aus dem Unterricht, Lehrkräfte behalten
+              den Überblick.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <AppStoreBadge className="h-11" />

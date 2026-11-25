@@ -51,8 +51,8 @@ export default function AboutPage() {
             <Reveal direction="up" delay={200}>
               <p className="text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto">
                 Wir begleiten Schulen auf dem Weg vom Frontalunterricht zu freien Lernformen,
-                mit KI-Werkzeugen für Lernen und Lernanalyse, die im Schulalltag wirklich ankommen, und einem
-                Lernbüro-Modul, das wir gemeinsam mit unseren Pilotschulen entwickeln.
+                mit KI-Werkzeugen für Lernen und Lernanalyse, die im Schulalltag wirklich ankommen. Wir entwickeln
+                sie gemeinsam mit unserer Partnerschule, der Evangelischen Schule Coswig, und weiteren Pilotschulen.
               </p>
             </Reveal>
           </div>
@@ -107,8 +107,8 @@ export default function AboutPage() {
                   <strong className="text-slate-900">Unsere Lösung:</strong> Wissn begleitet Schulen bei genau diesem Übergang. Fachlehrkräfte
                   laden ihr Unterrichtsmaterial hoch, ein KI-Tutor unterstützt Schülerinnen und Schüler mit sokratischen Dialogen,
                   Quellenangaben, Karteikarten, Quiz und Mindmaps, und KI-Lernpläne begleiten den individuellen Fortschritt. Die Lernanalyse
-                  gibt Lehrkräften die Grundlage für Feedback und Förderung. Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen und
-                  Freiheitsgraden entsteht aktuell gemeinsam mit unseren Pilotschulen.
+                  gibt Lehrkräften die Grundlage für Feedback und Förderung. Lernhilfen wie Vorlesen im eigenen Tempo und
+                  Sprachnachrichten sollen den Stoff auch für Kinder zugänglich machen, die mehr Unterstützung brauchen.
                 </p>
               </Reveal>
               <Reveal direction="left">
@@ -149,12 +149,6 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
-          <Reveal direction="up" delay={300}>
-            <p className="text-sm text-slate-500 leading-relaxed text-center max-w-2xl mx-auto mt-10">
-              Das dedizierte Lernbüro-Modul mit Logbuch, Lernbausteinen, Lerncoaching und Freiheitsgraden ist unsere
-              nächste große Ausbaustufe. Wir entwickeln es gemeinsam mit unseren Pilotschulen.
-            </p>
-          </Reveal>
         </div>
       </section>
 

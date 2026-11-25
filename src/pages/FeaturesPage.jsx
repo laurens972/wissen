@@ -3,8 +3,7 @@ import Reveal from '../components/Reveal'
 import IpadFrame from '../components/IpadFrame'
 import {
   MessageSquare, BookOpen, BrainCircuit, FileText, ListChecks, BarChart3,
-  ArrowRight, Check,
-  CalendarDays, Milestone, ClipboardList, SlidersHorizontal,
+  ArrowRight, Check, BellRing, Volume2,
 } from 'lucide-react'
 
 const features = [
@@ -26,14 +25,14 @@ const features = [
     icon: BookOpen,
     slug: 'karteikarten-quiz',
     eyebrow: 'Üben',
-    title: 'Karteikarten, Quiz und Lückentexte automatisch aus deinen Materialien',
+    title: 'Karteikarten, Quiz und Probeklausur automatisch aus deinen Materialien',
     image: '/screenshots/schueler/karteikarten.webp',
     alt: 'Eine KI-Karteikarte mit Quellenhinweis aufs Dokument und dem Hinweis, wie viele Karten die KI ergänzt hat',
     description: 'Aus den Materialien deines Fachs erstellt die KI passende Übungen. So wiederholst du aktiv, statt nur zu lesen, und siehst sofort, was schon sitzt und was du noch üben solltest.',
     details: [
       'Karteikarten entstehen automatisch aus den Inhalten deines Fachs. Ergänzt die KI etwas, steht das offen dabei',
       'Quiz- und Lückentext-Übungen zum aktiven Wiederholen',
-      'Übe in deinem Tempo und behalte deinen Lernstand im Blick',
+      'Probeklausur über die Schwerpunkte deines Lernplans, mit Rückmeldung zu jeder Antwort. Die Aufgaben lassen sich vorlesen',
     ],
   },
   {
@@ -57,9 +56,10 @@ const features = [
     title: 'Dokumente hochladen, die KI strukturiert die Inhalte',
     image: '/screenshots/lehrer/materialien.webp',
     alt: 'Hochgeladene Materialien werden nach Klasse und Fach verwaltet, mit Status und Sichtbarkeit',
-    description: 'Lade PDF-, Word- oder PowerPoint-Dateien hoch. Die KI analysiert sie, strukturiert die Inhalte und macht sie durchsuchbar, die Grundlage für Karteikarten, Quiz und alle weiteren Lernwerkzeuge.',
+    description: 'Lade PDF-, Word- oder PowerPoint-Dateien hoch oder fotografiere ein Arbeitsblatt. Die KI analysiert das Material, strukturiert die Inhalte und macht sie durchsuchbar, die Grundlage für Karteikarten, Quiz und alle weiteren Lernwerkzeuge.',
     details: [
-      'Unterstützt PDF-, Word- und PowerPoint-Dateien',
+      'Das meiste Material stellt deine Lehrkraft bereit, eigene Unterlagen lädst du zusätzlich hoch',
+      'Unterstützt PDF-, Word- und PowerPoint-Dateien sowie Fotos',
       'Die KI strukturiert die Inhalte und macht sie durchsuchbar',
       'Aus den analysierten Dokumenten entstehen direkt Übungen und Lernmaterial',
     ],
@@ -79,6 +79,33 @@ const features = [
     ],
   },
   {
+    // Inklusion. Ausführliche Liste: src/components/Lernhilfen.jsx (Startseite, Für Schulen).
+    icon: Volume2,
+    slug: 'lernhilfen',
+    eyebrow: 'Lernhilfen',
+    title: 'Vorlesen, Sprechen und die eigene Sprache',
+    description: 'Nicht jeder liest und schreibt gleich schnell. Deshalb lässt sich in Wissn vieles anhören und einsprechen. Die Lernhilfen stehen allen offen, jede und jeder schaltet sie selbst ein.',
+    details: [
+      'Antworten, Material und Aufgaben vorlesen lassen, Tempo und Stimme stellst du selbst ein',
+      'Fragen an den Tutor als Sprachnachricht stellen statt zu tippen',
+      'Der Tutor antwortet in der Sprache, die du im Profil einstellst',
+    ],
+  },
+  {
+    icon: BellRing,
+    slug: 'hilfe-ruf',
+    eyebrow: 'Hilfe-Ruf',
+    title: 'Per Knopfdruck die Lehrkraft rufen',
+    image: '/screenshots/schueler/hilfe.webp',
+    alt: 'Auswahl „Wie möchtest du Hilfe bekommen?“ mit Lehrkraft rufen oder erst mit dem Lern-Buddy reden',
+    description: 'Kommst du nicht weiter, holst du dir Hilfe: zuerst beim KI-Tutor oder direkt bei deiner Lehrkraft. Sie sieht deinen Ruf und kommt zu dir, ohne dass du dich vor der Klasse melden musst.',
+    details: [
+      'Ein Knopfdruck reicht, um die Lehrkraft zu rufen',
+      'Oder erst mit dem Lern-Buddy reden, dem KI-Tutor',
+      'Die Lehrkraft sieht alle offenen Rufe ihrer Klasse auf einen Blick',
+    ],
+  },
+  {
     icon: BarChart3,
     slug: 'analytics',
     eyebrow: 'Lernanalyse',
@@ -90,37 +117,15 @@ const features = [
       'Drill-down von Fach über Thema bis zum Verständnis einzelner Schülerinnen und Schüler',
       'Erkenne früh, wo eine Gruppe hakt, und setze deine Zeit gezielt ein',
       'Fundierte Gesprächsgrundlage, statt sich auf ein Bauchgefühl zu verlassen',
+      'Die Gespräche mit dem KI-Tutor liest die Lehrkraft nicht',
     ],
-  },
-]
-
-const roadmap = [
-  {
-    icon: CalendarDays,
-    title: 'Logbuch mit Wochenplanung',
-    text: 'Ein digitales Logbuch, in dem Schülerinnen und Schüler ihre Woche planen und ihren Lernprozess festhalten.',
-  },
-  {
-    icon: Milestone,
-    title: 'Lernbausteine mit Etappen',
-    text: 'Fachinhalte als selbstständig bearbeitbare Bausteine, unterteilt in Etappen mit Materialien und Zielen.',
-  },
-  {
-    icon: ClipboardList,
-    title: 'Coaching-Dokumentation',
-    text: 'Werkzeuge, um wöchentliche Reflexionsgespräche vorzubereiten, zu dokumentieren und Vereinbarungen festzuhalten.',
-  },
-  {
-    icon: SlidersHorizontal,
-    title: 'Freiheitsgrade',
-    text: 'Abgestufte Entscheidungsspielräume, die sich an der wachsenden Selbstständigkeit der Lernenden orientieren.',
   },
 ]
 
 export default function FeaturesPage() {
   useSEO({
     title: 'Features',
-    description: 'Die Funktionen von Wissn: Chat-Tutor mit sokratischem Modus und Quellen-Zitaten, KI-Karteikarten, Quiz und Lückentexte, interaktive Mindmaps, Dokumenten-Analyse, personalisierte Lernpläne und Lernanalyse für Lehrkräfte.',
+    description: 'Die Funktionen von Wissn: Chat-Tutor mit sokratischem Modus und Quellen-Zitaten, KI-Karteikarten, Quiz und Probeklausur, interaktive Mindmaps, personalisierte Lernpläne, Vorlesen und Sprachnachrichten, Hilfe-Ruf und Lernanalyse für Lehrkräfte.',
   })
 
   return (
@@ -150,7 +155,8 @@ export default function FeaturesPage() {
               'Karteikarten, Quiz und Lückentexte',
               'Interaktive Mindmaps',
               'KI-Lernpläne mit Fortschritt',
-              'Lernanalyse für Lehrkräfte',
+              'Vorlesen und Sprachnachrichten',
+              'Lernanalyse und Hilfe-Ruf für Lehrkräfte',
             ].map((tag) => (
               <li
                 key={tag}
@@ -212,36 +218,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Roadmap: Lernbüro-Modul in Entwicklung */}
-      <section className="py-16 lg:py-24 bg-wissn-green-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal direction="up" className="max-w-2xl mb-12">
-            <p className="text-xs uppercase tracking-widest text-wissn-green font-semibold mb-3">In Entwicklung</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
-              Das Lernbüro-Modul entsteht
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Gemeinsam mit unseren Pilotschulen bauen wir die Werkzeuge, die freies Lernen im Lernbüro Schritt für Schritt vollständig abbilden. Diese Bausteine sind noch nicht Teil der App, sondern zeigen, woran wir arbeiten.
-            </p>
-          </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {roadmap.map(({ icon: Icon, title, text }, i) => (
-              <Reveal key={title} direction="up" delay={(i % 2) * 100}>
-                <div className="h-full rounded-2xl bg-white border border-wissn-green-100 p-6 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="w-10 h-10 rounded-xl bg-wissn-green-50 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-wissn-green" />
-                    </span>
-                    <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-                  </div>
-                  <p className="text-slate-600 leading-relaxed">{text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-16 lg:py-24 bg-slate-900">
         <div className="max-w-3xl mx-auto px-4 text-center">
@@ -256,7 +232,7 @@ export default function FeaturesPage() {
               href="/kontakt"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-wissn-green-btn text-white text-base font-semibold no-underline hover:bg-wissn-green-dark active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wissn-green focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
-              Gespräch vereinbaren
+              Pilot anfragen
               <ArrowRight className="w-5 h-5" />
             </a>
           </Reveal>
