@@ -2,6 +2,9 @@ import Layout, { useSEO } from '../components/Layout'
 
 // Text 1:1 aus dem App-Repo WissnfuerSchulen, assets/legal/nutzungsbedingungen.md (Version 3.0).
 // Ändert sich der Text dort, diese Seite mitziehen; hier nicht eigenständig umformulieren.
+// Einzige Abweichung (PO-Auftrag 25.11.2026): Die Geschäftsanschrift lautet hier schon
+// Köhlerstraße 90 (Gewerbeummeldung). Der App-Text nennt noch die alte Anschrift und
+// muss nachziehen; danach diesen Hinweis löschen.
 export default function NutzungsbedingungenPage() {
   useSEO({
     title: 'Nutzungsbedingungen',
@@ -30,7 +33,7 @@ export default function NutzungsbedingungenPage() {
               <p>
                 Wissn-AI GbR<br />
                 vertreten durch die Gesellschafter Laurens Samberg und Felix Maurer<br />
-                Eugen-d'Albert-Straße 11<br />
+                Köhlerstraße 90<br />
                 01640 Coswig<br />
                 Deutschland<br />
                 E-Mail: info@wissn-ai.de
@@ -211,7 +214,7 @@ export default function NutzungsbedingungenPage() {
               <h2 className="text-xl font-semibold text-slate-900 mb-3">13. Kontakt</h2>
               <p>
                 Wissn-AI GbR<br />
-                Eugen-d'Albert-Straße 11, 01640 Coswig<br />
+                Köhlerstraße 90, 01640 Coswig<br />
                 E-Mail: info@wissn-ai.de<br />
                 Datenschutz: datenschutz@wissn-ai.de
               </p>
